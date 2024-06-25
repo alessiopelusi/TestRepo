@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dvlm_r:RoleManagement xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:dvlm_r="http://www.virsat.sc.dlr.de/dvlm/v10/r" assignedDiscipline="b0bcb24e-77e0-40dd-9171-8e7e8995eb61" uuid="d41641d1-df36-4692-bad0-89fcca756d4b">
+  <disciplines uuid="b0bcb24e-77e0-40dd-9171-8e7e8995eb61" name="System">
+    <users>pelu_al</users>
+  </disciplines>
+</dvlm_r:RoleManagement>

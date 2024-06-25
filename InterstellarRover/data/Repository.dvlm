@@ -1,0 +1,766 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dvlm:Repository xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:dvlm="http://www.virsat.sc.dlr.de/dvlm/v10" xmlns:dvlm_calc="http://www.virsat.sc.dlr.de/dvlm/v10/calc" xmlns:dvlm_cppd="http://www.virsat.sc.dlr.de/dvlm/v10/cp/cppd" uuid="c9806a4c-65e5-436b-9ce4-54e4d80060f5">
+  <assignedDiscipline href="RoleManagement.dvlm#b0bcb24e-77e0-40dd-9171-8e7e8995eb61"/>
+  <rootEntities href="ise_7086f009-dfb9-4fc7-b9ab-523585b0e53f/StructuralElement.dvlm#7086f009-dfb9-4fc7-b9ab-523585b0e53f"/>
+  <roleManagement href="RoleManagement.dvlm#d41641d1-df36-4692-bad0-89fcca756d4b"/>
+  <unitManagement href="UnitManagement.dvlm#1f751312-a9a7-46f4-8677-24c92d9d32de"/>
+  <activeConcepts name="de.dlr.sc.virsat.model.ext.core" description="Concept for core language elements" DMF="true" displayName="Core">
+    <categories name="GenericCategory" description="Implicit super category of all categories" isAbstract="true"/>
+  </activeConcepts>
+  <activeConcepts name="de.dlr.sc.virsat.model.extension.ps" description="Product Structure Concept" version="1.3" displayName="Product Structure">
+    <imports importedNamespace="de.dlr.sc.virsat.model.ext.core.*"/>
+    <categories name="Document" description="Category to describe documents such as specifications" applicableFor="de.dlr.sc.virsat.model.extension.ps.ElementDefinition de.dlr.sc.virsat.model.extension.ps.ElementConfiguration de.dlr.sc.virsat.model.extension.ps.ElementOccurence de.dlr.sc.virsat.model.extension.ps.ElementRealization" extendsCategory="de.dlr.sc.virsat.model.ext.core.GenericCategory">
+      <properties xsi:type="dvlm_cppd:StringProperty" name="documentName" description="Name of the document"/>
+      <properties xsi:type="dvlm_cppd:StringProperty" name="note" description="Some not of the document"/>
+      <properties xsi:type="dvlm_cppd:StringProperty" name="url" description="A reference URL to the document"/>
+      <properties xsi:type="dvlm_cppd:ResourceProperty" name="file" description="The actual file of the document"/>
+    </categories>
+    <structuralElements name="ProductTree" description="Product tree to describe specifications of used components" isRootStructuralElement="true"/>
+    <structuralElements name="ProductTreeDomain" description="A domain representing a folder in which component specifications can be organized" applicableFor="de.dlr.sc.virsat.model.extension.ps.ProductTree de.dlr.sc.virsat.model.extension.ps.ProductTreeDomain"/>
+    <structuralElements name="ElementDefinition" description="A component representing the specification of it" applicableFor="de.dlr.sc.virsat.model.extension.ps.ProductTreeDomain"/>
+    <structuralElements name="ConfigurationTree" description="Configuration tree representing how components are put together" canInheritFrom="de.dlr.sc.virsat.model.extension.ps.ElementDefinition" isRootStructuralElement="true"/>
+    <structuralElements name="ElementConfiguration" description="A components representing the specification of how components are connected" applicableFor="de.dlr.sc.virsat.model.extension.ps.ConfigurationTree de.dlr.sc.virsat.model.extension.ps.ElementConfiguration" canInheritFrom="de.dlr.sc.virsat.model.extension.ps.ElementDefinition"/>
+    <structuralElements name="AssemblyTree" description="Assembly tree to represent how components are actually integrated" canInheritFrom="de.dlr.sc.virsat.model.extension.ps.ConfigurationTree" isRootStructuralElement="true"/>
+    <structuralElements name="ElementOccurence" description="A component representing the integrated state within an assembly tree" applicableFor="de.dlr.sc.virsat.model.extension.ps.AssemblyTree de.dlr.sc.virsat.model.extension.ps.ElementOccurence" canInheritFrom="de.dlr.sc.virsat.model.extension.ps.ElementConfiguration de.dlr.sc.virsat.model.extension.ps.ElementRealization"/>
+    <structuralElements name="ProductStorage" description="Product tree to describe a storage of real components" isRootStructuralElement="true"/>
+    <structuralElements name="ProductStorageDomain" description="A domain representing a folder in which real component can be organized within the storage" applicableFor="de.dlr.sc.virsat.model.extension.ps.ProductStorage de.dlr.sc.virsat.model.extension.ps.ProductStorageDomain"/>
+    <structuralElements name="ElementRealization" description="A component representing the real product" applicableFor="de.dlr.sc.virsat.model.extension.ps.ProductStorageDomain" canInheritFrom="de.dlr.sc.virsat.model.extension.ps.ElementDefinition"/>
+  </activeConcepts>
+  <activeConcepts name="de.dlr.sc.virsat.model.extension.requirements" description="Extension for Requirement Specification" version="0.7" displayName="Requirements" beta="true">
+    <imports importedNamespace="de.dlr.sc.virsat.model.ext.core.*"/>
+    <ecoreImports importedNsURI="http://www.virsat.sc.dlr.de/dvlm/v9/cp"/>
+    <categories name="IRequirementTreeElement" extendsCategory="de.dlr.sc.virsat.model.ext.core.GenericCategory"/>
+    <categories name="RequirementsSpecification" isApplicableForAll="true" extendsCategory="de.dlr.sc.virsat.model.extension.requirements.IRequirementTreeElement">
+      <properties xsi:type="dvlm_cppd:ResourceProperty" name="exportFile"/>
+      <properties xsi:type="dvlm_cppd:ComposedProperty" name="requirements" type="de.dlr.sc.virsat.model.extension.requirements.RequirementObject">
+        <arrayModifier xsi:type="dvlm_cppd:DynamicArrayModifier"/>
+      </properties>
+      <properties xsi:type="dvlm_cppd:ComposedProperty" name="links" type="de.dlr.sc.virsat.model.extension.requirements.RequirementLink">
+        <arrayModifier xsi:type="dvlm_cppd:DynamicArrayModifier"/>
+      </properties>
+    </categories>
+    <categories name="RequirementsView" isApplicableForAll="true" extendsCategory="de.dlr.sc.virsat.model.ext.core.GenericCategory">
+      <properties xsi:type="dvlm_cppd:ReferenceProperty" name="treeElementToView" description="Specifies from where requirements are shown, if non pointing to the element itself" referenceType="de.dlr.sc.virsat.model.extension.requirements.IRequirementTreeElement"/>
+      <properties xsi:type="dvlm_cppd:BooleanProperty" name="showDeepChildren"/>
+      <properties xsi:type="dvlm_cppd:ReferenceProperty" name="reqTypesToView" referenceType="de.dlr.sc.virsat.model.extension.requirements.RequirementType">
+        <arrayModifier xsi:type="dvlm_cppd:DynamicArrayModifier"/>
+      </properties>
+    </categories>
+    <categories name="RequirementsConfiguration" applicableFor="de.dlr.sc.virsat.model.extension.requirements.RequirementsConfigurationCollection" extendsCategory="de.dlr.sc.virsat.model.ext.core.GenericCategory">
+      <properties xsi:type="dvlm_cppd:StringProperty" name="fileName"/>
+      <properties xsi:type="dvlm_cppd:ComposedProperty" name="typeDefinitions" type="de.dlr.sc.virsat.model.extension.requirements.RequirementType">
+        <arrayModifier xsi:type="dvlm_cppd:DynamicArrayModifier"/>
+      </properties>
+      <properties xsi:type="dvlm_cppd:ComposedProperty" name="linkTypeDefinitions" type="de.dlr.sc.virsat.model.extension.requirements.RequirementLinkType">
+        <arrayModifier xsi:type="dvlm_cppd:DynamicArrayModifier"/>
+      </properties>
+    </categories>
+    <categories name="VerificationConfiguration" applicableFor="de.dlr.sc.virsat.model.extension.requirements.RequirementsConfigurationCollection" extendsCategory="de.dlr.sc.virsat.model.ext.core.GenericCategory">
+      <properties xsi:type="dvlm_cppd:ComposedProperty" name="verificationTypes" type="de.dlr.sc.virsat.model.extension.requirements.VerificationType">
+        <arrayModifier xsi:type="dvlm_cppd:DynamicArrayModifier"/>
+      </properties>
+    </categories>
+    <categories name="RequirementObject" description="Interface for specification objects" isAbstract="true" extendsCategory="de.dlr.sc.virsat.model.extension.requirements.IRequirementTreeElement"/>
+    <categories name="RequirementGroup" extendsCategory="de.dlr.sc.virsat.model.extension.requirements.RequirementObject">
+      <properties xsi:type="dvlm_cppd:ComposedProperty" name="children" type="de.dlr.sc.virsat.model.extension.requirements.RequirementObject">
+        <arrayModifier xsi:type="dvlm_cppd:DynamicArrayModifier"/>
+      </properties>
+    </categories>
+    <categories name="Requirement" extendsCategory="de.dlr.sc.virsat.model.extension.requirements.RequirementObject">
+      <properties xsi:type="dvlm_cppd:ReferenceProperty" name="reqType" referenceType="de.dlr.sc.virsat.model.extension.requirements.RequirementType"/>
+      <properties xsi:type="dvlm_cppd:ComposedProperty" name="elements" type="de.dlr.sc.virsat.model.extension.requirements.AttributeValue">
+        <arrayModifier xsi:type="dvlm_cppd:DynamicArrayModifier"/>
+      </properties>
+      <properties xsi:type="dvlm_cppd:EnumProperty" name="status">
+        <values name="Open" value="0"/>
+        <values name="FullyCompliant" value="1"/>
+        <values name="PartialCompliant" value="2"/>
+        <values name="NonCompliant" value="3"/>
+        <values name="NotApplicable" value="4"/>
+      </properties>
+      <properties xsi:type="dvlm_cppd:ComposedProperty" name="verifications" type="de.dlr.sc.virsat.model.extension.requirements.IVerification">
+        <arrayModifier xsi:type="dvlm_cppd:DynamicArrayModifier"/>
+      </properties>
+      <properties xsi:type="dvlm_cppd:ComposedProperty" name="trace" type="de.dlr.sc.virsat.model.extension.requirements.RequirementTrace"/>
+      <properties xsi:type="dvlm_cppd:StringProperty" name="descriptionText"/>
+      <properties xsi:type="dvlm_cppd:ComposedProperty" name="children" type="de.dlr.sc.virsat.model.extension.requirements.RequirementObject">
+        <arrayModifier xsi:type="dvlm_cppd:DynamicArrayModifier"/>
+      </properties>
+    </categories>
+    <categories name="RequirementLink" extendsCategory="de.dlr.sc.virsat.model.ext.core.GenericCategory">
+      <properties xsi:type="dvlm_cppd:ReferenceProperty" name="type" referenceType="de.dlr.sc.virsat.model.extension.requirements.RequirementLinkType"/>
+      <properties xsi:type="dvlm_cppd:ReferenceProperty" name="subject" referenceType="de.dlr.sc.virsat.model.extension.requirements.Requirement"/>
+      <properties xsi:type="dvlm_cppd:ReferenceProperty" name="targets" referenceType="de.dlr.sc.virsat.model.extension.requirements.Requirement">
+        <arrayModifier xsi:type="dvlm_cppd:DynamicArrayModifier"/>
+      </properties>
+    </categories>
+    <categories name="RequirementTrace" extendsCategory="de.dlr.sc.virsat.model.ext.core.GenericCategory">
+      <properties xsi:type="dvlm_cppd:ReferenceProperty" name="target" referenceType="de.dlr.sc.virsat.model.ext.core.GenericCategory">
+        <arrayModifier xsi:type="dvlm_cppd:DynamicArrayModifier"/>
+      </properties>
+    </categories>
+    <categories name="AttributeValue" extendsCategory="de.dlr.sc.virsat.model.ext.core.GenericCategory">
+      <properties xsi:type="dvlm_cppd:ReferenceProperty" name="attType" referenceType="de.dlr.sc.virsat.model.extension.requirements.RequirementAttribute"/>
+      <properties xsi:type="dvlm_cppd:StringProperty" name="value" description="The raw value of this attribute"/>
+      <properties xsi:type="dvlm_cppd:StringProperty" name="formattedValue" description="Optional property containing the value of this attribute formatted by e.g. HTML"/>
+    </categories>
+    <categories name="RequirementType" description="Definition of a requirement type" extendsCategory="de.dlr.sc.virsat.model.ext.core.GenericCategory">
+      <properties xsi:type="dvlm_cppd:ComposedProperty" name="attributes" type="de.dlr.sc.virsat.model.extension.requirements.RequirementAttribute">
+        <arrayModifier xsi:type="dvlm_cppd:DynamicArrayModifier"/>
+      </properties>
+    </categories>
+    <categories name="RequirementLinkType" description="Definition of a requirement link type" extendsCategory="de.dlr.sc.virsat.model.ext.core.GenericCategory">
+      <properties xsi:type="dvlm_cppd:StringProperty" name="linkDescription"/>
+    </categories>
+    <categories name="RequirementAttribute" description="Attribute definition for requirements" extendsCategory="de.dlr.sc.virsat.model.ext.core.GenericCategory">
+      <properties xsi:type="dvlm_cppd:EnumProperty" name="type" defaultValue="//@activeConcepts.2/@categories.13/@properties.0/@values.5">
+        <values name="Boolean" value="0"/>
+        <values name="Date" value="1"/>
+        <values name="Enumeration" value="2"/>
+        <values name="Integer" value="3"/>
+        <values name="Real" value="4"/>
+        <values name="String" value="5"/>
+        <values name="Identifier" value="6"/>
+      </properties>
+      <properties xsi:type="dvlm_cppd:ComposedProperty" name="enumeration" type="de.dlr.sc.virsat.model.extension.requirements.EnumerationDefinition"/>
+    </categories>
+    <categories name="ImportConfiguration" description="Mapping specification of imported requirements" applicableFor="de.dlr.sc.virsat.model.extension.requirements.RequirementsConfigurationCollection" extendsCategory="de.dlr.sc.virsat.model.ext.core.GenericCategory">
+      <properties xsi:type="dvlm_cppd:StringProperty" name="selectedTypeKeys" description="List of requirement types to be imported, using ReqIF identifiers">
+        <arrayModifier xsi:type="dvlm_cppd:DynamicArrayModifier"/>
+      </properties>
+      <properties xsi:type="dvlm_cppd:ReferenceProperty" name="typeDefinitionsContainer" referenceType="de.dlr.sc.virsat.model.extension.requirements.RequirementsConfiguration"/>
+      <properties xsi:type="dvlm_cppd:ComposedProperty" name="mappedSpecifications" type="de.dlr.sc.virsat.model.extension.requirements.SpecificationMapping">
+        <arrayModifier xsi:type="dvlm_cppd:DynamicArrayModifier"/>
+      </properties>
+      <properties xsi:type="dvlm_cppd:BooleanProperty" name="groupSupport" description="If true using RequirementGroups for requirement objects with children"/>
+    </categories>
+    <categories name="SpecificationMapping" extendsCategory="de.dlr.sc.virsat.model.ext.core.GenericCategory">
+      <properties xsi:type="dvlm_cppd:StringProperty" name="externalIdentifier"/>
+      <properties xsi:type="dvlm_cppd:ReferenceProperty" name="specification" referenceType="de.dlr.sc.virsat.model.extension.requirements.RequirementsSpecification"/>
+    </categories>
+    <categories name="EnumerationDefinition" extendsCategory="de.dlr.sc.virsat.model.ext.core.GenericCategory">
+      <properties xsi:type="dvlm_cppd:ComposedProperty" name="literals" type="de.dlr.sc.virsat.model.extension.requirements.EnumerationLiteral">
+        <arrayModifier xsi:type="dvlm_cppd:DynamicArrayModifier"/>
+      </properties>
+    </categories>
+    <categories name="EnumerationLiteral" extendsCategory="de.dlr.sc.virsat.model.ext.core.GenericCategory"/>
+    <categories name="IVerification" isAbstract="true" extendsCategory="de.dlr.sc.virsat.model.ext.core.GenericCategory">
+      <properties xsi:type="dvlm_cppd:EnumProperty" name="status">
+        <values name="Open" value="0"/>
+        <values name="FullyCompliant" value="1"/>
+        <values name="PartialCompliant" value="2"/>
+        <values name="NonCompliant" value="3"/>
+        <values name="NotApplicable" value="4"/>
+      </properties>
+    </categories>
+    <categories name="DefaultVerification" extendsCategory="de.dlr.sc.virsat.model.extension.requirements.IVerification">
+      <properties xsi:type="dvlm_cppd:ReferenceProperty" name="verificationType" referenceType="de.dlr.sc.virsat.model.extension.requirements.VerificationType"/>
+    </categories>
+    <categories name="VerificationType" extendsCategory="de.dlr.sc.virsat.model.ext.core.GenericCategory">
+      <properties xsi:type="dvlm_cppd:StringProperty" name="verDescription"/>
+      <properties xsi:type="dvlm_cppd:EnumProperty" name="verType">
+        <values name="NotApplicable" value="0"/>
+        <values name="Analysis" value="1"/>
+        <values name="Inspection" value="2"/>
+        <values name="Demonstration" value="3"/>
+        <values name="Test" value="4"/>
+      </properties>
+    </categories>
+    <categories name="ModelVerification" isAbstract="true" extendsCategory="de.dlr.sc.virsat.model.extension.requirements.IVerification">
+      <properties xsi:type="dvlm_cppd:EReferenceProperty" name="elementToBeVerified" description="The exact element (Class / property) to be verified">
+        <referenceType href="../../../plugin/de.dlr.sc.virsat.model/model/dvlm.ecore#//categories/ATypeDefinition"/>
+      </properties>
+    </categories>
+    <categories name="ExistenceVerification" extendsCategory="de.dlr.sc.virsat.model.extension.requirements.ModelVerification"/>
+    <categories name="IValueVerification" isAbstract="true" extendsCategory="de.dlr.sc.virsat.model.extension.requirements.ModelVerification" isVerification="true"/>
+    <categories name="UpperLimitVerification" extendsCategory="de.dlr.sc.virsat.model.extension.requirements.IValueVerification" isVerification="true">
+      <properties xsi:type="dvlm_cppd:FloatProperty" name="upperBound"/>
+    </categories>
+    <categories name="LowerLimitVerification" extendsCategory="de.dlr.sc.virsat.model.extension.requirements.IValueVerification" isVerification="true">
+      <properties xsi:type="dvlm_cppd:FloatProperty" name="lowerBound"/>
+    </categories>
+    <categories name="BoundedValueVerification" extendsCategory="de.dlr.sc.virsat.model.extension.requirements.IValueVerification" isVerification="true">
+      <properties xsi:type="dvlm_cppd:FloatProperty" name="lowerBound"/>
+      <properties xsi:type="dvlm_cppd:FloatProperty" name="upperBound"/>
+    </categories>
+    <structuralElements name="RequirementsConfigurationCollection" description="Storage for configuration elements of requirements" isRootStructuralElement="true"/>
+  </activeConcepts>
+  <activeConcepts name="de.dlr.sc.virsat.model.extension.maturity" description="Maturity Concept for Products and Parts" version="1.2" displayName="Design Maturity">
+    <imports importedNamespace="de.dlr.sc.virsat.model.ext.core.*"/>
+    <categories name="Maturity" description="Category to describe the maturity of a part or product" isApplicableForAll="true" cardinality="1" extendsCategory="de.dlr.sc.virsat.model.ext.core.GenericCategory">
+      <properties xsi:type="dvlm_cppd:EnumProperty" name="level" description="Maturity Level within the project" quantityKindName="Dimensionless" unitName="No Unit" defaultValue="//@activeConcepts.3/@categories.0/@properties.0/@values.2">
+        <values name="READY_TO_BE_USED" value="1"/>
+        <values name="HAS_TO_BE_MODIFIED" value="2"/>
+        <values name="HAS_TO_BE_DEVELOPED" value="3"/>
+      </properties>
+      <properties xsi:type="dvlm_cppd:EnumProperty" name="trl" description="ECSS Technology Readiness Level of the part/product" quantityKindName="Dimensionless" unitName="No Unit" defaultValue="//@activeConcepts.3/@categories.0/@properties.1/@values.0">
+        <values name="TRL_1" value="1"/>
+        <values name="TRL_2" value="2"/>
+        <values name="TRL_3" value="3"/>
+        <values name="TRL_4" value="4"/>
+        <values name="TRL_5" value="5"/>
+        <values name="TRL_6" value="6"/>
+        <values name="TRL_7" value="7"/>
+        <values name="TRL_8" value="8"/>
+        <values name="TRL_9" value="9"/>
+      </properties>
+    </categories>
+  </activeConcepts>
+  <activeConcepts name="de.dlr.sc.virsat.model.extension.statemachines" description="Concept for modeling State Machines" version="1.6" displayName="State Machines" beta="true">
+    <imports importedNamespace="de.dlr.sc.virsat.model.extension.ps.*"/>
+    <imports importedNamespace="de.dlr.sc.virsat.model.ext.core.*"/>
+    <categories name="State" description="State of the component at a given time" extendsCategory="de.dlr.sc.virsat.model.extension.statemachines.StateMachine">
+      <properties xsi:type="dvlm_cppd:StringProperty" name="detail" description="Optional additional detail information about the state"/>
+      <properties xsi:type="dvlm_cppd:FloatProperty" name="maxTime" description="The maximum time spent in the state" quantityKindName="Time" unitName="Second" defaultValue="0.0"/>
+    </categories>
+    <categories name="Transition" description="Transitions among states" extendsCategory="de.dlr.sc.virsat.model.ext.core.GenericCategory">
+      <properties xsi:type="dvlm_cppd:ReferenceProperty" name="stateFrom" description="The Transition starts in this state" referenceType="de.dlr.sc.virsat.model.extension.statemachines.State"/>
+      <properties xsi:type="dvlm_cppd:ReferenceProperty" name="stateTo" description="The Transition ends in this state" referenceType="de.dlr.sc.virsat.model.extension.statemachines.State"/>
+      <properties xsi:type="dvlm_cppd:ReferenceProperty" name="trigger" description="The event that triggers the Transition" referenceType="de.dlr.sc.virsat.model.extension.statemachines.TransitionTriggerEvent"/>
+    </categories>
+    <categories name="TransitionTriggerEvent" description="Some kind of event or action that triggers a transition" extendsCategory="de.dlr.sc.virsat.model.ext.core.GenericCategory">
+      <properties xsi:type="dvlm_cppd:EnumProperty" name="type" defaultValue="//@activeConcepts.4/@categories.2/@properties.0/@values.0">
+        <values name="asynchronous" value="1"/>
+        <values name="synchronous" value="2"/>
+      </properties>
+      <properties xsi:type="dvlm_cppd:StringProperty" name="detail" description="Optional additional detail information about this trigger"/>
+      <properties xsi:type="dvlm_cppd:EnumProperty" name="sending" defaultValue="//@activeConcepts.4/@categories.2/@properties.2/@values.0">
+        <values name="send" value="1"/>
+        <values name="receive" value="2"/>
+      </properties>
+    </categories>
+    <categories name="AConstraint" description="General constraint in statemachines " isAbstract="true" extendsCategory="de.dlr.sc.virsat.model.ext.core.GenericCategory">
+      <properties xsi:type="dvlm_cppd:ReferenceProperty" name="stateConstraining" description="The state that constraints the influenced state" referenceType="de.dlr.sc.virsat.model.extension.statemachines.State"/>
+      <properties xsi:type="dvlm_cppd:ReferenceProperty" name="stateInfluenced" description="The state that is influenced by this constraint" referenceType="de.dlr.sc.virsat.model.extension.statemachines.State"/>
+    </categories>
+    <categories name="AllowsConstraint" description="A state explicitly allows another state" extendsCategory="de.dlr.sc.virsat.model.extension.statemachines.AConstraint"/>
+    <categories name="ForbidsConstraint" description="A state forbids another state" extendsCategory="de.dlr.sc.virsat.model.extension.statemachines.AConstraint"/>
+    <categories name="StateMachine" description="A state machine with states and transitions" applicableFor="de.dlr.sc.virsat.model.extension.ps.ElementDefinition de.dlr.sc.virsat.model.extension.ps.ElementConfiguration de.dlr.sc.virsat.model.extension.ps.ElementOccurence" extendsCategory="de.dlr.sc.virsat.model.ext.core.GenericCategory">
+      <properties xsi:type="dvlm_cppd:EnumProperty" name="type" defaultValue="//@activeConcepts.4/@categories.6/@properties.0/@values.0">
+        <values name="SoftwareStateMachine" value="1"/>
+        <values name="HardwareStateMachine" value="2"/>
+      </properties>
+      <properties xsi:type="dvlm_cppd:ReferenceProperty" name="initialState" description="The initial state of this state machine" referenceType="de.dlr.sc.virsat.model.extension.statemachines.State"/>
+      <properties xsi:type="dvlm_cppd:ComposedProperty" name="states" description="A collection of states of this state machine" type="de.dlr.sc.virsat.model.extension.statemachines.State">
+        <arrayModifier xsi:type="dvlm_cppd:DynamicArrayModifier"/>
+      </properties>
+      <properties xsi:type="dvlm_cppd:ComposedProperty" name="transitions" description="A collections of transitions of this state machine" type="de.dlr.sc.virsat.model.extension.statemachines.Transition">
+        <arrayModifier xsi:type="dvlm_cppd:DynamicArrayModifier"/>
+      </properties>
+      <properties xsi:type="dvlm_cppd:ComposedProperty" name="constraints" description="A collection of constraints of this state machine" type="de.dlr.sc.virsat.model.extension.statemachines.AConstraint">
+        <arrayModifier xsi:type="dvlm_cppd:DynamicArrayModifier"/>
+      </properties>
+      <properties xsi:type="dvlm_cppd:ComposedProperty" name="triggerEvents" description="List of explicit events that trigger a transition" type="de.dlr.sc.virsat.model.extension.statemachines.TransitionTriggerEvent">
+        <arrayModifier xsi:type="dvlm_cppd:DynamicArrayModifier"/>
+      </properties>
+    </categories>
+  </activeConcepts>
+  <activeConcepts name="de.dlr.sc.virsat.model.extension.funcelectrical" description="Concept for modeling Functional Electrical Architecture (FEA)" version="2.1" displayName="Functional Electrical Architecture">
+    <imports importedNamespace="de.dlr.sc.virsat.model.extension.ps.*"/>
+    <imports importedNamespace="de.dlr.sc.virsat.model.ext.core.*"/>
+    <categories name="InterfaceType" shortName="IFT" description="InterfaceTypes such as MIL or CAN to type communication of InterfaceEnds" applicableFor="de.dlr.sc.virsat.model.extension.funcelectrical.InterfaceTypeCollection" extendsCategory="de.dlr.sc.virsat.model.ext.core.GenericCategory"/>
+    <categories name="PowerInterfaceType" description="Describes a Power interface type with nominal voltages" extendsCategory="de.dlr.sc.virsat.model.extension.funcelectrical.InterfaceType">
+      <properties xsi:type="dvlm_cppd:ComposedProperty" name="voltages" type="de.dlr.sc.virsat.model.extension.funcelectrical.VoltageDefinition">
+        <arrayModifier xsi:type="dvlm_cppd:DynamicArrayModifier"/>
+      </properties>
+    </categories>
+    <categories name="VoltageDefinition" description="Abstract voltage definition" isAbstract="true" extendsCategory="de.dlr.sc.virsat.model.ext.core.GenericCategory"/>
+    <categories name="FixedVoltageDefinition" description="Fixed voltage defining a nominal value" extendsCategory="de.dlr.sc.virsat.model.extension.funcelectrical.VoltageDefinition">
+      <properties xsi:type="dvlm_cppd:FloatProperty" name="nominalValue" quantityKindName="Electric potential difference" unitName="Volt" defaultValue="0"/>
+    </categories>
+    <categories name="RangedVoltageDefinition" description="Interval range of nominal voltages" extendsCategory="de.dlr.sc.virsat.model.extension.funcelectrical.VoltageDefinition">
+      <properties xsi:type="dvlm_cppd:FloatProperty" name="minVoltage" quantityKindName="Electric potential difference" unitName="Volt" defaultValue="0"/>
+      <properties xsi:type="dvlm_cppd:FloatProperty" name="maxVoltage" quantityKindName="Electric potential difference" unitName="Volt" defaultValue="0"/>
+    </categories>
+    <categories name="DataInterfaceType" description="Describes a Data communication interface type" extendsCategory="de.dlr.sc.virsat.model.extension.funcelectrical.InterfaceType">
+      <properties xsi:type="dvlm_cppd:StringProperty" name="electricalStandard" defaultValue="Analog"/>
+    </categories>
+    <categories name="ThermalReferencePoint" description="Describes a thermal communication interface type" extendsCategory="de.dlr.sc.virsat.model.extension.funcelectrical.DataInterfaceType"/>
+    <categories name="InterfaceEnd" shortName="IFE" description="Describes a Functional Electrical InterfaceEnd as connection point for Interfaces" applicableFor="de.dlr.sc.virsat.model.extension.ps.ElementDefinition de.dlr.sc.virsat.model.extension.ps.ElementConfiguration de.dlr.sc.virsat.model.extension.ps.ElementOccurence" extendsCategory="de.dlr.sc.virsat.model.ext.core.GenericCategory">
+      <properties xsi:type="dvlm_cppd:ReferenceProperty" name="type" referenceType="de.dlr.sc.virsat.model.extension.funcelectrical.InterfaceType"/>
+    </categories>
+    <categories name="Interface" shortName="IF" description="Describes a Functional Electrical Interface connecting two InterfaceEnds" applicableFor="de.dlr.sc.virsat.model.extension.ps.ElementConfiguration de.dlr.sc.virsat.model.extension.ps.ElementOccurence" extendsCategory="de.dlr.sc.virsat.model.ext.core.GenericCategory">
+      <properties xsi:type="dvlm_cppd:ReferenceProperty" name="interfaceEndFrom" referenceType="de.dlr.sc.virsat.model.extension.funcelectrical.InterfaceEnd"/>
+      <properties xsi:type="dvlm_cppd:ReferenceProperty" name="interfaceEndTo" referenceType="de.dlr.sc.virsat.model.extension.funcelectrical.InterfaceEnd"/>
+    </categories>
+    <structuralElements name="InterfaceTypeCollection" description="A Container to summarize all InterfaceTypes" isRootStructuralElement="true"/>
+  </activeConcepts>
+  <activeConcepts name="de.dlr.sc.virsat.model.extension.budget.cost" description="Cost Budget Concept" displayName="Cost Budget">
+    <imports importedNamespace="de.dlr.sc.virsat.model.extension.ps.*"/>
+    <imports importedNamespace="de.dlr.sc.virsat.model.ext.core.*"/>
+    <categories name="CostType" shortName="CT" description="InterfaceTypes such as MIL or CAN to type communication of InterfaceEnds" applicableFor="de.dlr.sc.virsat.model.extension.budget.cost.CostTypesCollection" extendsCategory="de.dlr.sc.virsat.model.ext.core.GenericCategory"/>
+    <categories name="ACostParameters" description="Definition of the equipment cost" isAbstract="true" extendsCategory="de.dlr.sc.virsat.model.ext.core.GenericCategory">
+      <properties xsi:type="dvlm_cppd:FloatProperty" name="cost" description="The Equipment costs" quantityKindName="Dimensionless" unitName="Euro" defaultValue="0.0"/>
+      <properties xsi:type="dvlm_cppd:FloatProperty" name="costWithMargin" description="The equipment cost plus the safety margin" quantityKindName="Dimensionless" unitName="Euro" defaultValue="0.0"/>
+      <properties xsi:type="dvlm_cppd:FloatProperty" name="costMargin" description="The actual amount of margin cost" quantityKindName="Dimensionless" unitName="Euro" defaultValue="0.0"/>
+      <properties xsi:type="dvlm_cppd:FloatProperty" name="margin" description="The margin to be added as safety factor" quantityKindName="Dimensionless" unitName="Percent" defaultValue="20.0"/>
+    </categories>
+    <categories name="CostTableEntry" description="Definition the equipment cost of the type" extendsCategory="de.dlr.sc.virsat.model.ext.core.GenericCategory">
+      <properties xsi:type="dvlm_cppd:ReferenceProperty" name="type" referenceType="de.dlr.sc.virsat.model.extension.budget.cost.CostType"/>
+      <properties xsi:type="dvlm_cppd:FloatProperty" name="cost" description="The Equipment costs" quantityKindName="Dimensionless" unitName="Euro" defaultValue="0.0"/>
+      <properties xsi:type="dvlm_cppd:FloatProperty" name="costWithMargin" description="The equipment cost plus the safety margin" quantityKindName="Dimensionless" unitName="Euro" defaultValue="0.0"/>
+      <properties xsi:type="dvlm_cppd:FloatProperty" name="costMargin" description="The actual amount of margin cost" quantityKindName="Dimensionless" unitName="Euro" defaultValue="0.0"/>
+      <properties xsi:type="dvlm_cppd:FloatProperty" name="margin" description="The margin to be added as safety factor" quantityKindName="Dimensionless" unitName="Percent" defaultValue="20.0"/>
+    </categories>
+    <categories name="CostEquipment" description="Definition of the equipment cost" isApplicableForAll="true" extendsCategory="de.dlr.sc.virsat.model.extension.budget.cost.ACostParameters">
+      <equationDefinitions>
+        <expression xsi:type="dvlm_calc:MultiplicationAndDivision" operator="*">
+          <left xsi:type="dvlm_calc:ReferencedDefinitionInput" reference="de.dlr.sc.virsat.model.extension.budget.cost.ACostParameters.cost"/>
+          <right xsi:type="dvlm_calc:Parenthesis">
+            <right xsi:type="dvlm_calc:AdditionAndSubtraction">
+              <left xsi:type="dvlm_calc:NumberLiteral" value="1"/>
+              <right xsi:type="dvlm_calc:ReferencedDefinitionInput" reference="de.dlr.sc.virsat.model.extension.budget.cost.ACostParameters.margin"/>
+            </right>
+          </right>
+        </expression>
+        <result xsi:type="dvlm_calc:TypeDefinitionResult" reference="de.dlr.sc.virsat.model.extension.budget.cost.ACostParameters.costWithMargin"/>
+      </equationDefinitions>
+      <equationDefinitions>
+        <expression xsi:type="dvlm_calc:AdditionAndSubtraction" operator="-">
+          <left xsi:type="dvlm_calc:ReferencedDefinitionInput" reference="de.dlr.sc.virsat.model.extension.budget.cost.ACostParameters.costWithMargin"/>
+          <right xsi:type="dvlm_calc:ReferencedDefinitionInput" reference="de.dlr.sc.virsat.model.extension.budget.cost.ACostParameters.cost"/>
+        </expression>
+        <result xsi:type="dvlm_calc:TypeDefinitionResult" reference="de.dlr.sc.virsat.model.extension.budget.cost.ACostParameters.costMargin"/>
+      </equationDefinitions>
+      <properties xsi:type="dvlm_cppd:ReferenceProperty" name="type" referenceType="de.dlr.sc.virsat.model.extension.budget.cost.CostType"/>
+    </categories>
+    <categories name="CostSummary" description="Summary of all nested equipment costs" isApplicableForAll="true" cardinality="1" extendsCategory="de.dlr.sc.virsat.model.extension.budget.cost.ACostParameters">
+      <equationDefinitions>
+        <expression xsi:type="dvlm_calc:SetFunction" operator="summary" typeDefinition="de.dlr.sc.virsat.model.extension.budget.cost.ACostParameters.cost"/>
+        <result xsi:type="dvlm_calc:TypeDefinitionResult" reference="de.dlr.sc.virsat.model.extension.budget.cost.ACostParameters.cost"/>
+      </equationDefinitions>
+      <equationDefinitions>
+        <expression xsi:type="dvlm_calc:SetFunction" operator="summary" typeDefinition="de.dlr.sc.virsat.model.extension.budget.cost.ACostParameters.costWithMargin"/>
+        <result xsi:type="dvlm_calc:TypeDefinitionResult" reference="de.dlr.sc.virsat.model.extension.budget.cost.ACostParameters.costWithMargin"/>
+      </equationDefinitions>
+      <equationDefinitions>
+        <expression xsi:type="dvlm_calc:AdditionAndSubtraction" operator="-">
+          <left xsi:type="dvlm_calc:ReferencedDefinitionInput" reference="de.dlr.sc.virsat.model.extension.budget.cost.ACostParameters.costWithMargin"/>
+          <right xsi:type="dvlm_calc:ReferencedDefinitionInput" reference="de.dlr.sc.virsat.model.extension.budget.cost.ACostParameters.cost"/>
+        </expression>
+        <result xsi:type="dvlm_calc:TypeDefinitionResult" reference="de.dlr.sc.virsat.model.extension.budget.cost.ACostParameters.costMargin"/>
+      </equationDefinitions>
+      <equationDefinitions>
+        <expression xsi:type="dvlm_calc:MultiplicationAndDivision" operator="/">
+          <left xsi:type="dvlm_calc:ReferencedDefinitionInput" reference="de.dlr.sc.virsat.model.extension.budget.cost.ACostParameters.costMargin"/>
+          <right xsi:type="dvlm_calc:ReferencedDefinitionInput" reference="de.dlr.sc.virsat.model.extension.budget.cost.ACostParameters.cost"/>
+        </expression>
+        <result xsi:type="dvlm_calc:TypeDefinitionResult" reference="de.dlr.sc.virsat.model.extension.budget.cost.ACostParameters.margin"/>
+      </equationDefinitions>
+      <properties xsi:type="dvlm_cppd:ComposedProperty" name="costTable" type="de.dlr.sc.virsat.model.extension.budget.cost.CostTableEntry">
+        <arrayModifier xsi:type="dvlm_cppd:DynamicArrayModifier"/>
+      </properties>
+    </categories>
+    <structuralElements name="CostTypesCollection" description="A Container to summarize all CostTypes" isRootStructuralElement="true"/>
+  </activeConcepts>
+  <activeConcepts name="de.dlr.sc.virsat.model.extension.budget.mass" description="Mass Budget Concept" version="1.4" displayName="Mass Budget">
+    <imports importedNamespace="de.dlr.sc.virsat.model.extension.requirements.*"/>
+    <imports importedNamespace="de.dlr.sc.virsat.model.ext.core.*"/>
+    <categories name="AMassParameters" description="Definition of the equipment mass" isAbstract="true" extendsCategory="de.dlr.sc.virsat.model.ext.core.GenericCategory">
+      <properties xsi:type="dvlm_cppd:FloatProperty" name="mass" description="The Equipment mass" quantityKindName="Mass" unitName="Kilogram" defaultValue="0.0">
+        <verification xsi:type="dvlm_cppd:VerificationTypeSpecification" verificationType="de.dlr.sc.virsat.model.extension.requirements.UpperLimitVerification"/>
+      </properties>
+      <properties xsi:type="dvlm_cppd:FloatProperty" name="massWithMargin" description="The equipment mass plus the safety margin" quantityKindName="Mass" unitName="Kilogram" defaultValue="0.0">
+        <verification xsi:type="dvlm_cppd:VerificationTypeSpecification" verificationType="de.dlr.sc.virsat.model.extension.requirements.UpperLimitVerification"/>
+      </properties>
+      <properties xsi:type="dvlm_cppd:FloatProperty" name="massMargin" description="The actual amount of margin mass" quantityKindName="Mass" unitName="Kilogram" defaultValue="0.0"/>
+      <properties xsi:type="dvlm_cppd:FloatProperty" name="margin" description="The margin to be added as safety factor" quantityKindName="Dimensionless" unitName="Percent" defaultValue="20.0"/>
+    </categories>
+    <categories name="MassEquipment" description="Definition of the equipment mass" isApplicableForAll="true" cardinality="1" extendsCategory="de.dlr.sc.virsat.model.extension.budget.mass.AMassParameters">
+      <equationDefinitions>
+        <expression xsi:type="dvlm_calc:MultiplicationAndDivision" operator="*">
+          <left xsi:type="dvlm_calc:ReferencedDefinitionInput" reference="de.dlr.sc.virsat.model.extension.budget.mass.AMassParameters.mass"/>
+          <right xsi:type="dvlm_calc:Parenthesis">
+            <right xsi:type="dvlm_calc:AdditionAndSubtraction">
+              <left xsi:type="dvlm_calc:NumberLiteral" value="1"/>
+              <right xsi:type="dvlm_calc:ReferencedDefinitionInput" reference="de.dlr.sc.virsat.model.extension.budget.mass.AMassParameters.margin"/>
+            </right>
+          </right>
+        </expression>
+        <result xsi:type="dvlm_calc:TypeDefinitionResult" reference="de.dlr.sc.virsat.model.extension.budget.mass.AMassParameters.massWithMargin"/>
+      </equationDefinitions>
+      <equationDefinitions>
+        <expression xsi:type="dvlm_calc:AdditionAndSubtraction" operator="-">
+          <left xsi:type="dvlm_calc:ReferencedDefinitionInput" reference="de.dlr.sc.virsat.model.extension.budget.mass.AMassParameters.massWithMargin"/>
+          <right xsi:type="dvlm_calc:ReferencedDefinitionInput" reference="de.dlr.sc.virsat.model.extension.budget.mass.AMassParameters.mass"/>
+        </expression>
+        <result xsi:type="dvlm_calc:TypeDefinitionResult" reference="de.dlr.sc.virsat.model.extension.budget.mass.AMassParameters.massMargin"/>
+      </equationDefinitions>
+    </categories>
+    <categories name="MassSummary" description="Summary of all nested equipment masses" isApplicableForAll="true" cardinality="1" extendsCategory="de.dlr.sc.virsat.model.extension.budget.mass.AMassParameters">
+      <equationDefinitions>
+        <expression xsi:type="dvlm_calc:SetFunction" operator="summary" typeDefinition="de.dlr.sc.virsat.model.extension.budget.mass.AMassParameters.mass"/>
+        <result xsi:type="dvlm_calc:TypeDefinitionResult" reference="de.dlr.sc.virsat.model.extension.budget.mass.AMassParameters.mass"/>
+      </equationDefinitions>
+      <equationDefinitions>
+        <expression xsi:type="dvlm_calc:SetFunction" operator="summary" typeDefinition="de.dlr.sc.virsat.model.extension.budget.mass.AMassParameters.massWithMargin"/>
+        <result xsi:type="dvlm_calc:TypeDefinitionResult" reference="de.dlr.sc.virsat.model.extension.budget.mass.AMassParameters.massWithMargin"/>
+      </equationDefinitions>
+      <equationDefinitions>
+        <expression xsi:type="dvlm_calc:AdditionAndSubtraction" operator="-">
+          <left xsi:type="dvlm_calc:ReferencedDefinitionInput" reference="de.dlr.sc.virsat.model.extension.budget.mass.AMassParameters.massWithMargin"/>
+          <right xsi:type="dvlm_calc:ReferencedDefinitionInput" reference="de.dlr.sc.virsat.model.extension.budget.mass.AMassParameters.mass"/>
+        </expression>
+        <result xsi:type="dvlm_calc:TypeDefinitionResult" reference="de.dlr.sc.virsat.model.extension.budget.mass.AMassParameters.massMargin"/>
+      </equationDefinitions>
+      <equationDefinitions>
+        <expression xsi:type="dvlm_calc:MultiplicationAndDivision" operator="/">
+          <left xsi:type="dvlm_calc:ReferencedDefinitionInput" reference="de.dlr.sc.virsat.model.extension.budget.mass.AMassParameters.massMargin"/>
+          <right xsi:type="dvlm_calc:ReferencedDefinitionInput" reference="de.dlr.sc.virsat.model.extension.budget.mass.AMassParameters.mass"/>
+        </expression>
+        <result xsi:type="dvlm_calc:TypeDefinitionResult" reference="de.dlr.sc.virsat.model.extension.budget.mass.AMassParameters.margin"/>
+      </equationDefinitions>
+    </categories>
+  </activeConcepts>
+  <activeConcepts name="de.dlr.sc.virsat.model.extension.tests" description="A pure test concept to check that everything is working as expected" version="1.1" DMF="true">
+    <imports importedNamespace="de.dlr.sc.virsat.model.extension.maturity.*"/>
+    <imports importedNamespace="de.dlr.sc.virsat.model.ext.core.*"/>
+    <imports importedNamespace="de.dlr.sc.virsat.model.ext.core.*"/>
+    <ecoreImports importedNsURI="http://www.virsat.sc.dlr.de/external/tests"/>
+    <categories name="TestCategoryAllProperty" description="TestCategory for testing all property Types once" isApplicableForAll="true" extendsCategory="de.dlr.sc.virsat.model.ext.core.GenericCategory">
+      <properties xsi:type="dvlm_cppd:StringProperty" name="testString"/>
+      <properties xsi:type="dvlm_cppd:IntProperty" name="testInt"/>
+      <properties xsi:type="dvlm_cppd:FloatProperty" name="testFloat" quantityKindName="Mass" unitName="Kilogram"/>
+      <properties xsi:type="dvlm_cppd:BooleanProperty" name="testBool"/>
+      <properties xsi:type="dvlm_cppd:ResourceProperty" name="testResource"/>
+      <properties xsi:type="dvlm_cppd:EnumProperty" name="testEnum">
+        <values name="LOW" value="15"/>
+        <values name="MEDIUM" value="20"/>
+        <values name="HIGH" value="25"/>
+        <values name="INCREDIBLE" value="30"/>
+      </properties>
+    </categories>
+    <categories name="TestCategoryComposition" isApplicableForAll="true" extendsCategory="de.dlr.sc.virsat.model.ext.core.GenericCategory">
+      <properties xsi:type="dvlm_cppd:ComposedProperty" name="testSubCategory" type="de.dlr.sc.virsat.model.extension.tests.TestCategoryAllProperty"/>
+    </categories>
+    <categories name="TestCategoryReference" isApplicableForAll="true" extendsCategory="de.dlr.sc.virsat.model.ext.core.GenericCategory">
+      <properties xsi:type="dvlm_cppd:ReferenceProperty" name="testRefCategory" referenceType="de.dlr.sc.virsat.model.extension.tests.TestCategoryAllProperty"/>
+      <properties xsi:type="dvlm_cppd:ReferenceProperty" name="testRefProperty" referenceType="de.dlr.sc.virsat.model.extension.tests.TestCategoryAllProperty.testString"/>
+    </categories>
+    <categories name="TestCategoryIntrinsicArray" isApplicableForAll="true" extendsCategory="de.dlr.sc.virsat.model.ext.core.GenericCategory">
+      <properties xsi:type="dvlm_cppd:StringProperty" name="testStringArrayDynamic">
+        <arrayModifier xsi:type="dvlm_cppd:DynamicArrayModifier"/>
+      </properties>
+      <properties xsi:type="dvlm_cppd:StringProperty" name="testStringArrayStatic">
+        <arrayModifier xsi:type="dvlm_cppd:StaticArrayModifier" arraySize="4"/>
+      </properties>
+    </categories>
+    <categories name="TestCategoryCompositionArray" isApplicableForAll="true" extendsCategory="de.dlr.sc.virsat.model.ext.core.GenericCategory">
+      <properties xsi:type="dvlm_cppd:ComposedProperty" name="testCompositionArrayDynamic" type="de.dlr.sc.virsat.model.extension.tests.TestCategoryAllProperty">
+        <arrayModifier xsi:type="dvlm_cppd:DynamicArrayModifier"/>
+      </properties>
+      <properties xsi:type="dvlm_cppd:ComposedProperty" name="testCompositionArrayStatic" type="de.dlr.sc.virsat.model.extension.tests.TestCategoryAllProperty">
+        <arrayModifier xsi:type="dvlm_cppd:StaticArrayModifier" arraySize="4"/>
+      </properties>
+    </categories>
+    <categories name="TestCategoryReferenceArray" isApplicableForAll="true" extendsCategory="de.dlr.sc.virsat.model.ext.core.GenericCategory">
+      <properties xsi:type="dvlm_cppd:ReferenceProperty" name="testCategoryReferenceArrayDynamic" referenceType="de.dlr.sc.virsat.model.extension.tests.TestCategoryAllProperty">
+        <arrayModifier xsi:type="dvlm_cppd:DynamicArrayModifier"/>
+      </properties>
+      <properties xsi:type="dvlm_cppd:ReferenceProperty" name="testCategoryReferenceArrayStatic" referenceType="de.dlr.sc.virsat.model.extension.tests.TestCategoryAllProperty">
+        <arrayModifier xsi:type="dvlm_cppd:StaticArrayModifier" arraySize="4"/>
+      </properties>
+      <properties xsi:type="dvlm_cppd:ReferenceProperty" name="testPropertyReferenceArrayDynamic" referenceType="de.dlr.sc.virsat.model.extension.tests.TestCategoryAllProperty.testString">
+        <arrayModifier xsi:type="dvlm_cppd:DynamicArrayModifier"/>
+      </properties>
+      <properties xsi:type="dvlm_cppd:ReferenceProperty" name="testPropertyReferenceArrayStatic" referenceType="de.dlr.sc.virsat.model.extension.tests.TestCategoryAllProperty.testString">
+        <arrayModifier xsi:type="dvlm_cppd:StaticArrayModifier" arraySize="4"/>
+      </properties>
+    </categories>
+    <categories name="TestCategoryBeanA" isApplicableForAll="true" extendsCategory="de.dlr.sc.virsat.model.ext.core.GenericCategory"/>
+    <categories name="TestCategoryBeanB" isApplicableForAll="true" extendsCategory="de.dlr.sc.virsat.model.ext.core.GenericCategory"/>
+    <categories name="TestCategoryBeanAbstract" isApplicableForAll="true" isAbstract="true" extendsCategory="de.dlr.sc.virsat.model.ext.core.GenericCategory"/>
+    <categories name="TestCategoryBeanConcrete" isApplicableForAll="true" extendsCategory="de.dlr.sc.virsat.model.extension.tests.TestCategoryBeanAbstract"/>
+    <categories name="TestCategoryBase" isApplicableForAll="true" extendsCategory="de.dlr.sc.virsat.model.ext.core.GenericCategory">
+      <properties xsi:type="dvlm_cppd:ComposedProperty" name="testArray" type="de.dlr.sc.virsat.model.extension.tests.TestCategoryBase">
+        <arrayModifier xsi:type="dvlm_cppd:DynamicArrayModifier"/>
+      </properties>
+      <properties xsi:type="dvlm_cppd:IntProperty" name="testBaseProperty"/>
+      <properties xsi:type="dvlm_cppd:ReferenceProperty" name="testReference" referenceType="de.dlr.sc.virsat.model.extension.tests.TestCategoryBase"/>
+    </categories>
+    <categories name="TestCategoryExtends" extendsCategory="de.dlr.sc.virsat.model.extension.tests.TestCategoryBase">
+      <properties xsi:type="dvlm_cppd:IntProperty" name="testExtendsProperty"/>
+    </categories>
+    <categories name="TestParameter" isApplicableForAll="true" extendsCategory="de.dlr.sc.virsat.model.ext.core.GenericCategory">
+      <properties xsi:type="dvlm_cppd:FloatProperty" name="defaultValue" defaultValue="0"/>
+    </categories>
+    <categories name="TestMassParameters" isApplicableForAll="true" cardinality="1" extendsCategory="de.dlr.sc.virsat.model.ext.core.GenericCategory">
+      <properties xsi:type="dvlm_cppd:ComposedProperty" name="mass" type="de.dlr.sc.virsat.model.extension.tests.TestParameter" quantityKindName="Mass"/>
+    </categories>
+    <categories name="TestCrossLinkedParametersWithCalculation" isApplicableForAll="true" extendsCategory="de.dlr.sc.virsat.model.ext.core.GenericCategory">
+      <equationDefinitions>
+        <expression xsi:type="dvlm_calc:ReferencedDefinitionInput" reference="de.dlr.sc.virsat.model.extension.maturity.Maturity.trl"/>
+        <result xsi:type="dvlm_calc:TypeDefinitionResult" reference="de.dlr.sc.virsat.model.extension.tests.TestCrossLinkedParametersWithCalculation.calcedTrl"/>
+      </equationDefinitions>
+      <properties xsi:type="dvlm_cppd:FloatProperty" name="calcedTrl" quantityKindName="Mass"/>
+    </categories>
+    <categories name="EReferenceTest" isApplicableForAll="true" extendsCategory="de.dlr.sc.virsat.model.ext.core.GenericCategory">
+      <properties xsi:type="dvlm_cppd:EReferenceProperty" name="eReferenceTest">
+        <referenceType href="../../../plugin/de.dlr.sc.virsat.model.external.tests/model/ExternalModel.ecore#//ExternalTestType"/>
+      </properties>
+    </categories>
+    <structuralElements name="TestStructuralElement" description="StructuralElement for testing code generator" isApplicableForAll="true" isCanInheritFromAll="true" isRootStructuralElement="true"/>
+    <structuralElements name="TestStructuralElementOther" description="Another StructuralElement for bean structural element instance helper" isApplicableForAll="true" isCanInheritFromAll="true"/>
+  </activeConcepts>
+  <activeConcepts name="de.dlr.sc.virsat.model.extension.thermal" description="Concept for modeling thermal properties" displayName="Thermal" beta="true">
+    <imports importedNamespace="de.dlr.sc.virsat.model.ext.core.*"/>
+    <categories name="ComponentMeshSize" description="The maximum specific size of the mesh is specified here." extendsCategory="de.dlr.sc.virsat.model.ext.core.GenericCategory">
+      <properties xsi:type="dvlm_cppd:ReferenceProperty" name="meshComponent" referenceType="de.dlr.sc.virsat.model.extension.thermal.ThermalElementParameters"/>
+      <properties xsi:type="dvlm_cppd:FloatProperty" name="maximumCharacteristicMeshLength" quantityKindName="Length" defaultValue="0"/>
+    </categories>
+    <categories name="ThermalAnalysis" description="Here all general information for the analysis is stored" isApplicableForAll="true" cardinality="1" extendsCategory="de.dlr.sc.virsat.model.ext.core.GenericCategory">
+      <properties xsi:type="dvlm_cppd:ComposedProperty" name="boundaryConditions" type="de.dlr.sc.virsat.model.extension.thermal.BoundaryConditions"/>
+      <properties xsi:type="dvlm_cppd:ComposedProperty" name="meshsizes" type="de.dlr.sc.virsat.model.extension.thermal.ComponentMeshSize">
+        <arrayModifier xsi:type="dvlm_cppd:DynamicArrayModifier"/>
+      </properties>
+      <properties xsi:type="dvlm_cppd:ComposedProperty" name="thermalanalysisResults" type="de.dlr.sc.virsat.model.extension.thermal.AnalysisResult">
+        <arrayModifier xsi:type="dvlm_cppd:DynamicArrayModifier"/>
+      </properties>
+      <properties xsi:type="dvlm_cppd:ComposedProperty" name="analysisType" type="de.dlr.sc.virsat.model.extension.thermal.AnalysisType"/>
+      <properties xsi:type="dvlm_cppd:ComposedProperty" name="thermalcontacts" type="de.dlr.sc.virsat.model.extension.thermal.ThermalContacts"/>
+      <properties xsi:type="dvlm_cppd:ComposedProperty" name="reports" type="de.dlr.sc.virsat.model.extension.thermal.Reports">
+        <arrayModifier xsi:type="dvlm_cppd:DynamicArrayModifier"/>
+      </properties>
+    </categories>
+    <categories name="ThermalData" description="Modeling thermal element data" isApplicableForAll="true" cardinality="1" extendsCategory="de.dlr.sc.virsat.model.ext.core.GenericCategory">
+      <properties xsi:type="dvlm_cppd:ComposedProperty" name="singlefaceradiationaList" type="de.dlr.sc.virsat.model.extension.thermal.FaceRadiation">
+        <arrayModifier xsi:type="dvlm_cppd:DynamicArrayModifier"/>
+      </properties>
+      <properties xsi:type="dvlm_cppd:ComposedProperty" name="thermalelementparameters" type="de.dlr.sc.virsat.model.extension.thermal.ThermalElementParameters"/>
+    </categories>
+    <categories name="ThermalContacts" description="Here all thermal contacts are stored" extendsCategory="de.dlr.sc.virsat.model.ext.core.GenericCategory">
+      <properties xsi:type="dvlm_cppd:ComposedProperty" name="thermalportlist" type="de.dlr.sc.virsat.model.extension.thermal.ThermalPort">
+        <arrayModifier xsi:type="dvlm_cppd:DynamicArrayModifier"/>
+      </properties>
+      <properties xsi:type="dvlm_cppd:ComposedProperty" name="thermalinterfacelist" type="de.dlr.sc.virsat.model.extension.thermal.ThermalInterface">
+        <arrayModifier xsi:type="dvlm_cppd:DynamicArrayModifier"/>
+      </properties>
+    </categories>
+    <categories name="BoundaryConditions" description="Modeling the temperature boundary conditions on the system" extendsCategory="de.dlr.sc.virsat.model.ext.core.GenericCategory">
+      <properties xsi:type="dvlm_cppd:ComposedProperty" name="boundaries" type="de.dlr.sc.virsat.model.extension.thermal.TemperatureBoundary">
+        <arrayModifier xsi:type="dvlm_cppd:DynamicArrayModifier"/>
+      </properties>
+      <properties xsi:type="dvlm_cppd:ComposedProperty" name="heatflowface" type="de.dlr.sc.virsat.model.extension.thermal.HeatFlowToFace">
+        <arrayModifier xsi:type="dvlm_cppd:DynamicArrayModifier"/>
+      </properties>
+    </categories>
+    <categories name="AnalysisResult" description="Maximum mesh element sizes for components can be defined here." extendsCategory="de.dlr.sc.virsat.model.ext.core.GenericCategory">
+      <properties xsi:type="dvlm_cppd:ComposedProperty" name="componentresult" type="de.dlr.sc.virsat.model.extension.thermal.ComponentResult">
+        <arrayModifier xsi:type="dvlm_cppd:DynamicArrayModifier"/>
+      </properties>
+    </categories>
+    <categories name="TemperatureBoundary" description="Modeling a temperature boundary condition" extendsCategory="de.dlr.sc.virsat.model.ext.core.GenericCategory">
+      <properties xsi:type="dvlm_cppd:ReferenceProperty" name="component" referenceType="de.dlr.sc.virsat.model.extension.thermal.ThermalElementParameters"/>
+      <properties xsi:type="dvlm_cppd:EnumProperty" name="boundaryType" description="BC applicable for Face or for complete volume">
+        <values name="Face" value="0"/>
+        <values name="Volume" value="1"/>
+      </properties>
+      <properties xsi:type="dvlm_cppd:IntProperty" name="freeCADFaceNumberBC" description="The number of the corresponding face in the FreeCAD model" quantityKindName="Dimensionless"/>
+      <properties xsi:type="dvlm_cppd:FloatProperty" name="boundaryTemperature" description="Fixed temperature of the element"/>
+    </categories>
+    <categories name="HeatFlowToFace" description="Modeling an external heat flow to a face" extendsCategory="de.dlr.sc.virsat.model.ext.core.GenericCategory">
+      <properties xsi:type="dvlm_cppd:ReferenceProperty" name="component" referenceType="de.dlr.sc.virsat.model.extension.thermal.ThermalElementParameters"/>
+      <properties xsi:type="dvlm_cppd:IntProperty" name="freeCADFaceNumberHF" description="The number of the corresponding face in the FreeCAD model" quantityKindName="Dimensionless"/>
+      <properties xsi:type="dvlm_cppd:FloatProperty" name="heatFlow" description="Total magnitude of heat flow applied to the element" quantityKindName="Heat Flow Rate per Unit Area" unitName="Watt per Meter squared"/>
+    </categories>
+    <categories name="AnalysisType" description="Static or Transient" extendsCategory="de.dlr.sc.virsat.model.ext.core.GenericCategory">
+      <properties xsi:type="dvlm_cppd:EnumProperty" name="analysisType" description="Type of the analysis to be executed" unitName="No Unit">
+        <values name="Static" value="0"/>
+        <values name="Transient" value="1"/>
+      </properties>
+      <properties xsi:type="dvlm_cppd:FloatProperty" name="timeStep" description="Desired timestep for dynamic simulation" quantityKindName="Time" unitName="Second"/>
+      <properties xsi:type="dvlm_cppd:FloatProperty" name="totalTime" description="Desired total time for dynamic simulation" quantityKindName="Time" unitName="Second"/>
+      <properties xsi:type="dvlm_cppd:EnumProperty" name="includeOrbitRadiation" description="Specify if solar radiation etc variation shall be included or not" unitName="No Unit">
+        <values name="Include" value="0"/>
+        <values name="NotInclude" value="1"/>
+      </properties>
+    </categories>
+    <categories name="Reports" description="Analysis reports can be referenced here" extendsCategory="de.dlr.sc.virsat.model.ext.core.GenericCategory">
+      <properties xsi:type="dvlm_cppd:StringProperty" name="reportName" description="Name of the report"/>
+      <properties xsi:type="dvlm_cppd:StringProperty" name="comment" description="Comment on the report"/>
+      <properties xsi:type="dvlm_cppd:ResourceProperty" name="report" description="Upload file here"/>
+    </categories>
+    <categories name="ThermalElementParameters" description="Thermal conductivity of the element" extendsCategory="de.dlr.sc.virsat.model.ext.core.GenericCategory">
+      <properties xsi:type="dvlm_cppd:ReferenceProperty" name="predefinedMaterial" referenceType="de.dlr.sc.virsat.model.extension.thermal.Material"/>
+      <properties xsi:type="dvlm_cppd:FloatProperty" name="initialTemperature" quantityKindName="Temperature" unitName="Kelvin"/>
+      <properties xsi:type="dvlm_cppd:FloatProperty" name="powerBalance" quantityKindName="Power" unitName="Watt"/>
+    </categories>
+    <categories name="FaceRadiation" description="Emissivity of specific face" extendsCategory="de.dlr.sc.virsat.model.ext.core.GenericCategory">
+      <properties xsi:type="dvlm_cppd:IntProperty" name="freeCADFaceNumber" description="Number of face, must match with face number in FreeCAD"/>
+      <properties xsi:type="dvlm_cppd:FloatProperty" name="faceEmissivity" quantityKindName="Dimensionless" unitName="No Unit"/>
+      <properties xsi:type="dvlm_cppd:FloatProperty" name="faceAbsorptivity" quantityKindName="Dimensionless" unitName="No Unit"/>
+    </categories>
+    <categories name="ThermalPort" description="Modeling of thermal connectors" extendsCategory="de.dlr.sc.virsat.model.ext.core.GenericCategory">
+      <properties xsi:type="dvlm_cppd:ReferenceProperty" name="portComponent" referenceType="de.dlr.sc.virsat.model.extension.thermal.ThermalElementParameters"/>
+    </categories>
+    <categories name="ThermalInterface" description="Modeling of thermal interfaces" extendsCategory="de.dlr.sc.virsat.model.ext.core.GenericCategory">
+      <properties xsi:type="dvlm_cppd:ReferenceProperty" name="Contacts" referenceType="de.dlr.sc.virsat.model.extension.thermal.ThermalPort">
+        <arrayModifier xsi:type="dvlm_cppd:StaticArrayModifier" arraySize="2"/>
+      </properties>
+      <properties xsi:type="dvlm_cppd:FloatProperty" name="thermalContactConductivity" quantityKindName="Thermal Conductivity" unitName="Watt Per Metre Squared Per Kelvin"/>
+      <properties xsi:type="dvlm_cppd:FloatProperty" name="contactMaxMeshElementSize0" unitName="No Unit" defaultValue="0"/>
+      <properties xsi:type="dvlm_cppd:FloatProperty" name="contactMaxMeshElementSize1" unitName="No Unit" defaultValue="0"/>
+    </categories>
+    <categories name="Material" description="Model of a material" applicableFor="de.dlr.sc.virsat.model.extension.thermal.MaterialCollection" extendsCategory="de.dlr.sc.virsat.model.ext.core.GenericCategory">
+      <properties xsi:type="dvlm_cppd:FloatProperty" name="thermalConductivity" quantityKindName="Thermal Conductivity" unitName="Meter Kilogram Per Second Cubed Per Kelvin"/>
+      <properties xsi:type="dvlm_cppd:FloatProperty" name="absorptionCoefficient" quantityKindName="Dimensionless" unitName="No Unit"/>
+      <properties xsi:type="dvlm_cppd:FloatProperty" name="elementEmissivity" quantityKindName="Dimensionless" unitName="No Unit"/>
+      <properties xsi:type="dvlm_cppd:FloatProperty" name="heatCapacity" quantityKindName="Specific Heat Capacity" unitName="Meter Squared Per Second Squared Per Kelvin"/>
+      <properties xsi:type="dvlm_cppd:FloatProperty" name="density" quantityKindName="Density" unitName="Kilogram Per Cubic Meter"/>
+    </categories>
+    <categories name="ComponentResult" description="Here the results of the analyses are displayed." extendsCategory="de.dlr.sc.virsat.model.ext.core.GenericCategory">
+      <properties xsi:type="dvlm_cppd:ReferenceProperty" name="component" referenceType="de.dlr.sc.virsat.model.extension.thermal.ThermalElementParameters"/>
+      <properties xsi:type="dvlm_cppd:FloatProperty" name="maxTemperature" quantityKindName="Temperature" unitName="Kelvin"/>
+      <properties xsi:type="dvlm_cppd:IntProperty" name="timeStepMaxTemperature" quantityKindName="Dimensionless" unitName="No Unit"/>
+      <properties xsi:type="dvlm_cppd:FloatProperty" name="minTemperature" quantityKindName="Temperature" unitName="Kelvin"/>
+      <properties xsi:type="dvlm_cppd:IntProperty" name="timeStepMinTemperature" quantityKindName="Dimensionless" unitName="No Unit"/>
+    </categories>
+    <structuralElements name="MaterialCollection" description="Materials can be created here or imported from .csv" isRootStructuralElement="true"/>
+  </activeConcepts>
+  <activeConcepts name="de.dlr.sc.virsat.model.extension.sequencing" description="Sequencing Concept" version="1.1" displayName="Sequencing">
+    <imports importedNamespace="de.dlr.sc.virsat.model.extension.ps.*"/>
+    <imports importedNamespace="de.dlr.sc.virsat.model.extension.statemachines.*"/>
+    <imports importedNamespace="de.dlr.sc.virsat.model.extension.funcelectrical.*"/>
+    <imports importedNamespace="de.dlr.sc.virsat.model.ext.core.*"/>
+    <categories name="EventToOutputMapping" applicableFor="de.dlr.sc.virsat.model.extension.ps.ElementDefinition de.dlr.sc.virsat.model.extension.ps.ElementConfiguration de.dlr.sc.virsat.model.extension.ps.ElementOccurence" extendsCategory="de.dlr.sc.virsat.model.ext.core.GenericCategory">
+      <properties xsi:type="dvlm_cppd:ReferenceProperty" name="event" referenceType="de.dlr.sc.virsat.model.extension.statemachines.TransitionTriggerEvent"/>
+      <properties xsi:type="dvlm_cppd:ReferenceProperty" name="interfaceEnds" referenceType="de.dlr.sc.virsat.model.extension.funcelectrical.InterfaceEnd">
+        <arrayModifier xsi:type="dvlm_cppd:DynamicArrayModifier"/>
+      </properties>
+      <properties xsi:type="dvlm_cppd:ReferenceProperty" name="outputStates" referenceType="de.dlr.sc.virsat.model.extension.statemachines.State">
+        <arrayModifier xsi:type="dvlm_cppd:DynamicArrayModifier"/>
+      </properties>
+    </categories>
+    <categories name="SequenceEntry" extendsCategory="de.dlr.sc.virsat.model.ext.core.GenericCategory">
+      <properties xsi:type="dvlm_cppd:FloatProperty" name="time" description="The time to trigger the Transition" quantityKindName="Time" unitName="Second" defaultValue="0.0"/>
+      <properties xsi:type="dvlm_cppd:ReferenceProperty" name="event" referenceType="de.dlr.sc.virsat.model.extension.statemachines.TransitionTriggerEvent"/>
+    </categories>
+    <categories name="Sequence" isApplicableForAll="true" extendsCategory="de.dlr.sc.virsat.model.ext.core.GenericCategory">
+      <properties xsi:type="dvlm_cppd:ComposedProperty" name="sequenceEntries" type="de.dlr.sc.virsat.model.extension.sequencing.SequenceEntry">
+        <arrayModifier xsi:type="dvlm_cppd:DynamicArrayModifier"/>
+      </properties>
+    </categories>
+  </activeConcepts>
+  <activeConcepts name="de.dlr.sc.virsat.model.extension.budget.power" description="Power Budget Concept" version="1.1" displayName="Power Budget" beta="true">
+    <imports importedNamespace="de.dlr.sc.virsat.model.extension.statemachines.*"/>
+    <imports importedNamespace="de.dlr.sc.virsat.model.ext.core.*"/>
+    <categories name="APowerParameters" description="Abstract definition of a collection of power parameters" isAbstract="true" extendsCategory="de.dlr.sc.virsat.model.ext.core.GenericCategory">
+      <properties xsi:type="dvlm_cppd:FloatProperty" name="avgPower" description="The average power over all states" quantityKindName="Power" unitName="Watt"/>
+      <properties xsi:type="dvlm_cppd:FloatProperty" name="minPower" description="The minimum power over all states" quantityKindName="Power" unitName="Watt"/>
+      <properties xsi:type="dvlm_cppd:FloatProperty" name="maxPower" description="The maximum power over all states" quantityKindName="Power" unitName="Watt"/>
+      <properties xsi:type="dvlm_cppd:FloatProperty" name="avgPowerWithMargin" description="The equipment mass plus the safety margin" quantityKindName="Power" unitName="Watt" defaultValue="0.0"/>
+      <properties xsi:type="dvlm_cppd:FloatProperty" name="avgPowerMargin" description="The actual amount of margin mass" quantityKindName="Power" unitName="Watt" defaultValue="0.0"/>
+      <properties xsi:type="dvlm_cppd:FloatProperty" name="margin" description="The margin to be added as safety factor" quantityKindName="Dimensionless" unitName="Percent" defaultValue="20.0"/>
+    </categories>
+    <categories name="PowerEquipment" description="Definition of the equipment power" isApplicableForAll="true" cardinality="1" extendsCategory="de.dlr.sc.virsat.model.extension.budget.power.APowerParameters">
+      <equationDefinitions>
+        <expression xsi:type="dvlm_calc:SetFunction" operator="summary" typeDefinition="de.dlr.sc.virsat.model.extension.budget.power.PowerState.avgPower"/>
+        <result xsi:type="dvlm_calc:TypeDefinitionResult" reference="de.dlr.sc.virsat.model.extension.budget.power.APowerParameters.avgPower"/>
+      </equationDefinitions>
+      <equationDefinitions>
+        <expression xsi:type="dvlm_calc:SetFunction" operator="min" typeDefinition="de.dlr.sc.virsat.model.extension.budget.power.PowerState.power"/>
+        <result xsi:type="dvlm_calc:TypeDefinitionResult" reference="de.dlr.sc.virsat.model.extension.budget.power.APowerParameters.minPower"/>
+      </equationDefinitions>
+      <equationDefinitions>
+        <expression xsi:type="dvlm_calc:SetFunction" operator="max" typeDefinition="de.dlr.sc.virsat.model.extension.budget.power.PowerState.power"/>
+        <result xsi:type="dvlm_calc:TypeDefinitionResult" reference="de.dlr.sc.virsat.model.extension.budget.power.APowerParameters.maxPower"/>
+      </equationDefinitions>
+      <equationDefinitions>
+        <expression xsi:type="dvlm_calc:MultiplicationAndDivision" operator="*">
+          <left xsi:type="dvlm_calc:ReferencedDefinitionInput" reference="de.dlr.sc.virsat.model.extension.budget.power.APowerParameters.avgPower"/>
+          <right xsi:type="dvlm_calc:Parenthesis">
+            <right xsi:type="dvlm_calc:AdditionAndSubtraction">
+              <left xsi:type="dvlm_calc:NumberLiteral" value="1"/>
+              <right xsi:type="dvlm_calc:ReferencedDefinitionInput" reference="de.dlr.sc.virsat.model.extension.budget.power.APowerParameters.margin"/>
+            </right>
+          </right>
+        </expression>
+        <result xsi:type="dvlm_calc:TypeDefinitionResult" reference="de.dlr.sc.virsat.model.extension.budget.power.APowerParameters.avgPowerWithMargin"/>
+      </equationDefinitions>
+      <equationDefinitions>
+        <expression xsi:type="dvlm_calc:AdditionAndSubtraction" operator="-">
+          <left xsi:type="dvlm_calc:ReferencedDefinitionInput" reference="de.dlr.sc.virsat.model.extension.budget.power.APowerParameters.avgPowerWithMargin"/>
+          <right xsi:type="dvlm_calc:ReferencedDefinitionInput" reference="de.dlr.sc.virsat.model.extension.budget.power.APowerParameters.avgPower"/>
+        </expression>
+        <result xsi:type="dvlm_calc:TypeDefinitionResult" reference="de.dlr.sc.virsat.model.extension.budget.power.APowerParameters.avgPowerMargin"/>
+      </equationDefinitions>
+      <properties xsi:type="dvlm_cppd:ComposedProperty" name="powerValues" type="de.dlr.sc.virsat.model.extension.budget.power.PowerState">
+        <arrayModifier xsi:type="dvlm_cppd:DynamicArrayModifier"/>
+      </properties>
+    </categories>
+    <categories name="PowerSummary" description="Summary of all nested equipment powers" isApplicableForAll="true" cardinality="1" extendsCategory="de.dlr.sc.virsat.model.extension.budget.power.APowerParameters">
+      <equationDefinitions>
+        <expression xsi:type="dvlm_calc:SetFunction" operator="summary" typeDefinition="de.dlr.sc.virsat.model.extension.budget.power.APowerParameters.avgPower"/>
+        <result xsi:type="dvlm_calc:TypeDefinitionResult" reference="de.dlr.sc.virsat.model.extension.budget.power.APowerParameters.avgPower"/>
+      </equationDefinitions>
+      <equationDefinitions>
+        <expression xsi:type="dvlm_calc:SetFunction" operator="summary" typeDefinition="de.dlr.sc.virsat.model.extension.budget.power.APowerParameters.minPower"/>
+        <result xsi:type="dvlm_calc:TypeDefinitionResult" reference="de.dlr.sc.virsat.model.extension.budget.power.APowerParameters.minPower"/>
+      </equationDefinitions>
+      <equationDefinitions>
+        <expression xsi:type="dvlm_calc:SetFunction" operator="summary" typeDefinition="de.dlr.sc.virsat.model.extension.budget.power.APowerParameters.maxPower"/>
+        <result xsi:type="dvlm_calc:TypeDefinitionResult" reference="de.dlr.sc.virsat.model.extension.budget.power.APowerParameters.maxPower"/>
+      </equationDefinitions>
+      <equationDefinitions>
+        <expression xsi:type="dvlm_calc:SetFunction" operator="summary" typeDefinition="de.dlr.sc.virsat.model.extension.budget.power.APowerParameters.avgPowerWithMargin"/>
+        <result xsi:type="dvlm_calc:TypeDefinitionResult" reference="de.dlr.sc.virsat.model.extension.budget.power.APowerParameters.avgPowerWithMargin"/>
+      </equationDefinitions>
+      <equationDefinitions>
+        <expression xsi:type="dvlm_calc:AdditionAndSubtraction" operator="-">
+          <left xsi:type="dvlm_calc:ReferencedDefinitionInput" reference="de.dlr.sc.virsat.model.extension.budget.power.APowerParameters.avgPowerWithMargin"/>
+          <right xsi:type="dvlm_calc:ReferencedDefinitionInput" reference="de.dlr.sc.virsat.model.extension.budget.power.APowerParameters.avgPower"/>
+        </expression>
+        <result xsi:type="dvlm_calc:TypeDefinitionResult" reference="de.dlr.sc.virsat.model.extension.budget.power.APowerParameters.avgPowerMargin"/>
+      </equationDefinitions>
+      <equationDefinitions>
+        <expression xsi:type="dvlm_calc:MultiplicationAndDivision" operator="/">
+          <left xsi:type="dvlm_calc:ReferencedDefinitionInput" reference="de.dlr.sc.virsat.model.extension.budget.power.APowerParameters.avgPowerMargin"/>
+          <right xsi:type="dvlm_calc:ReferencedDefinitionInput" reference="de.dlr.sc.virsat.model.extension.budget.power.APowerParameters.avgPower"/>
+        </expression>
+        <result xsi:type="dvlm_calc:TypeDefinitionResult" reference="de.dlr.sc.virsat.model.extension.budget.power.APowerParameters.margin"/>
+      </equationDefinitions>
+    </categories>
+    <categories name="PowerState" description="Power data for a single equipment mode" extendsCategory="de.dlr.sc.virsat.model.ext.core.GenericCategory">
+      <equationDefinitions>
+        <expression xsi:type="dvlm_calc:MultiplicationAndDivision" operator="*">
+          <left xsi:type="dvlm_calc:ReferencedDefinitionInput" reference="de.dlr.sc.virsat.model.extension.budget.power.PowerState.power"/>
+          <right xsi:type="dvlm_calc:ReferencedDefinitionInput" reference="de.dlr.sc.virsat.model.extension.budget.power.PowerState.dutyCycle"/>
+        </expression>
+        <result xsi:type="dvlm_calc:TypeDefinitionResult" reference="de.dlr.sc.virsat.model.extension.budget.power.PowerState.avgPower"/>
+      </equationDefinitions>
+      <properties xsi:type="dvlm_cppd:ReferenceProperty" name="mode" description="The mode of the equipment" referenceType="de.dlr.sc.virsat.model.extension.statemachines.State"/>
+      <properties xsi:type="dvlm_cppd:FloatProperty" name="power" description="The power consumption in this mode" quantityKindName="Power" unitName="Watt" defaultValue="0"/>
+      <properties xsi:type="dvlm_cppd:FloatProperty" name="avgPower" description="The average power consumption of the mode" quantityKindName="Power" unitName="Watt"/>
+      <properties xsi:type="dvlm_cppd:FloatProperty" name="dutyCycle" description="The percentage of time spent in the mode " quantityKindName="Dimensionless" unitName="Percent" defaultValue="0"/>
+    </categories>
+  </activeConcepts>
+  <activeConcepts name="de.dlr.sc.virsat.model.extension.visualisation" description="Concept that defines visualisation properties" version="1.4" displayName="Visualization">
+    <imports importedNamespace="de.dlr.sc.virsat.model.ext.core.*"/>
+    <categories name="Visualisation" isApplicableForAll="true" cardinality="1" extendsCategory="de.dlr.sc.virsat.model.ext.core.GenericCategory">
+      <properties xsi:type="dvlm_cppd:EnumProperty" name="shape" defaultValue="//@activeConcepts.12/@categories.0/@properties.0/@values.0">
+        <values name="NONE" value="1"/>
+        <values name="BOX" value="2"/>
+        <values name="SPHERE" value="3"/>
+        <values name="CYLINDER" value="4"/>
+        <values name="CONE" value="5"/>
+        <values name="GEOMETRY" value="6"/>
+      </properties>
+      <properties xsi:type="dvlm_cppd:ResourceProperty" name="geometryFile" description="STL File"/>
+      <properties xsi:type="dvlm_cppd:FloatProperty" name="radius" quantityKindName="Length" unitName="Meter" defaultValue="0"/>
+      <properties xsi:type="dvlm_cppd:FloatProperty" name="sizeX" quantityKindName="Length" unitName="Meter" defaultValue="0"/>
+      <properties xsi:type="dvlm_cppd:FloatProperty" name="sizeY" quantityKindName="Length" unitName="Meter" defaultValue="0"/>
+      <properties xsi:type="dvlm_cppd:FloatProperty" name="sizeZ" quantityKindName="Length" unitName="Meter" defaultValue="0"/>
+      <properties xsi:type="dvlm_cppd:IntProperty" name="color" defaultValue="16777215"/>
+      <properties xsi:type="dvlm_cppd:FloatProperty" name="transparency" defaultValue="0"/>
+      <properties xsi:type="dvlm_cppd:FloatProperty" name="positionX" quantityKindName="Length" unitName="Meter" defaultValue="0"/>
+      <properties xsi:type="dvlm_cppd:FloatProperty" name="positionY" quantityKindName="Length" unitName="Meter" defaultValue="0"/>
+      <properties xsi:type="dvlm_cppd:FloatProperty" name="positionZ" quantityKindName="Length" unitName="Meter" defaultValue="0"/>
+      <properties xsi:type="dvlm_cppd:FloatProperty" name="rotationX" quantityKindName="Angle" unitName="Degree" defaultValue="0"/>
+      <properties xsi:type="dvlm_cppd:FloatProperty" name="rotationY" quantityKindName="Angle" unitName="Degree" defaultValue="0"/>
+      <properties xsi:type="dvlm_cppd:FloatProperty" name="rotationZ" quantityKindName="Angle" unitName="Degree" defaultValue="0"/>
+    </categories>
+  </activeConcepts>
+  <activeConcepts name="de.dlr.sc.virsat.model.extension.mechanical" description="Concept for mechanical engineering" version="0.2" displayName="Mechanical Engineering">
+    <imports importedNamespace="de.dlr.sc.virsat.model.ext.core.*"/>
+  </activeConcepts>
+</dvlm:Repository>
