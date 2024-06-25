@@ -2,6 +2,7 @@
 <dvlm:Repository xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:dvlm="http://www.virsat.sc.dlr.de/dvlm/v10" xmlns:dvlm_calc="http://www.virsat.sc.dlr.de/dvlm/v10/calc" xmlns:dvlm_cppd="http://www.virsat.sc.dlr.de/dvlm/v10/cp/cppd" uuid="c9806a4c-65e5-436b-9ce4-54e4d80060f5">
   <assignedDiscipline href="RoleManagement.dvlm#b0bcb24e-77e0-40dd-9171-8e7e8995eb61"/>
   <rootEntities href="ise_7086f009-dfb9-4fc7-b9ab-523585b0e53f/StructuralElement.dvlm#7086f009-dfb9-4fc7-b9ab-523585b0e53f"/>
+  <rootEntities href="ise_53df1e13-9fbb-4273-a9db-30d5c6c7bfd3/StructuralElement.dvlm#53df1e13-9fbb-4273-a9db-30d5c6c7bfd3"/>
   <roleManagement href="RoleManagement.dvlm#d41641d1-df36-4692-bad0-89fcca756d4b"/>
   <unitManagement href="UnitManagement.dvlm#1f751312-a9a7-46f4-8677-24c92d9d32de"/>
   <activeConcepts name="de.dlr.sc.virsat.model.ext.core" description="Concept for core language elements" DMF="true" displayName="Core">
