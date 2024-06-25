@@ -1,0 +1,491 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dvlm_s:StructuralElementInstance xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:dvlm_calc="http://www.virsat.sc.dlr.de/dvlm/v10/calc" xmlns:dvlm_cp="http://www.virsat.sc.dlr.de/dvlm/v10/cp" xmlns:dvlm_cppd="http://www.virsat.sc.dlr.de/dvlm/v10/cp/cppd" xmlns:dvlm_cppi="http://www.virsat.sc.dlr.de/dvlm/v10/cp/cppi" xmlns:dvlm_qudv="http://www.virsat.sc.dlr.de/dvlm/v10/qudv" xmlns:dvlm_s="http://www.virsat.sc.dlr.de/dvlm/v10/s" uuid="38c0302d-c6eb-47e5-869a-061b1bf213c3" name="MySat">
+  <assignedDiscipline href="../RoleManagement.dvlm#49a3fcdc-58cf-4be6-87a8-5406874b4713"/>
+  <categoryAssignments uuid="a2ffc869-e4ad-43be-b30e-f27cfa40af7e" name="SystemParameters">
+    <type xsi:type="dvlm_cp:Category" href="../Repository.dvlm#de.dlr.sc.virsat.model.extension.cefx.SystemParameters"/>
+    <propertyInstances xsi:type="dvlm_cppi:UnitValuePropertyInstance" uuid="93014593-a747-4adf-8128-2a72f74489b9" value="0">
+      <type xsi:type="dvlm_cppd:FloatProperty" href="../Repository.dvlm#de.dlr.sc.virsat.model.extension.cefx.SystemParameters.systemMargin"/>
+      <unit xsi:type="dvlm_qudv:PrefixedUnit" href="../UnitManagement.dvlm#fef49d92-595c-4a89-a519-748dd0c689b9"/>
+    </propertyInstances>
+    <propertyInstances xsi:type="dvlm_cppi:ComposedPropertyInstance" uuid="8802903c-6f35-4a16-a39c-3cd760ed992a">
+      <type xsi:type="dvlm_cppd:ComposedProperty" href="../Repository.dvlm#de.dlr.sc.virsat.model.extension.cefx.SystemParameters.modeDuration"/>
+      <typeInstance uuid="a79e2082-f7bb-4465-985d-dabbae751ac2" name="modeDuration">
+        <type xsi:type="dvlm_cp:Category" href="../Repository.dvlm#de.dlr.sc.virsat.model.extension.cefx.Parameter"/>
+        <propertyInstances xsi:type="dvlm_cppi:UnitValuePropertyInstance" uuid="cb758042-13b4-4a11-bc2b-064ca7f0778b" value="0">
+          <type xsi:type="dvlm_cppd:FloatProperty" href="../Repository.dvlm#de.dlr.sc.virsat.model.extension.cefx.Parameter.defaultValue"/>
+          <unit xsi:type="dvlm_qudv:SimpleUnit" href="../UnitManagement.dvlm#bfafd3e5-f037-44d9-86d4-664e5aa7330e"/>
+        </propertyInstances>
+        <propertyInstances xsi:type="dvlm_cppi:ArrayInstance" uuid="e1837011-ecf3-43f7-a952-b26ee9765ed7">
+          <type xsi:type="dvlm_cppd:ComposedProperty" href="../Repository.dvlm#de.dlr.sc.virsat.model.extension.cefx.Parameter.modeValues"/>
+        </propertyInstances>
+        <propertyInstances xsi:type="dvlm_cppi:ArrayInstance" uuid="b5b234a9-1b45-4f13-a27e-ea8ec7795e5d">
+          <type xsi:type="dvlm_cppd:ComposedProperty" href="../Repository.dvlm#de.dlr.sc.virsat.model.extension.cefx.Parameter.rangeValues"/>
+        </propertyInstances>
+        <propertyInstances xsi:type="dvlm_cppi:ValuePropertyInstance" uuid="3f37baf9-33b2-4cd0-872f-d279e6f18f4b">
+          <type xsi:type="dvlm_cppd:StringProperty" href="../Repository.dvlm#de.dlr.sc.virsat.model.extension.cefx.Parameter.note"/>
+        </propertyInstances>
+      </typeInstance>
+    </propertyInstances>
+  </categoryAssignments>
+  <categoryAssignments uuid="cfb4e0c3-ba9b-4c11-afc8-0d56001d430c" name="SystemMassParameters">
+    <type xsi:type="dvlm_cp:Category" href="../Repository.dvlm#de.dlr.sc.virsat.model.extension.cefx.SystemMassParameters"/>
+    <equationSection>
+      <equations resultText="0.0">
+        <expression xsi:type="dvlm_calc:SetFunction" operator="summary">
+          <typeDefinition xsi:type="dvlm_cppd:ComposedProperty" href="../Repository.dvlm#de.dlr.sc.virsat.model.extension.cefx.SubSystemMassParameters.massTotal"/>
+        </expression>
+        <result xsi:type="dvlm_calc:TypeInstanceResult" uuid="ff8e4521-8ec2-4383-8e0d-8e2c1053de60" reference="5da8c0c7-b444-4c89-8e71-804158e24429"/>
+        <definition href="../Repository.dvlm#//@activeConcepts.8/@categories.4/@equationDefinitions.0"/>
+      </equations>
+      <equations resultText="0.0">
+        <expression xsi:type="dvlm_calc:SetFunction" operator="summary">
+          <typeDefinition xsi:type="dvlm_cppd:ComposedProperty" href="../Repository.dvlm#de.dlr.sc.virsat.model.extension.cefx.SubSystemMassParameters.massTotalWithMargin"/>
+        </expression>
+        <result xsi:type="dvlm_calc:TypeInstanceResult" uuid="f6e66de2-630c-4823-b633-fbd6940bbd40" reference="79205f8b-5155-47b8-a5c1-b19527407dbb"/>
+        <definition href="../Repository.dvlm#//@activeConcepts.8/@categories.4/@equationDefinitions.1"/>
+      </equations>
+      <equations resultText="0.0">
+        <expression xsi:type="dvlm_calc:MultiplicationAndDivision" operator="*">
+          <left xsi:type="dvlm_calc:ReferencedInput" reference="79205f8b-5155-47b8-a5c1-b19527407dbb">
+            <definition href="../Repository.dvlm#//@activeConcepts.8/@categories.4/@equationDefinitions.2/@expression/@left"/>
+          </left>
+          <right xsi:type="dvlm_calc:Parenthesis">
+            <right xsi:type="dvlm_calc:AdditionAndSubtraction">
+              <left xsi:type="dvlm_calc:NumberLiteral" value="1"/>
+              <right xsi:type="dvlm_calc:ReferencedInput" reference="93014593-a747-4adf-8128-2a72f74489b9">
+                <definition href="../Repository.dvlm#//@activeConcepts.8/@categories.4/@equationDefinitions.2/@expression/@right/@right/@right"/>
+              </right>
+            </right>
+          </right>
+        </expression>
+        <result xsi:type="dvlm_calc:TypeInstanceResult" uuid="1b4ba852-84b7-4b36-b448-344e7d0f9919" reference="c21062db-a798-4e75-a89b-e73eb84d36c6"/>
+        <definition href="../Repository.dvlm#//@activeConcepts.8/@categories.4/@equationDefinitions.2"/>
+      </equations>
+      <equations resultText="0.0">
+        <expression xsi:type="dvlm_calc:AdditionAndSubtraction">
+          <left xsi:type="dvlm_calc:AdditionAndSubtraction">
+            <left xsi:type="dvlm_calc:ReferencedInput" reference="c21062db-a798-4e75-a89b-e73eb84d36c6">
+              <definition href="../Repository.dvlm#//@activeConcepts.8/@categories.4/@equationDefinitions.3/@expression/@left/@left"/>
+            </left>
+            <right xsi:type="dvlm_calc:ReferencedInput" reference="4114afa3-f35d-4b6d-a848-1f9320054d5f">
+              <definition href="../Repository.dvlm#//@activeConcepts.8/@categories.4/@equationDefinitions.3/@expression/@left/@right"/>
+            </right>
+          </left>
+          <right xsi:type="dvlm_calc:ReferencedInput" reference="81ce89ef-07cf-425e-8de8-4cb2e3bbee91">
+            <definition href="../Repository.dvlm#//@activeConcepts.8/@categories.4/@equationDefinitions.3/@expression/@right"/>
+          </right>
+        </expression>
+        <result xsi:type="dvlm_calc:TypeInstanceResult" uuid="6b3ddfc8-57f3-4058-814c-81c4975ebc2c" reference="b9207e83-8d5f-434f-b452-6b1aa17df8b8"/>
+        <definition href="../Repository.dvlm#//@activeConcepts.8/@categories.4/@equationDefinitions.3"/>
+      </equations>
+      <equations resultText="0.0">
+        <expression xsi:type="dvlm_calc:AdditionAndSubtraction" operator="-">
+          <left xsi:type="dvlm_calc:ReferencedInput" reference="f38c00d1-6579-4fcb-9ab3-fb7ba73eca67">
+            <definition href="../Repository.dvlm#//@activeConcepts.8/@categories.4/@equationDefinitions.4/@expression/@left"/>
+          </left>
+          <right xsi:type="dvlm_calc:ReferencedInput" reference="b9207e83-8d5f-434f-b452-6b1aa17df8b8">
+            <definition href="../Repository.dvlm#//@activeConcepts.8/@categories.4/@equationDefinitions.4/@expression/@right"/>
+          </right>
+        </expression>
+        <result xsi:type="dvlm_calc:TypeInstanceResult" uuid="702c57b0-c995-4455-8e38-a0c420d07fbf" reference="d23a140d-a7a2-42f3-b9ae-ce89a385bc84"/>
+        <definition href="../Repository.dvlm#//@activeConcepts.8/@categories.4/@equationDefinitions.4"/>
+      </equations>
+    </equationSection>
+    <propertyInstances xsi:type="dvlm_cppi:ComposedPropertyInstance" uuid="c971f440-446c-44c2-b92b-8bd8d460b731">
+      <type xsi:type="dvlm_cppd:ComposedProperty" href="../Repository.dvlm#de.dlr.sc.virsat.model.extension.cefx.SystemMassParameters.massLaunch"/>
+      <typeInstance uuid="b9207e83-8d5f-434f-b452-6b1aa17df8b8" name="massLaunch">
+        <type xsi:type="dvlm_cp:Category" href="../Repository.dvlm#de.dlr.sc.virsat.model.extension.cefx.Parameter"/>
+        <propertyInstances xsi:type="dvlm_cppi:UnitValuePropertyInstance" uuid="3e9c928b-4d98-412f-a2b8-e5582605aaec" override="true" value="0.0">
+          <type xsi:type="dvlm_cppd:FloatProperty" href="../Repository.dvlm#de.dlr.sc.virsat.model.extension.cefx.Parameter.defaultValue"/>
+          <unit xsi:type="dvlm_qudv:PrefixedUnit" href="../UnitManagement.dvlm#d0d43862-08ba-407c-9750-ef7b9a794ffd"/>
+        </propertyInstances>
+        <propertyInstances xsi:type="dvlm_cppi:ArrayInstance" uuid="f0cfb523-a1e7-4e5f-8a97-1b08b717919f">
+          <type xsi:type="dvlm_cppd:ComposedProperty" href="../Repository.dvlm#de.dlr.sc.virsat.model.extension.cefx.Parameter.modeValues"/>
+        </propertyInstances>
+        <propertyInstances xsi:type="dvlm_cppi:ArrayInstance" uuid="75d3fade-783d-42a6-b7f5-375b2532cf27">
+          <type xsi:type="dvlm_cppd:ComposedProperty" href="../Repository.dvlm#de.dlr.sc.virsat.model.extension.cefx.Parameter.rangeValues"/>
+        </propertyInstances>
+        <propertyInstances xsi:type="dvlm_cppi:ValuePropertyInstance" uuid="7533eca3-6a3a-4ead-b811-50d3d7465952">
+          <type xsi:type="dvlm_cppd:StringProperty" href="../Repository.dvlm#de.dlr.sc.virsat.model.extension.cefx.Parameter.note"/>
+        </propertyInstances>
+      </typeInstance>
+    </propertyInstances>
+    <propertyInstances xsi:type="dvlm_cppi:ComposedPropertyInstance" uuid="fa72804e-d6fe-42d7-8c95-d6d2f02ab3a7">
+      <type xsi:type="dvlm_cppd:ComposedProperty" href="../Repository.dvlm#de.dlr.sc.virsat.model.extension.cefx.SystemMassParameters.massTotal"/>
+      <typeInstance uuid="5da8c0c7-b444-4c89-8e71-804158e24429" name="massTotal">
+        <type xsi:type="dvlm_cp:Category" href="../Repository.dvlm#de.dlr.sc.virsat.model.extension.cefx.Parameter"/>
+        <propertyInstances xsi:type="dvlm_cppi:UnitValuePropertyInstance" uuid="17a0f709-8401-444f-b8af-6b45eb34e013" override="true" value="0.0">
+          <type xsi:type="dvlm_cppd:FloatProperty" href="../Repository.dvlm#de.dlr.sc.virsat.model.extension.cefx.Parameter.defaultValue"/>
+          <unit xsi:type="dvlm_qudv:PrefixedUnit" href="../UnitManagement.dvlm#d0d43862-08ba-407c-9750-ef7b9a794ffd"/>
+        </propertyInstances>
+        <propertyInstances xsi:type="dvlm_cppi:ArrayInstance" uuid="0aaf1384-25e3-4ea4-99f2-15d958778855">
+          <type xsi:type="dvlm_cppd:ComposedProperty" href="../Repository.dvlm#de.dlr.sc.virsat.model.extension.cefx.Parameter.modeValues"/>
+        </propertyInstances>
+        <propertyInstances xsi:type="dvlm_cppi:ArrayInstance" uuid="4ae0dadc-7775-4df0-94e8-7baaf477c3b7">
+          <type xsi:type="dvlm_cppd:ComposedProperty" href="../Repository.dvlm#de.dlr.sc.virsat.model.extension.cefx.Parameter.rangeValues"/>
+        </propertyInstances>
+        <propertyInstances xsi:type="dvlm_cppi:ValuePropertyInstance" uuid="9234a6a9-95c0-4715-9379-5efa58fb2179">
+          <type xsi:type="dvlm_cppd:StringProperty" href="../Repository.dvlm#de.dlr.sc.virsat.model.extension.cefx.Parameter.note"/>
+        </propertyInstances>
+      </typeInstance>
+    </propertyInstances>
+    <propertyInstances xsi:type="dvlm_cppi:ComposedPropertyInstance" uuid="6e829a1a-3413-4c33-b54e-6fe899465513">
+      <type xsi:type="dvlm_cppd:ComposedProperty" href="../Repository.dvlm#de.dlr.sc.virsat.model.extension.cefx.SystemMassParameters.massTotalWithMargin"/>
+      <typeInstance uuid="79205f8b-5155-47b8-a5c1-b19527407dbb" name="massTotalWithMargin">
+        <type xsi:type="dvlm_cp:Category" href="../Repository.dvlm#de.dlr.sc.virsat.model.extension.cefx.Parameter"/>
+        <propertyInstances xsi:type="dvlm_cppi:UnitValuePropertyInstance" uuid="08933842-d7c8-4c53-af24-1c69859a9636" override="true" value="0.0">
+          <type xsi:type="dvlm_cppd:FloatProperty" href="../Repository.dvlm#de.dlr.sc.virsat.model.extension.cefx.Parameter.defaultValue"/>
+          <unit xsi:type="dvlm_qudv:PrefixedUnit" href="../UnitManagement.dvlm#d0d43862-08ba-407c-9750-ef7b9a794ffd"/>
+        </propertyInstances>
+        <propertyInstances xsi:type="dvlm_cppi:ArrayInstance" uuid="6d9c0c9b-cd21-46bb-96e5-8605d9b7171d">
+          <type xsi:type="dvlm_cppd:ComposedProperty" href="../Repository.dvlm#de.dlr.sc.virsat.model.extension.cefx.Parameter.modeValues"/>
+        </propertyInstances>
+        <propertyInstances xsi:type="dvlm_cppi:ArrayInstance" uuid="33959946-f867-4656-8e98-0ea7904e5ee3">
+          <type xsi:type="dvlm_cppd:ComposedProperty" href="../Repository.dvlm#de.dlr.sc.virsat.model.extension.cefx.Parameter.rangeValues"/>
+        </propertyInstances>
+        <propertyInstances xsi:type="dvlm_cppi:ValuePropertyInstance" uuid="6ee643f8-d24a-4494-b007-d7629ddad814">
+          <type xsi:type="dvlm_cppd:StringProperty" href="../Repository.dvlm#de.dlr.sc.virsat.model.extension.cefx.Parameter.note"/>
+        </propertyInstances>
+      </typeInstance>
+    </propertyInstances>
+    <propertyInstances xsi:type="dvlm_cppi:ComposedPropertyInstance" uuid="15d9b87a-d839-4eac-a663-3228688a0bbc">
+      <type xsi:type="dvlm_cppd:ComposedProperty" href="../Repository.dvlm#de.dlr.sc.virsat.model.extension.cefx.SystemMassParameters.massTotalWithMarginWithSystemMargin"/>
+      <typeInstance uuid="c21062db-a798-4e75-a89b-e73eb84d36c6" name="massTotalWithMarginWithSystemMargin">
+        <type xsi:type="dvlm_cp:Category" href="../Repository.dvlm#de.dlr.sc.virsat.model.extension.cefx.Parameter"/>
+        <propertyInstances xsi:type="dvlm_cppi:UnitValuePropertyInstance" uuid="45a392fb-8351-42a6-a2f1-d1b5fe9d2ec7" override="true" value="0.0">
+          <type xsi:type="dvlm_cppd:FloatProperty" href="../Repository.dvlm#de.dlr.sc.virsat.model.extension.cefx.Parameter.defaultValue"/>
+          <unit xsi:type="dvlm_qudv:PrefixedUnit" href="../UnitManagement.dvlm#d0d43862-08ba-407c-9750-ef7b9a794ffd"/>
+        </propertyInstances>
+        <propertyInstances xsi:type="dvlm_cppi:ArrayInstance" uuid="770ad34c-c4cc-4a84-a4a7-341d9f82763a">
+          <type xsi:type="dvlm_cppd:ComposedProperty" href="../Repository.dvlm#de.dlr.sc.virsat.model.extension.cefx.Parameter.modeValues"/>
+        </propertyInstances>
+        <propertyInstances xsi:type="dvlm_cppi:ArrayInstance" uuid="1d1ddf9d-52ea-4aac-a638-0c67717ce50a">
+          <type xsi:type="dvlm_cppd:ComposedProperty" href="../Repository.dvlm#de.dlr.sc.virsat.model.extension.cefx.Parameter.rangeValues"/>
+        </propertyInstances>
+        <propertyInstances xsi:type="dvlm_cppi:ValuePropertyInstance" uuid="fe54db76-3672-4501-9fea-fbc2e481181c">
+          <type xsi:type="dvlm_cppd:StringProperty" href="../Repository.dvlm#de.dlr.sc.virsat.model.extension.cefx.Parameter.note"/>
+        </propertyInstances>
+      </typeInstance>
+    </propertyInstances>
+    <propertyInstances xsi:type="dvlm_cppi:ComposedPropertyInstance" uuid="01eb2e4d-445e-4c55-9744-9c3b7eef3e77">
+      <type xsi:type="dvlm_cppd:ComposedProperty" href="../Repository.dvlm#de.dlr.sc.virsat.model.extension.cefx.SystemMassParameters.massAdapter"/>
+      <typeInstance uuid="81ce89ef-07cf-425e-8de8-4cb2e3bbee91" name="massAdapter">
+        <type xsi:type="dvlm_cp:Category" href="../Repository.dvlm#de.dlr.sc.virsat.model.extension.cefx.Parameter"/>
+        <propertyInstances xsi:type="dvlm_cppi:UnitValuePropertyInstance" uuid="1750fb75-3c14-4077-af14-ae2035e47dc3" value="0">
+          <type xsi:type="dvlm_cppd:FloatProperty" href="../Repository.dvlm#de.dlr.sc.virsat.model.extension.cefx.Parameter.defaultValue"/>
+          <unit xsi:type="dvlm_qudv:PrefixedUnit" href="../UnitManagement.dvlm#d0d43862-08ba-407c-9750-ef7b9a794ffd"/>
+        </propertyInstances>
+        <propertyInstances xsi:type="dvlm_cppi:ArrayInstance" uuid="79f27519-a140-4625-bf20-448c8325577a">
+          <type xsi:type="dvlm_cppd:ComposedProperty" href="../Repository.dvlm#de.dlr.sc.virsat.model.extension.cefx.Parameter.modeValues"/>
+        </propertyInstances>
+        <propertyInstances xsi:type="dvlm_cppi:ArrayInstance" uuid="a93f9257-13f0-4347-9de3-8f9294481cb8">
+          <type xsi:type="dvlm_cppd:ComposedProperty" href="../Repository.dvlm#de.dlr.sc.virsat.model.extension.cefx.Parameter.rangeValues"/>
+        </propertyInstances>
+        <propertyInstances xsi:type="dvlm_cppi:ValuePropertyInstance" uuid="b9e1ef0a-f0f3-4328-9a73-729792f02886">
+          <type xsi:type="dvlm_cppd:StringProperty" href="../Repository.dvlm#de.dlr.sc.virsat.model.extension.cefx.Parameter.note"/>
+        </propertyInstances>
+      </typeInstance>
+    </propertyInstances>
+    <propertyInstances xsi:type="dvlm_cppi:ComposedPropertyInstance" uuid="039b0c60-5aec-47ab-ab87-7442df93a549">
+      <type xsi:type="dvlm_cppd:ComposedProperty" href="../Repository.dvlm#de.dlr.sc.virsat.model.extension.cefx.SystemMassParameters.massPropellant"/>
+      <typeInstance uuid="4114afa3-f35d-4b6d-a848-1f9320054d5f" name="massPropellant">
+        <type xsi:type="dvlm_cp:Category" href="../Repository.dvlm#de.dlr.sc.virsat.model.extension.cefx.Parameter"/>
+        <propertyInstances xsi:type="dvlm_cppi:UnitValuePropertyInstance" uuid="3f6fd18c-983e-42e6-8dc8-b896f5d44fbf" value="0">
+          <type xsi:type="dvlm_cppd:FloatProperty" href="../Repository.dvlm#de.dlr.sc.virsat.model.extension.cefx.Parameter.defaultValue"/>
+          <unit xsi:type="dvlm_qudv:PrefixedUnit" href="../UnitManagement.dvlm#d0d43862-08ba-407c-9750-ef7b9a794ffd"/>
+        </propertyInstances>
+        <propertyInstances xsi:type="dvlm_cppi:ArrayInstance" uuid="cd3e11aa-10b8-4c9d-87af-2039d16cec84">
+          <type xsi:type="dvlm_cppd:ComposedProperty" href="../Repository.dvlm#de.dlr.sc.virsat.model.extension.cefx.Parameter.modeValues"/>
+        </propertyInstances>
+        <propertyInstances xsi:type="dvlm_cppi:ArrayInstance" uuid="1c19345d-6c50-49f6-8f5e-3a0a40171096">
+          <type xsi:type="dvlm_cppd:ComposedProperty" href="../Repository.dvlm#de.dlr.sc.virsat.model.extension.cefx.Parameter.rangeValues"/>
+        </propertyInstances>
+        <propertyInstances xsi:type="dvlm_cppi:ValuePropertyInstance" uuid="ab0a3a31-4abb-403c-8b5c-90afd35df8f5">
+          <type xsi:type="dvlm_cppd:StringProperty" href="../Repository.dvlm#de.dlr.sc.virsat.model.extension.cefx.Parameter.note"/>
+        </propertyInstances>
+      </typeInstance>
+    </propertyInstances>
+    <propertyInstances xsi:type="dvlm_cppi:ComposedPropertyInstance" uuid="766f62b2-0639-4bfe-9cc7-4ee3404171db">
+      <type xsi:type="dvlm_cppd:ComposedProperty" href="../Repository.dvlm#de.dlr.sc.virsat.model.extension.cefx.SystemMassParameters.massLaunchMax"/>
+      <typeInstance uuid="f38c00d1-6579-4fcb-9ab3-fb7ba73eca67" name="massLaunchMax">
+        <type xsi:type="dvlm_cp:Category" href="../Repository.dvlm#de.dlr.sc.virsat.model.extension.cefx.Parameter"/>
+        <propertyInstances xsi:type="dvlm_cppi:UnitValuePropertyInstance" uuid="c7e6cb20-b1a5-47e1-8462-47aa3883a1f3" value="0">
+          <type xsi:type="dvlm_cppd:FloatProperty" href="../Repository.dvlm#de.dlr.sc.virsat.model.extension.cefx.Parameter.defaultValue"/>
+          <unit xsi:type="dvlm_qudv:PrefixedUnit" href="../UnitManagement.dvlm#d0d43862-08ba-407c-9750-ef7b9a794ffd"/>
+        </propertyInstances>
+        <propertyInstances xsi:type="dvlm_cppi:ArrayInstance" uuid="06f3dd93-6f83-40ad-bc29-547485042816">
+          <type xsi:type="dvlm_cppd:ComposedProperty" href="../Repository.dvlm#de.dlr.sc.virsat.model.extension.cefx.Parameter.modeValues"/>
+        </propertyInstances>
+        <propertyInstances xsi:type="dvlm_cppi:ArrayInstance" uuid="53e2e799-22b1-4824-bc73-f63c928efaff">
+          <type xsi:type="dvlm_cppd:ComposedProperty" href="../Repository.dvlm#de.dlr.sc.virsat.model.extension.cefx.Parameter.rangeValues"/>
+        </propertyInstances>
+        <propertyInstances xsi:type="dvlm_cppi:ValuePropertyInstance" uuid="f2b7b0da-99a6-4011-b074-f8787b7ff66b">
+          <type xsi:type="dvlm_cppd:StringProperty" href="../Repository.dvlm#de.dlr.sc.virsat.model.extension.cefx.Parameter.note"/>
+        </propertyInstances>
+      </typeInstance>
+    </propertyInstances>
+    <propertyInstances xsi:type="dvlm_cppi:ComposedPropertyInstance" uuid="8d3a117d-5e61-4db9-aa47-d774184f9149">
+      <type xsi:type="dvlm_cppd:ComposedProperty" href="../Repository.dvlm#de.dlr.sc.virsat.model.extension.cefx.SystemMassParameters.massBuffer"/>
+      <typeInstance uuid="d23a140d-a7a2-42f3-b9ae-ce89a385bc84" name="massBuffer">
+        <type xsi:type="dvlm_cp:Category" href="../Repository.dvlm#de.dlr.sc.virsat.model.extension.cefx.Parameter"/>
+        <propertyInstances xsi:type="dvlm_cppi:UnitValuePropertyInstance" uuid="37c886b3-2916-4e37-b919-8805ba0a45e5" override="true" value="0.0">
+          <type xsi:type="dvlm_cppd:FloatProperty" href="../Repository.dvlm#de.dlr.sc.virsat.model.extension.cefx.Parameter.defaultValue"/>
+          <unit xsi:type="dvlm_qudv:PrefixedUnit" href="../UnitManagement.dvlm#d0d43862-08ba-407c-9750-ef7b9a794ffd"/>
+        </propertyInstances>
+        <propertyInstances xsi:type="dvlm_cppi:ArrayInstance" uuid="e875bdfd-83f8-4906-8ecb-b81b45974304">
+          <type xsi:type="dvlm_cppd:ComposedProperty" href="../Repository.dvlm#de.dlr.sc.virsat.model.extension.cefx.Parameter.modeValues"/>
+        </propertyInstances>
+        <propertyInstances xsi:type="dvlm_cppi:ArrayInstance" uuid="9f66f5a6-2d9c-4e04-a11f-e1bfcffc5e30">
+          <type xsi:type="dvlm_cppd:ComposedProperty" href="../Repository.dvlm#de.dlr.sc.virsat.model.extension.cefx.Parameter.rangeValues"/>
+        </propertyInstances>
+        <propertyInstances xsi:type="dvlm_cppi:ValuePropertyInstance" uuid="a7c8d171-ada8-41ec-b60a-8625d5ec835d">
+          <type xsi:type="dvlm_cppd:StringProperty" href="../Repository.dvlm#de.dlr.sc.virsat.model.extension.cefx.Parameter.note"/>
+        </propertyInstances>
+      </typeInstance>
+    </propertyInstances>
+  </categoryAssignments>
+  <categoryAssignments uuid="23608e7c-b871-4550-ac10-0e6c8bf0e766" name="SystemPowerParameters">
+    <type xsi:type="dvlm_cp:Category" href="../Repository.dvlm#de.dlr.sc.virsat.model.extension.cefx.SystemPowerParameters"/>
+    <equationSection>
+      <equations resultText="{ default: 200.0, Charging: 200.0, Science: 10000.0 }">
+        <expression xsi:type="dvlm_calc:SetFunction" operator="summary">
+          <typeDefinition xsi:type="dvlm_cppd:ComposedProperty" href="../Repository.dvlm#de.dlr.sc.virsat.model.extension.cefx.SubSystemPowerParameters.powerAvgWithMargin"/>
+        </expression>
+        <result xsi:type="dvlm_calc:TypeInstanceResult" uuid="dbccd717-2d18-42c3-9155-7076dfc19979" reference="35a59ce6-03fa-43a4-b68a-912ccd0407d1"/>
+        <definition href="../Repository.dvlm#//@activeConcepts.8/@categories.5/@equationDefinitions.0"/>
+      </equations>
+      <equations resultText="{ default: 200.0, Charging: 200.0, Science: 10000.0 }">
+        <expression xsi:type="dvlm_calc:MultiplicationAndDivision" operator="*">
+          <left xsi:type="dvlm_calc:ReferencedInput" reference="35a59ce6-03fa-43a4-b68a-912ccd0407d1">
+            <definition href="../Repository.dvlm#//@activeConcepts.8/@categories.5/@equationDefinitions.1/@expression/@left"/>
+          </left>
+          <right xsi:type="dvlm_calc:Parenthesis">
+            <right xsi:type="dvlm_calc:AdditionAndSubtraction">
+              <left xsi:type="dvlm_calc:NumberLiteral" value="1"/>
+              <right xsi:type="dvlm_calc:ReferencedInput" reference="93014593-a747-4adf-8128-2a72f74489b9">
+                <definition href="../Repository.dvlm#//@activeConcepts.8/@categories.5/@equationDefinitions.1/@expression/@right/@right/@right"/>
+              </right>
+            </right>
+          </right>
+        </expression>
+        <result xsi:type="dvlm_calc:TypeInstanceResult" uuid="99422f55-3528-4b79-8b27-2a841411f1b9" reference="96ef45be-4d66-4c7b-a086-72f574173b7e"/>
+        <definition href="../Repository.dvlm#//@activeConcepts.8/@categories.5/@equationDefinitions.1"/>
+      </equations>
+      <equations resultText="{ default: 0.0, Charging: 0.0, Science: 0.0 }">
+        <expression xsi:type="dvlm_calc:SetFunction" operator="summary">
+          <typeDefinition xsi:type="dvlm_cppd:ComposedProperty" href="../Repository.dvlm#de.dlr.sc.virsat.model.extension.cefx.SubSystemPowerParameters.powerEnergyWithMargin"/>
+        </expression>
+        <result xsi:type="dvlm_calc:TypeInstanceResult" uuid="03df3427-49b0-4bc5-adc1-eba7c94483e9" reference="37e72c86-59c7-42ff-9c03-7727c4f80568"/>
+        <definition href="../Repository.dvlm#//@activeConcepts.8/@categories.5/@equationDefinitions.2"/>
+      </equations>
+      <equations resultText="{ default: 0.0, Charging: 0.0, Science: 0.0 }">
+        <expression xsi:type="dvlm_calc:MultiplicationAndDivision" operator="*">
+          <left xsi:type="dvlm_calc:ReferencedInput" reference="37e72c86-59c7-42ff-9c03-7727c4f80568">
+            <definition href="../Repository.dvlm#//@activeConcepts.8/@categories.5/@equationDefinitions.3/@expression/@left"/>
+          </left>
+          <right xsi:type="dvlm_calc:Parenthesis">
+            <right xsi:type="dvlm_calc:AdditionAndSubtraction">
+              <left xsi:type="dvlm_calc:NumberLiteral" value="1"/>
+              <right xsi:type="dvlm_calc:ReferencedInput" reference="93014593-a747-4adf-8128-2a72f74489b9">
+                <definition href="../Repository.dvlm#//@activeConcepts.8/@categories.5/@equationDefinitions.3/@expression/@right/@right/@right"/>
+              </right>
+            </right>
+          </right>
+        </expression>
+        <result xsi:type="dvlm_calc:TypeInstanceResult" uuid="77d3e2e7-4972-4986-9c00-d9e5a4ef01fd" reference="d02de6ca-5638-4af2-a3a9-7167d0faf879"/>
+        <definition href="../Repository.dvlm#//@activeConcepts.8/@categories.5/@equationDefinitions.3"/>
+      </equations>
+    </equationSection>
+    <propertyInstances xsi:type="dvlm_cppi:ComposedPropertyInstance" uuid="0fa24d9d-a1b0-483d-bf4c-d091c531392e">
+      <type xsi:type="dvlm_cppd:ComposedProperty" href="../Repository.dvlm#de.dlr.sc.virsat.model.extension.cefx.SystemPowerParameters.powerAvgWithMargin"/>
+      <typeInstance uuid="35a59ce6-03fa-43a4-b68a-912ccd0407d1" name="powerAvgWithMargin">
+        <type xsi:type="dvlm_cp:Category" href="../Repository.dvlm#de.dlr.sc.virsat.model.extension.cefx.Parameter"/>
+        <propertyInstances xsi:type="dvlm_cppi:UnitValuePropertyInstance" uuid="82cc8b3c-db4b-4fbb-b092-c8b1e4bff6d9" override="true" value="0.2">
+          <type xsi:type="dvlm_cppd:FloatProperty" href="../Repository.dvlm#de.dlr.sc.virsat.model.extension.cefx.Parameter.defaultValue"/>
+          <unit xsi:type="dvlm_qudv:DerivedUnit" href="../UnitManagement.dvlm#690c0758-4a91-4907-95c7-138326ca1ed4"/>
+        </propertyInstances>
+        <propertyInstances xsi:type="dvlm_cppi:ArrayInstance" uuid="69f31611-02f4-4b41-8610-c05c93890f6d">
+          <type xsi:type="dvlm_cppd:ComposedProperty" href="../Repository.dvlm#de.dlr.sc.virsat.model.extension.cefx.Parameter.modeValues"/>
+          <arrayInstances xsi:type="dvlm_cppi:ComposedPropertyInstance" uuid="6d2acb43-c8ec-41ed-a026-d269822e1bf3">
+            <type xsi:type="dvlm_cppd:ComposedProperty" href="../Repository.dvlm#de.dlr.sc.virsat.model.extension.cefx.Parameter.modeValues"/>
+            <typeInstance uuid="8560eae7-a9a6-4361-984f-aecc157bf751" name="Value">
+              <type xsi:type="dvlm_cp:Category" href="../Repository.dvlm#de.dlr.sc.virsat.model.extension.cefx.Value"/>
+              <propertyInstances xsi:type="dvlm_cppi:UnitValuePropertyInstance" uuid="da9fa62f-954a-4332-a58b-cd2ad511cb91" override="true" value="0.2">
+                <type xsi:type="dvlm_cppd:FloatProperty" href="../Repository.dvlm#de.dlr.sc.virsat.model.extension.cefx.Value.value"/>
+                <unit xsi:type="dvlm_qudv:DerivedUnit" href="../UnitManagement.dvlm#690c0758-4a91-4907-95c7-138326ca1ed4"/>
+              </propertyInstances>
+              <propertyInstances xsi:type="dvlm_cppi:ReferencePropertyInstance" uuid="dcd6d230-5d87-4a0e-beb0-d4e4999ae202">
+                <type xsi:type="dvlm_cppd:ReferenceProperty" href="../Repository.dvlm#de.dlr.sc.virsat.model.extension.cefx.Value.mode"/>
+                <reference xsi:type="dvlm_cp:CategoryAssignment" href="../ise_d145f7e1-9afc-4143-8d72-907b0d8e29e8/StructuralElement.dvlm#772dd281-b365-4250-8cd3-3acfaf27f02c"/>
+              </propertyInstances>
+            </typeInstance>
+          </arrayInstances>
+          <arrayInstances xsi:type="dvlm_cppi:ComposedPropertyInstance" uuid="80a19eae-c386-45a2-8c03-a688b20feef3">
+            <type xsi:type="dvlm_cppd:ComposedProperty" href="../Repository.dvlm#de.dlr.sc.virsat.model.extension.cefx.Parameter.modeValues"/>
+            <typeInstance uuid="4675109a-f08d-439f-9e45-31fc91da279d" name="Value">
+              <type xsi:type="dvlm_cp:Category" href="../Repository.dvlm#de.dlr.sc.virsat.model.extension.cefx.Value"/>
+              <propertyInstances xsi:type="dvlm_cppi:UnitValuePropertyInstance" uuid="44baac14-3d46-4fdf-be2f-7bb983851a12" override="true" value="10.0">
+                <type xsi:type="dvlm_cppd:FloatProperty" href="../Repository.dvlm#de.dlr.sc.virsat.model.extension.cefx.Value.value"/>
+                <unit xsi:type="dvlm_qudv:DerivedUnit" href="../UnitManagement.dvlm#690c0758-4a91-4907-95c7-138326ca1ed4"/>
+              </propertyInstances>
+              <propertyInstances xsi:type="dvlm_cppi:ReferencePropertyInstance" uuid="ba88cc67-2370-4507-994b-40a70ad55976">
+                <type xsi:type="dvlm_cppd:ReferenceProperty" href="../Repository.dvlm#de.dlr.sc.virsat.model.extension.cefx.Value.mode"/>
+                <reference xsi:type="dvlm_cp:CategoryAssignment" href="../ise_d145f7e1-9afc-4143-8d72-907b0d8e29e8/StructuralElement.dvlm#03460408-766f-46b1-981f-1fce3b38b176"/>
+              </propertyInstances>
+            </typeInstance>
+          </arrayInstances>
+        </propertyInstances>
+        <propertyInstances xsi:type="dvlm_cppi:ArrayInstance" uuid="2c2bc1f4-2a77-47fa-8217-1f97dcedc7ac">
+          <type xsi:type="dvlm_cppd:ComposedProperty" href="../Repository.dvlm#de.dlr.sc.virsat.model.extension.cefx.Parameter.rangeValues"/>
+        </propertyInstances>
+        <propertyInstances xsi:type="dvlm_cppi:ValuePropertyInstance" uuid="83b00b7a-9a15-4e01-bf63-669f141c49ef">
+          <type xsi:type="dvlm_cppd:StringProperty" href="../Repository.dvlm#de.dlr.sc.virsat.model.extension.cefx.Parameter.note"/>
+        </propertyInstances>
+      </typeInstance>
+    </propertyInstances>
+    <propertyInstances xsi:type="dvlm_cppi:ComposedPropertyInstance" uuid="7545e2ad-25a4-4ab0-b614-70347d51b171">
+      <type xsi:type="dvlm_cppd:ComposedProperty" href="../Repository.dvlm#de.dlr.sc.virsat.model.extension.cefx.SystemPowerParameters.powerAvgWithSystemMargin"/>
+      <typeInstance uuid="96ef45be-4d66-4c7b-a086-72f574173b7e" name="powerAvgWithSystemMargin">
+        <type xsi:type="dvlm_cp:Category" href="../Repository.dvlm#de.dlr.sc.virsat.model.extension.cefx.Parameter"/>
+        <propertyInstances xsi:type="dvlm_cppi:UnitValuePropertyInstance" uuid="ba3392c9-1e8f-4221-8d9f-631368dfa69c" override="true" value="0.2">
+          <type xsi:type="dvlm_cppd:FloatProperty" href="../Repository.dvlm#de.dlr.sc.virsat.model.extension.cefx.Parameter.defaultValue"/>
+          <unit xsi:type="dvlm_qudv:DerivedUnit" href="../UnitManagement.dvlm#690c0758-4a91-4907-95c7-138326ca1ed4"/>
+        </propertyInstances>
+        <propertyInstances xsi:type="dvlm_cppi:ArrayInstance" uuid="f21d2b80-4c60-4011-93bb-c52a9ecf35c1">
+          <type xsi:type="dvlm_cppd:ComposedProperty" href="../Repository.dvlm#de.dlr.sc.virsat.model.extension.cefx.Parameter.modeValues"/>
+          <arrayInstances xsi:type="dvlm_cppi:ComposedPropertyInstance" uuid="8aeefcc0-2d86-4932-83ff-c6e94a4f19e1">
+            <type xsi:type="dvlm_cppd:ComposedProperty" href="../Repository.dvlm#de.dlr.sc.virsat.model.extension.cefx.Parameter.modeValues"/>
+            <typeInstance uuid="e0246f4b-c8cf-4a7e-a9ff-202e83c1ad25" name="Value">
+              <type xsi:type="dvlm_cp:Category" href="../Repository.dvlm#de.dlr.sc.virsat.model.extension.cefx.Value"/>
+              <propertyInstances xsi:type="dvlm_cppi:UnitValuePropertyInstance" uuid="114130d1-1c87-4877-b5b8-99ead092333d" override="true" value="0.2">
+                <type xsi:type="dvlm_cppd:FloatProperty" href="../Repository.dvlm#de.dlr.sc.virsat.model.extension.cefx.Value.value"/>
+                <unit xsi:type="dvlm_qudv:DerivedUnit" href="../UnitManagement.dvlm#690c0758-4a91-4907-95c7-138326ca1ed4"/>
+              </propertyInstances>
+              <propertyInstances xsi:type="dvlm_cppi:ReferencePropertyInstance" uuid="a543527f-ddc9-4508-8890-95424ef4be5b">
+                <type xsi:type="dvlm_cppd:ReferenceProperty" href="../Repository.dvlm#de.dlr.sc.virsat.model.extension.cefx.Value.mode"/>
+                <reference xsi:type="dvlm_cp:CategoryAssignment" href="../ise_d145f7e1-9afc-4143-8d72-907b0d8e29e8/StructuralElement.dvlm#772dd281-b365-4250-8cd3-3acfaf27f02c"/>
+              </propertyInstances>
+            </typeInstance>
+          </arrayInstances>
+          <arrayInstances xsi:type="dvlm_cppi:ComposedPropertyInstance" uuid="dc3d9877-48c0-48a5-8985-6934194e5756">
+            <type xsi:type="dvlm_cppd:ComposedProperty" href="../Repository.dvlm#de.dlr.sc.virsat.model.extension.cefx.Parameter.modeValues"/>
+            <typeInstance uuid="a348a075-4f93-483c-865e-415a4ab8f466" name="Value">
+              <type xsi:type="dvlm_cp:Category" href="../Repository.dvlm#de.dlr.sc.virsat.model.extension.cefx.Value"/>
+              <propertyInstances xsi:type="dvlm_cppi:UnitValuePropertyInstance" uuid="029fdd52-9b08-466b-abd6-076d2b60e177" override="true" value="10.0">
+                <type xsi:type="dvlm_cppd:FloatProperty" href="../Repository.dvlm#de.dlr.sc.virsat.model.extension.cefx.Value.value"/>
+                <unit xsi:type="dvlm_qudv:DerivedUnit" href="../UnitManagement.dvlm#690c0758-4a91-4907-95c7-138326ca1ed4"/>
+              </propertyInstances>
+              <propertyInstances xsi:type="dvlm_cppi:ReferencePropertyInstance" uuid="ba11f4fa-15f2-4130-b734-3547a439e4d0">
+                <type xsi:type="dvlm_cppd:ReferenceProperty" href="../Repository.dvlm#de.dlr.sc.virsat.model.extension.cefx.Value.mode"/>
+                <reference xsi:type="dvlm_cp:CategoryAssignment" href="../ise_d145f7e1-9afc-4143-8d72-907b0d8e29e8/StructuralElement.dvlm#03460408-766f-46b1-981f-1fce3b38b176"/>
+              </propertyInstances>
+            </typeInstance>
+          </arrayInstances>
+        </propertyInstances>
+        <propertyInstances xsi:type="dvlm_cppi:ArrayInstance" uuid="939f323d-edfd-4786-886d-50a70d17792a">
+          <type xsi:type="dvlm_cppd:ComposedProperty" href="../Repository.dvlm#de.dlr.sc.virsat.model.extension.cefx.Parameter.rangeValues"/>
+        </propertyInstances>
+        <propertyInstances xsi:type="dvlm_cppi:ValuePropertyInstance" uuid="5d3edb7b-1d64-4ff3-9c50-26e6ab61c106">
+          <type xsi:type="dvlm_cppd:StringProperty" href="../Repository.dvlm#de.dlr.sc.virsat.model.extension.cefx.Parameter.note"/>
+        </propertyInstances>
+      </typeInstance>
+    </propertyInstances>
+    <propertyInstances xsi:type="dvlm_cppi:ComposedPropertyInstance" uuid="709aaae5-38c4-4ad0-8ab3-8fbcbb786e0e">
+      <type xsi:type="dvlm_cppd:ComposedProperty" href="../Repository.dvlm#de.dlr.sc.virsat.model.extension.cefx.SystemPowerParameters.powerEnergyWithMargin"/>
+      <typeInstance uuid="37e72c86-59c7-42ff-9c03-7727c4f80568" name="powerEnergyWithMargin">
+        <type xsi:type="dvlm_cp:Category" href="../Repository.dvlm#de.dlr.sc.virsat.model.extension.cefx.Parameter"/>
+        <propertyInstances xsi:type="dvlm_cppi:UnitValuePropertyInstance" uuid="380d44ae-5230-4dbb-8c95-3a60cee9997e" override="true" value="0.0">
+          <type xsi:type="dvlm_cppd:FloatProperty" href="../Repository.dvlm#de.dlr.sc.virsat.model.extension.cefx.Parameter.defaultValue"/>
+          <unit xsi:type="dvlm_qudv:DerivedUnit" href="../UnitManagement.dvlm#0fc371c5-39f6-4af5-8030-39476d0ef3fc"/>
+        </propertyInstances>
+        <propertyInstances xsi:type="dvlm_cppi:ArrayInstance" uuid="b6118202-77ac-4cdd-94a1-8c8287908db7">
+          <type xsi:type="dvlm_cppd:ComposedProperty" href="../Repository.dvlm#de.dlr.sc.virsat.model.extension.cefx.Parameter.modeValues"/>
+          <arrayInstances xsi:type="dvlm_cppi:ComposedPropertyInstance" uuid="2cd545ae-6b7f-4f68-a4fc-8e270cb2e301">
+            <type xsi:type="dvlm_cppd:ComposedProperty" href="../Repository.dvlm#de.dlr.sc.virsat.model.extension.cefx.Parameter.modeValues"/>
+            <typeInstance uuid="b02387b5-cd92-4b47-8121-5b79847d8a59" name="Value">
+              <type xsi:type="dvlm_cp:Category" href="../Repository.dvlm#de.dlr.sc.virsat.model.extension.cefx.Value"/>
+              <propertyInstances xsi:type="dvlm_cppi:UnitValuePropertyInstance" uuid="fbc1a458-0dac-4105-a55e-2569130a7088" override="true" value="0.0">
+                <type xsi:type="dvlm_cppd:FloatProperty" href="../Repository.dvlm#de.dlr.sc.virsat.model.extension.cefx.Value.value"/>
+                <unit xsi:type="dvlm_qudv:DerivedUnit" href="../UnitManagement.dvlm#0fc371c5-39f6-4af5-8030-39476d0ef3fc"/>
+              </propertyInstances>
+              <propertyInstances xsi:type="dvlm_cppi:ReferencePropertyInstance" uuid="a9fcdc7d-f1ee-4eb5-9b02-9005d7016c2e">
+                <type xsi:type="dvlm_cppd:ReferenceProperty" href="../Repository.dvlm#de.dlr.sc.virsat.model.extension.cefx.Value.mode"/>
+                <reference xsi:type="dvlm_cp:CategoryAssignment" href="../ise_d145f7e1-9afc-4143-8d72-907b0d8e29e8/StructuralElement.dvlm#772dd281-b365-4250-8cd3-3acfaf27f02c"/>
+              </propertyInstances>
+            </typeInstance>
+          </arrayInstances>
+          <arrayInstances xsi:type="dvlm_cppi:ComposedPropertyInstance" uuid="f3d301cd-6a37-471c-b0d1-636374fb6670">
+            <type xsi:type="dvlm_cppd:ComposedProperty" href="../Repository.dvlm#de.dlr.sc.virsat.model.extension.cefx.Parameter.modeValues"/>
+            <typeInstance uuid="bf8e4524-b372-4405-97a3-f5354d55c858" name="Value">
+              <type xsi:type="dvlm_cp:Category" href="../Repository.dvlm#de.dlr.sc.virsat.model.extension.cefx.Value"/>
+              <propertyInstances xsi:type="dvlm_cppi:UnitValuePropertyInstance" uuid="54589b4b-761d-4060-aa2a-b20402b08450" override="true" value="0.0">
+                <type xsi:type="dvlm_cppd:FloatProperty" href="../Repository.dvlm#de.dlr.sc.virsat.model.extension.cefx.Value.value"/>
+                <unit xsi:type="dvlm_qudv:DerivedUnit" href="../UnitManagement.dvlm#0fc371c5-39f6-4af5-8030-39476d0ef3fc"/>
+              </propertyInstances>
+              <propertyInstances xsi:type="dvlm_cppi:ReferencePropertyInstance" uuid="ee0c6845-f50a-432e-ab0d-941d1b4e1b11">
+                <type xsi:type="dvlm_cppd:ReferenceProperty" href="../Repository.dvlm#de.dlr.sc.virsat.model.extension.cefx.Value.mode"/>
+                <reference xsi:type="dvlm_cp:CategoryAssignment" href="../ise_d145f7e1-9afc-4143-8d72-907b0d8e29e8/StructuralElement.dvlm#03460408-766f-46b1-981f-1fce3b38b176"/>
+              </propertyInstances>
+            </typeInstance>
+          </arrayInstances>
+        </propertyInstances>
+        <propertyInstances xsi:type="dvlm_cppi:ArrayInstance" uuid="ba5db234-3e3e-458a-840d-7c8f978647c5">
+          <type xsi:type="dvlm_cppd:ComposedProperty" href="../Repository.dvlm#de.dlr.sc.virsat.model.extension.cefx.Parameter.rangeValues"/>
+        </propertyInstances>
+        <propertyInstances xsi:type="dvlm_cppi:ValuePropertyInstance" uuid="717ae0e5-b922-41c4-9d3e-ed658fd715db">
+          <type xsi:type="dvlm_cppd:StringProperty" href="../Repository.dvlm#de.dlr.sc.virsat.model.extension.cefx.Parameter.note"/>
+        </propertyInstances>
+      </typeInstance>
+    </propertyInstances>
+    <propertyInstances xsi:type="dvlm_cppi:ComposedPropertyInstance" uuid="6a30f7ac-ddb9-41cf-821e-983387af7b3c">
+      <type xsi:type="dvlm_cppd:ComposedProperty" href="../Repository.dvlm#de.dlr.sc.virsat.model.extension.cefx.SystemPowerParameters.powerEnergyWithSystemMargin"/>
+      <typeInstance uuid="d02de6ca-5638-4af2-a3a9-7167d0faf879" name="powerEnergyWithSystemMargin">
+        <type xsi:type="dvlm_cp:Category" href="../Repository.dvlm#de.dlr.sc.virsat.model.extension.cefx.Parameter"/>
+        <propertyInstances xsi:type="dvlm_cppi:UnitValuePropertyInstance" uuid="097c729f-a2a2-449b-94d8-0bfcfec92ce1" override="true" value="0.0">
+          <type xsi:type="dvlm_cppd:FloatProperty" href="../Repository.dvlm#de.dlr.sc.virsat.model.extension.cefx.Parameter.defaultValue"/>
+          <unit xsi:type="dvlm_qudv:DerivedUnit" href="../UnitManagement.dvlm#0fc371c5-39f6-4af5-8030-39476d0ef3fc"/>
+        </propertyInstances>
+        <propertyInstances xsi:type="dvlm_cppi:ArrayInstance" uuid="d71161e7-2275-4978-8201-fa4866f9deae">
+          <type xsi:type="dvlm_cppd:ComposedProperty" href="../Repository.dvlm#de.dlr.sc.virsat.model.extension.cefx.Parameter.modeValues"/>
+          <arrayInstances xsi:type="dvlm_cppi:ComposedPropertyInstance" uuid="f2b0a5b2-d99f-432b-b22f-16f53664dbf4">
+            <type xsi:type="dvlm_cppd:ComposedProperty" href="../Repository.dvlm#de.dlr.sc.virsat.model.extension.cefx.Parameter.modeValues"/>
+            <typeInstance uuid="e03e8800-664a-4503-8b89-72fb8dde0619" name="Value">
+              <type xsi:type="dvlm_cp:Category" href="../Repository.dvlm#de.dlr.sc.virsat.model.extension.cefx.Value"/>
+              <propertyInstances xsi:type="dvlm_cppi:UnitValuePropertyInstance" uuid="f7192a22-e0a4-454a-b010-9f78abbc7f35" override="true" value="0.0">
+                <type xsi:type="dvlm_cppd:FloatProperty" href="../Repository.dvlm#de.dlr.sc.virsat.model.extension.cefx.Value.value"/>
+                <unit xsi:type="dvlm_qudv:DerivedUnit" href="../UnitManagement.dvlm#0fc371c5-39f6-4af5-8030-39476d0ef3fc"/>
+              </propertyInstances>
+              <propertyInstances xsi:type="dvlm_cppi:ReferencePropertyInstance" uuid="41f9c50a-5d9b-418f-a524-79b66f1f9810">
+                <type xsi:type="dvlm_cppd:ReferenceProperty" href="../Repository.dvlm#de.dlr.sc.virsat.model.extension.cefx.Value.mode"/>
+                <reference xsi:type="dvlm_cp:CategoryAssignment" href="../ise_d145f7e1-9afc-4143-8d72-907b0d8e29e8/StructuralElement.dvlm#772dd281-b365-4250-8cd3-3acfaf27f02c"/>
+              </propertyInstances>
+            </typeInstance>
+          </arrayInstances>
+          <arrayInstances xsi:type="dvlm_cppi:ComposedPropertyInstance" uuid="aadbff66-6471-4247-837c-f9bf7369d9b9">
+            <type xsi:type="dvlm_cppd:ComposedProperty" href="../Repository.dvlm#de.dlr.sc.virsat.model.extension.cefx.Parameter.modeValues"/>
+            <typeInstance uuid="b52abe4d-e9b5-46b3-a4d5-073428324952" name="Value">
+              <type xsi:type="dvlm_cp:Category" href="../Repository.dvlm#de.dlr.sc.virsat.model.extension.cefx.Value"/>
+              <propertyInstances xsi:type="dvlm_cppi:UnitValuePropertyInstance" uuid="72f6aa77-5e18-4ddd-b38a-16a8c411538a" override="true" value="0.0">
+                <type xsi:type="dvlm_cppd:FloatProperty" href="../Repository.dvlm#de.dlr.sc.virsat.model.extension.cefx.Value.value"/>
+                <unit xsi:type="dvlm_qudv:DerivedUnit" href="../UnitManagement.dvlm#0fc371c5-39f6-4af5-8030-39476d0ef3fc"/>
+              </propertyInstances>
+              <propertyInstances xsi:type="dvlm_cppi:ReferencePropertyInstance" uuid="0eab0f6f-6ca2-41ff-8d64-5a2d85db1790">
+                <type xsi:type="dvlm_cppd:ReferenceProperty" href="../Repository.dvlm#de.dlr.sc.virsat.model.extension.cefx.Value.mode"/>
+                <reference xsi:type="dvlm_cp:CategoryAssignment" href="../ise_d145f7e1-9afc-4143-8d72-907b0d8e29e8/StructuralElement.dvlm#03460408-766f-46b1-981f-1fce3b38b176"/>
+              </propertyInstances>
+            </typeInstance>
+          </arrayInstances>
+        </propertyInstances>
+        <propertyInstances xsi:type="dvlm_cppi:ArrayInstance" uuid="458ab788-4319-4165-91e0-b01838a82742">
+          <type xsi:type="dvlm_cppd:ComposedProperty" href="../Repository.dvlm#de.dlr.sc.virsat.model.extension.cefx.Parameter.rangeValues"/>
+        </propertyInstances>
+        <propertyInstances xsi:type="dvlm_cppi:ValuePropertyInstance" uuid="e9f63087-552a-4a46-8e65-ab8a89f2666c">
+          <type xsi:type="dvlm_cppd:StringProperty" href="../Repository.dvlm#de.dlr.sc.virsat.model.extension.cefx.Parameter.note"/>
+        </propertyInstances>
+      </typeInstance>
+    </propertyInstances>
+  </categoryAssignments>
+  <type href="../Repository.dvlm#de.dlr.sc.virsat.model.extension.ps.ConfigurationTree"/>
+  <children href="../ise_f9409f78-1716-4843-8a39-8f2e106688f3/StructuralElement.dvlm#f9409f78-1716-4843-8a39-8f2e106688f3"/>
+  <children href="../ise_4aee838b-6a1d-43af-90be-6bf2cbcdea99/StructuralElement.dvlm#4aee838b-6a1d-43af-90be-6bf2cbcdea99"/>
+</dvlm_s:StructuralElementInstance>

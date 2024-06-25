@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dvlm_s:StructuralElementInstance xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:dvlm_s="http://www.virsat.sc.dlr.de/dvlm/v10/s" uuid="4aee838b-6a1d-43af-90be-6bf2cbcdea99" name="Ops">
+  <parent href="../ise_38c0302d-c6eb-47e5-869a-061b1bf213c3/StructuralElement.dvlm#38c0302d-c6eb-47e5-869a-061b1bf213c3"/>
+  <assignedDiscipline href="../RoleManagement.dvlm#49a3fcdc-58cf-4be6-87a8-5406874b4713"/>
+  <type href="../Repository.dvlm#de.dlr.sc.virsat.model.extension.ps.ElementConfiguration"/>
+  <children href="../ise_d145f7e1-9afc-4143-8d72-907b0d8e29e8/StructuralElement.dvlm#d145f7e1-9afc-4143-8d72-907b0d8e29e8"/>
+</dvlm_s:StructuralElementInstance>

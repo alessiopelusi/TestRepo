@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dvlm_r:RoleManagement xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:dvlm_r="http://www.virsat.sc.dlr.de/dvlm/v10/r" assignedDiscipline="49a3fcdc-58cf-4be6-87a8-5406874b4713" uuid="a9cfde4d-73eb-4e1e-ba8c-75ddabb44a33">
+  <disciplines uuid="49a3fcdc-58cf-4be6-87a8-5406874b4713" name="System">
+    <users>fisc_ph</users>
+  </disciplines>
+</dvlm_r:RoleManagement>

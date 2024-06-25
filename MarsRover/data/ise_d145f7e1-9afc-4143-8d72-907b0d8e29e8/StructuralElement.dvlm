@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dvlm_s:StructuralElementInstance xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:dvlm_cp="http://www.virsat.sc.dlr.de/dvlm/v10/cp" xmlns:dvlm_cppd="http://www.virsat.sc.dlr.de/dvlm/v10/cp/cppd" xmlns:dvlm_cppi="http://www.virsat.sc.dlr.de/dvlm/v10/cp/cppi" xmlns:dvlm_s="http://www.virsat.sc.dlr.de/dvlm/v10/s" uuid="d145f7e1-9afc-4143-8d72-907b0d8e29e8" name="Ops">
+  <parent href="../ise_4aee838b-6a1d-43af-90be-6bf2cbcdea99/StructuralElement.dvlm#4aee838b-6a1d-43af-90be-6bf2cbcdea99"/>
+  <assignedDiscipline href="../RoleManagement.dvlm#49a3fcdc-58cf-4be6-87a8-5406874b4713"/>
+  <categoryAssignments uuid="03460408-766f-46b1-981f-1fce3b38b176" isInherited="true" name="Science">
+    <superTis xsi:type="dvlm_cp:CategoryAssignment" href="../ise_6230d247-1bd3-474b-9318-6ad6d979e907/StructuralElement.dvlm#f949048f-4308-43d2-aa9e-450b3a863b71"/>
+    <type xsi:type="dvlm_cp:Category" href="../Repository.dvlm#de.dlr.sc.virsat.model.extension.cefx.SystemMode"/>
+    <propertyInstances xsi:type="dvlm_cppi:ValuePropertyInstance" uuid="a65763a2-24c4-4e90-bb7b-be7238c7bee8" isInherited="true" value="no description">
+      <superTis xsi:type="dvlm_cppi:ValuePropertyInstance" href="../ise_6230d247-1bd3-474b-9318-6ad6d979e907/StructuralElement.dvlm#417b2da3-39cb-4cf8-b54a-a7d36de5f067"/>
+      <type xsi:type="dvlm_cppd:StringProperty" href="../Repository.dvlm#de.dlr.sc.virsat.model.extension.cefx.SystemMode.note"/>
+    </propertyInstances>
+  </categoryAssignments>
+  <categoryAssignments uuid="772dd281-b365-4250-8cd3-3acfaf27f02c" isInherited="true" name="Charging">
+    <superTis xsi:type="dvlm_cp:CategoryAssignment" href="../ise_6230d247-1bd3-474b-9318-6ad6d979e907/StructuralElement.dvlm#751641d4-d472-4af9-ba3e-4a0893d23e50"/>
+    <type xsi:type="dvlm_cp:Category" href="../Repository.dvlm#de.dlr.sc.virsat.model.extension.cefx.SystemMode"/>
+    <propertyInstances xsi:type="dvlm_cppi:ValuePropertyInstance" uuid="9f2167e6-7d64-4a2d-a17c-4a7cb4c66abd" isInherited="true" value="no description">
+      <superTis xsi:type="dvlm_cppi:ValuePropertyInstance" href="../ise_6230d247-1bd3-474b-9318-6ad6d979e907/StructuralElement.dvlm#69f207a2-1c67-4d56-be54-c0feb040aeca"/>
+      <type xsi:type="dvlm_cppd:StringProperty" href="../Repository.dvlm#de.dlr.sc.virsat.model.extension.cefx.SystemMode.note"/>
+    </propertyInstances>
+  </categoryAssignments>
+  <categoryAssignments uuid="123b4ab8-cda0-4031-88de-8be9691b9f6c" isInherited="true" name="LEOP">
+    <superTis xsi:type="dvlm_cp:CategoryAssignment" href="../ise_6230d247-1bd3-474b-9318-6ad6d979e907/StructuralElement.dvlm#303cff65-c96e-4161-973c-70c39a326788"/>
+    <type xsi:type="dvlm_cp:Category" href="../Repository.dvlm#de.dlr.sc.virsat.model.extension.cefx.SystemMode"/>
+    <propertyInstances xsi:type="dvlm_cppi:ValuePropertyInstance" uuid="930831a7-9aa1-44c1-a6b3-61fd6496e94e" isInherited="true" value="no description">
+      <superTis xsi:type="dvlm_cppi:ValuePropertyInstance" href="../ise_6230d247-1bd3-474b-9318-6ad6d979e907/StructuralElement.dvlm#970b7e82-935e-4c2b-9c74-87f0d97dd1c1"/>
+      <type xsi:type="dvlm_cppd:StringProperty" href="../Repository.dvlm#de.dlr.sc.virsat.model.extension.cefx.SystemMode.note"/>
+    </propertyInstances>
+  </categoryAssignments>
+  <superSeis href="../ise_6230d247-1bd3-474b-9318-6ad6d979e907/StructuralElement.dvlm#6230d247-1bd3-474b-9318-6ad6d979e907"/>
+  <type href="../Repository.dvlm#de.dlr.sc.virsat.model.extension.ps.ElementConfiguration"/>
+</dvlm_s:StructuralElementInstance>
