@@ -2,4 +2,5 @@
 <dvlm_s:StructuralElementInstance xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:dvlm_s="http://www.virsat.sc.dlr.de/dvlm/v10/s" uuid="7086f009-dfb9-4fc7-b9ab-523585b0e53f" name="AOCS">
   <assignedDiscipline href="../RoleManagement.dvlm#b0bcb24e-77e0-40dd-9171-8e7e8995eb61"/>
   <type href="../Repository.dvlm#de.dlr.sc.virsat.model.extension.ps.ProductTree"/>
+  <children href="../ise_8b309bc4-cd0d-4beb-931d-69651dc74743/StructuralElement.dvlm#8b309bc4-cd0d-4beb-931d-69651dc74743"/>
 </dvlm_s:StructuralElementInstance>
