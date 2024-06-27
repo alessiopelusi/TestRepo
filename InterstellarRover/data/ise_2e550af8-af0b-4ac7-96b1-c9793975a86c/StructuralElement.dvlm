@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dvlm_s:StructuralElementInstance xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:dvlm_s="http://www.virsat.sc.dlr.de/dvlm/v10/s" uuid="2e550af8-af0b-4ac7-96b1-c9793975a86c" name="RequirementsConfigurationCollection">
+  <assignedDiscipline href="../RoleManagement.dvlm#b0bcb24e-77e0-40dd-9171-8e7e8995eb61"/>
+  <type href="../Repository.dvlm#de.dlr.sc.virsat.model.extension.requirements.RequirementsConfigurationCollection"/>
+</dvlm_s:StructuralElementInstance>
