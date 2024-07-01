@@ -1,0 +1,373 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dvlm_u:UnitManagement xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:dvlm_qudv="http://www.virsat.sc.dlr.de/dvlm/v10/qudv" xmlns:dvlm_u="http://www.virsat.sc.dlr.de/dvlm/v10/u" uuid="9691b667-8f59-4196-ad1c-faa01b67f556">
+  <assignedDiscipline href="RoleManagement.dvlm#b05086e5-76e9-4f79-9246-e10a60756ef6"/>
+  <systemOfUnit name="SystemOfUnits" uuid="f7ba0e3e-47df-46e1-afe4-1333be01fcd3" symbol="SoU" description="This is the system of units for this study" definitionURI="N/A">
+    <prefix name="yotta" uuid="f7448d47-a168-45cf-9026-385e3a4a4615" symbol="Y" factor="1.0E24"/>
+    <prefix name="zetta" uuid="5ab2f0f6-9e74-4604-9b34-f6e29ae9cae0" symbol="Z" factor="1.0E21"/>
+    <prefix name="exa" uuid="bc5d1dc7-1fe7-4dc7-a41c-6f3b396a43f5" symbol="E" factor="1.0E18"/>
+    <prefix name="peta" uuid="f44aac72-80f3-4590-976d-35cfd32c98af" symbol="P" factor="1.0E15"/>
+    <prefix name="tera" uuid="b7cd5a51-87a3-47a0-a18a-6c8a7c86e54e" symbol="T" factor="1.0E12"/>
+    <prefix name="giga" uuid="b77eea37-6553-47f0-993e-b246684d6310" symbol="G" factor="1.0E9"/>
+    <prefix name="mega" uuid="40fd4a38-5e71-4539-b635-055634642e08" symbol="M" factor="1000000.0"/>
+    <prefix name="kilo" uuid="22443539-9226-4d67-959a-09fcdafa21b4" symbol="k" factor="1000.0"/>
+    <prefix name="hecto" uuid="81c58bbf-f329-4b64-be9e-de989b838df3" symbol="h" factor="100.0"/>
+    <prefix name="deka" uuid="2c6919ae-88fd-4fd4-ab0a-0ab110516437" symbol="da" factor="10.0"/>
+    <prefix name="deci" uuid="a52da120-be50-4df4-bccf-c81be57751be" symbol="d" factor="0.1"/>
+    <prefix name="centi" uuid="39b9ebff-b4f3-463c-9ef9-e596f5609b9d" symbol="c" factor="0.01"/>
+    <prefix name="milli" uuid="edafcc85-df4d-46c1-b2db-a118f6a54e98" symbol="m" factor="0.001"/>
+    <prefix name="micro" uuid="9a381973-0b64-4cb6-9cef-f57792655672" symbol="µ" factor="1.0E-6"/>
+    <prefix name="nano" uuid="0838b97c-dc6c-4f8d-8e8e-7414237cfa27" symbol="n" factor="1.0E-9"/>
+    <prefix name="pico" uuid="db82bcae-dc52-4ec2-a05e-a210a9f049b8" symbol="p" factor="1.0E-12"/>
+    <prefix name="femto" uuid="f445206e-dca2-40d4-92bb-bd46472aa858" symbol="f" factor="1.0E-15"/>
+    <prefix name="atto" uuid="806d2409-6118-44a9-9314-5f2aaa366130" symbol="a" factor="1.0E-18"/>
+    <prefix name="zepto" uuid="ed551057-4655-419c-9364-98937ed65cbf" symbol="z" factor="1.0E-21"/>
+    <prefix name="yocto" uuid="807456d9-6768-41d4-ac00-105fab3bcbe9" symbol="y" factor="1.0E-24"/>
+    <unit xsi:type="dvlm_qudv:SimpleUnit" name="No Unit" uuid="f76cb7a3-c0dd-4146-8261-0d34069467f4" symbol="" description="noUnit" definitionURI="" quantityKind="e054baf0-1b95-44a2-b60e-97c130bc0ca0"/>
+    <unit xsi:type="dvlm_qudv:SimpleUnit" name="Meter" uuid="370d3671-32ff-472c-b9e6-68e1a67f9bfa" symbol="m" description="meterUnit" definitionURI="" quantityKind="7b22c866-6851-4f98-a510-b525a8f16575"/>
+    <unit xsi:type="dvlm_qudv:SimpleUnit" name="Gram" uuid="67cdb761-6c51-403e-98d1-1ea17e97001f" symbol="g" description="gramUnit" definitionURI="" quantityKind="4280f271-f4e8-48cd-b66e-527fc282a3f7"/>
+    <unit xsi:type="dvlm_qudv:SimpleUnit" name="Second" uuid="7e7bcb32-df7a-44a4-8a98-abb9431c54a2" symbol="s" description="secondUnit" definitionURI="" quantityKind="188462f4-8d07-4e7b-865c-b67036612f2c"/>
+    <unit xsi:type="dvlm_qudv:SimpleUnit" name="Ampere" uuid="569f45c4-0feb-4d7e-8332-66256f4b81eb" symbol="A" description="ampereUnit" definitionURI="" quantityKind="11b2c4c3-20d5-432e-9bb1-c06340fbe970"/>
+    <unit xsi:type="dvlm_qudv:SimpleUnit" name="Kelvin" uuid="527e4efa-6b77-41ca-9715-e6a88ac49af3" symbol="K" description="kelvinUnit" definitionURI="" quantityKind="c11c3d20-af8d-4cca-80b5-1fcead0cd8af"/>
+    <unit xsi:type="dvlm_qudv:SimpleUnit" name="Mole" uuid="a109a548-a478-475e-bb6c-84c1ef4c1402" symbol="mol" description="moleUnit" definitionURI="" quantityKind="0368a65a-f2c3-4b46-825b-31aef1635eb4"/>
+    <unit xsi:type="dvlm_qudv:SimpleUnit" name="Candela" uuid="f4623b3f-2641-4f8a-9a77-2a21091416aa" symbol="cd" description="candelaUnit" definitionURI="" quantityKind="004a408e-4c6d-4053-afaa-37854abe4941"/>
+    <unit xsi:type="dvlm_qudv:PrefixedUnit" name="Kilometer" uuid="faca3ca1-158b-45a9-8e69-c4e64e7759e8" symbol="km" description="kilometerUnit" definitionURI="" quantityKind="7b22c866-6851-4f98-a510-b525a8f16575" isInvertible="true" referenceUnit="370d3671-32ff-472c-b9e6-68e1a67f9bfa" prefix="22443539-9226-4d67-959a-09fcdafa21b4"/>
+    <unit xsi:type="dvlm_qudv:PrefixedUnit" name="Millimeter" uuid="dc466137-08ed-4881-993d-896420f4f070" symbol="mm" description="millimeterUnit" definitionURI="" quantityKind="7b22c866-6851-4f98-a510-b525a8f16575" isInvertible="true" referenceUnit="370d3671-32ff-472c-b9e6-68e1a67f9bfa" prefix="edafcc85-df4d-46c1-b2db-a118f6a54e98"/>
+    <unit xsi:type="dvlm_qudv:PrefixedUnit" name="Centimeter" uuid="87d1d20a-5cd4-4904-a475-0b4006d30ba7" symbol="cm" description="centimeterUnit" definitionURI="" quantityKind="7b22c866-6851-4f98-a510-b525a8f16575" isInvertible="true" referenceUnit="370d3671-32ff-472c-b9e6-68e1a67f9bfa" prefix="39b9ebff-b4f3-463c-9ef9-e596f5609b9d"/>
+    <unit xsi:type="dvlm_qudv:PrefixedUnit" name="Kilogram" uuid="03178d6e-f5df-4e48-87bd-de529f206dec" symbol="kg" description="kilogramUnit" definitionURI="" quantityKind="4280f271-f4e8-48cd-b66e-527fc282a3f7" isInvertible="true" referenceUnit="67cdb761-6c51-403e-98d1-1ea17e97001f" prefix="22443539-9226-4d67-959a-09fcdafa21b4"/>
+    <unit xsi:type="dvlm_qudv:AffineConversionUnit" name="Minute" uuid="ba93188d-566a-4344-acba-7e25f19e1242" symbol="min" description="minuteUnit" definitionURI="" quantityKind="188462f4-8d07-4e7b-865c-b67036612f2c" isInvertible="true" referenceUnit="7e7bcb32-df7a-44a4-8a98-abb9431c54a2" factor="60.0"/>
+    <unit xsi:type="dvlm_qudv:AffineConversionUnit" name="Hour" uuid="35c455f9-a6c1-4a5c-bf14-b21437553522" symbol="h" description="hourUnit" definitionURI="" quantityKind="188462f4-8d07-4e7b-865c-b67036612f2c" isInvertible="true" referenceUnit="ba93188d-566a-4344-acba-7e25f19e1242" factor="60.0"/>
+    <unit xsi:type="dvlm_qudv:AffineConversionUnit" name="Year" uuid="4bbc90d3-1b36-4f0c-814d-c2ce226e4402" symbol="y" description="yearUnit" definitionURI="" quantityKind="188462f4-8d07-4e7b-865c-b67036612f2c" isInvertible="true" referenceUnit="7e7bcb32-df7a-44a4-8a98-abb9431c54a2" factor="3.1556926E7"/>
+    <unit xsi:type="dvlm_qudv:PrefixedUnit" name="Millisecond" uuid="b3608f05-e83d-40d2-81db-679c70799dcb" symbol="ms" description="millisecondUnit" definitionURI="" quantityKind="188462f4-8d07-4e7b-865c-b67036612f2c" isInvertible="true" referenceUnit="7e7bcb32-df7a-44a4-8a98-abb9431c54a2" prefix="edafcc85-df4d-46c1-b2db-a118f6a54e98"/>
+    <unit xsi:type="dvlm_qudv:AffineConversionUnit" name="Degree Celsius" uuid="2225186b-2cdd-4391-b18e-a688eebc50d9" symbol="°C" description="degreeCelsiusUnit" definitionURI="" quantityKind="c11c3d20-af8d-4cca-80b5-1fcead0cd8af" isInvertible="true" referenceUnit="527e4efa-6b77-41ca-9715-e6a88ac49af3" factor="1.0" offset="273.15"/>
+    <unit xsi:type="dvlm_qudv:AffineConversionUnit" name="Degree Fahrenheit" uuid="66e3c97b-2ee4-42b2-96ee-ede53556c3a1" symbol="°F" description="degreeFahrenheitUnit" definitionURI="" quantityKind="c11c3d20-af8d-4cca-80b5-1fcead0cd8af" isInvertible="true" referenceUnit="2225186b-2cdd-4391-b18e-a688eebc50d9" factor="0.5555555555555556" offset="-17.77777777777778"/>
+    <unit xsi:type="dvlm_qudv:DerivedUnit" name="Meter Per Second" uuid="99719395-b81f-44ce-a55c-3e39cfac5c1b" symbol="m¹ s⁻¹" description="meterPerSecondUnit" definitionURI="" quantityKind="d7484665-a001-4ae3-807f-64eb3174f9b8">
+      <factor uuid="7d5eda79-f05d-4c3d-a339-76e4f0133ba5" exponent="1.0" unit="370d3671-32ff-472c-b9e6-68e1a67f9bfa"/>
+      <factor uuid="2aae8e0e-e4a4-4187-98fe-2c8ce471cb2d" exponent="-1.0" unit="7e7bcb32-df7a-44a4-8a98-abb9431c54a2"/>
+    </unit>
+    <unit xsi:type="dvlm_qudv:DerivedUnit" name="Kilometer Per Hour" uuid="53edeea9-7932-4b8c-a041-f6033d69cc83" symbol="km¹ h⁻¹" description="kilometerPerHourUnit" definitionURI="" quantityKind="d7484665-a001-4ae3-807f-64eb3174f9b8">
+      <factor uuid="e1996597-3420-480d-8aaf-0d35fe3db66f" exponent="-1.0" unit="35c455f9-a6c1-4a5c-bf14-b21437553522"/>
+      <factor uuid="c052229e-1b1d-463e-a32e-7d730749e352" exponent="1.0" unit="faca3ca1-158b-45a9-8e69-c4e64e7759e8"/>
+    </unit>
+    <unit xsi:type="dvlm_qudv:DerivedUnit" name="Square Kilometer" uuid="6338f487-47e6-452b-8240-bfe0de48237f" symbol="km²" description="squareKilometerUnit" definitionURI="" quantityKind="88c276fa-a1f9-4fb4-9cb9-41f66149ed0b">
+      <factor uuid="03a6e2fe-e776-46eb-95d7-35fa3857d5ee" exponent="2.0" unit="faca3ca1-158b-45a9-8e69-c4e64e7759e8"/>
+    </unit>
+    <unit xsi:type="dvlm_qudv:DerivedUnit" name="Square Meter" uuid="c8ebc84d-a7ed-422b-a208-9cf0a2f61cc0" symbol="m²" description="squareMeterUnit" definitionURI="" quantityKind="88c276fa-a1f9-4fb4-9cb9-41f66149ed0b">
+      <factor uuid="9169a199-d914-4f6f-9198-30666bd7c9c1" exponent="2.0" unit="370d3671-32ff-472c-b9e6-68e1a67f9bfa"/>
+    </unit>
+    <unit xsi:type="dvlm_qudv:DerivedUnit" name="Square Millimeter" uuid="88fd6797-dfc8-455c-9647-6a6d0947f928" symbol="mm²" description="squareMillimeterUnit" definitionURI="" quantityKind="88c276fa-a1f9-4fb4-9cb9-41f66149ed0b">
+      <factor uuid="20d36976-d043-4450-af29-79f01af369e4" exponent="2.0" unit="dc466137-08ed-4881-993d-896420f4f070"/>
+    </unit>
+    <unit xsi:type="dvlm_qudv:DerivedUnit" name="Square Centimeter" uuid="57f0542a-f85b-4181-9d90-fbe5f72c14e9" symbol="cm²" description="squareCentiMeterUnit" definitionURI="" quantityKind="88c276fa-a1f9-4fb4-9cb9-41f66149ed0b">
+      <factor uuid="55e684fc-2fd1-4193-bb8f-8f44f7ef5d3f" exponent="2.0" unit="87d1d20a-5cd4-4904-a475-0b4006d30ba7"/>
+    </unit>
+    <unit xsi:type="dvlm_qudv:DerivedUnit" name="Cubic Meter" uuid="091fd45f-c653-4b74-82a1-8ce23bc6c0a6" symbol="m³" description="cubicMeterUnit" definitionURI="" quantityKind="f03cfb36-b537-4d20-be3b-85f3168dae17">
+      <factor uuid="c1d29497-5583-4581-9084-8984205e21e7" exponent="3.0" unit="370d3671-32ff-472c-b9e6-68e1a67f9bfa"/>
+    </unit>
+    <unit xsi:type="dvlm_qudv:DerivedUnit" name="Cubic Centimeter" uuid="cbf9f974-4591-4110-b387-60a4720c5f8e" symbol="cm³" description="cubicCentimeterUnit" definitionURI="" quantityKind="f03cfb36-b537-4d20-be3b-85f3168dae17">
+      <factor uuid="6532850a-5e90-416d-919b-8d002a57b18c" exponent="3.0" unit="87d1d20a-5cd4-4904-a475-0b4006d30ba7"/>
+    </unit>
+    <unit xsi:type="dvlm_qudv:DerivedUnit" name="Newton" uuid="82cdfd41-c367-40ea-a7c5-2652cef6ccfc" symbol="N" description="newtonUnit" definitionURI="" quantityKind="22ada418-5c6b-47d2-837e-5f4932d2316a">
+      <factor uuid="df9ea048-d6c9-4dd6-845f-7ad52816dc03" exponent="1.0" unit="03178d6e-f5df-4e48-87bd-de529f206dec"/>
+      <factor uuid="8672ccb7-d4a6-4aa8-801e-0df31358b25c" exponent="1.0" unit="370d3671-32ff-472c-b9e6-68e1a67f9bfa"/>
+      <factor uuid="64612272-8313-4162-8680-6aaf676be3e4" exponent="-2.0" unit="7e7bcb32-df7a-44a4-8a98-abb9431c54a2"/>
+    </unit>
+    <unit xsi:type="dvlm_qudv:DerivedUnit" name="Joule" uuid="ae313eaa-4a4c-4edd-84c2-030e8885469a" symbol="J" description="jouleUnit" definitionURI="" quantityKind="96671b65-b0d6-4d4e-ab62-67c65d5f61c2">
+      <factor uuid="59695883-b30c-4533-b065-927a732eb7a6" exponent="1.0" unit="03178d6e-f5df-4e48-87bd-de529f206dec"/>
+      <factor uuid="16f18313-19a9-4eb4-b779-dec12ae2017c" exponent="2.0" unit="370d3671-32ff-472c-b9e6-68e1a67f9bfa"/>
+      <factor uuid="4a19ac54-a8e1-4abd-9e89-b5405011900e" exponent="-2.0" unit="7e7bcb32-df7a-44a4-8a98-abb9431c54a2"/>
+    </unit>
+    <unit xsi:type="dvlm_qudv:DerivedUnit" name="Newtonmeter" uuid="02cbea38-d16c-4cd4-ad23-e60b4a5fd357" symbol="Nm" description="newtonMeterUnit" definitionURI="" quantityKind="288c0e51-ba9d-470f-a508-4e287811f399">
+      <factor uuid="c98fb2bc-9fba-492c-ac25-085261f72420" exponent="1.0" unit="03178d6e-f5df-4e48-87bd-de529f206dec"/>
+      <factor uuid="218f9356-dea2-4355-ae76-e878607228f9" exponent="2.0" unit="370d3671-32ff-472c-b9e6-68e1a67f9bfa"/>
+      <factor uuid="60d0bbbe-bdce-4861-abe4-a150df723b7b" exponent="-2.0" unit="7e7bcb32-df7a-44a4-8a98-abb9431c54a2"/>
+    </unit>
+    <unit xsi:type="dvlm_qudv:DerivedUnit" name="Hertz" uuid="ccdcad45-2268-492b-8091-8b235466bd9a" symbol="Hz" description="hertzUnit" definitionURI="" quantityKind="e2afcdf9-67b3-4b3b-8fae-c08e53ff01ab">
+      <factor uuid="b4790a46-e08e-4618-9e89-c957427542c0" exponent="-1.0" unit="7e7bcb32-df7a-44a4-8a98-abb9431c54a2"/>
+    </unit>
+    <unit xsi:type="dvlm_qudv:DerivedUnit" name="Per Hour" uuid="6ac72a29-082d-480a-93ae-e3872149bbb4" symbol="h⁻¹" description="perHourUnit" definitionURI="" quantityKind="e2afcdf9-67b3-4b3b-8fae-c08e53ff01ab">
+      <factor uuid="cd510f23-85fb-4e95-bc7b-459e44a83c85" exponent="-1.0" unit="35c455f9-a6c1-4a5c-bf14-b21437553522"/>
+    </unit>
+    <unit xsi:type="dvlm_qudv:DerivedUnit" name="Meter Per Second Squared" uuid="3e04f4ed-71c9-4928-849f-89f1be1f11e6" symbol="m s⁻²" description="meterPerSecondSquaredUnit" definitionURI="" quantityKind="4df543bf-1fca-477e-b041-210bb431f961">
+      <factor uuid="5265ab18-dcca-4750-b421-e8e7057bf7cf" exponent="1.0" unit="370d3671-32ff-472c-b9e6-68e1a67f9bfa"/>
+      <factor uuid="dcda6a9f-7069-424e-aa4f-52d3ab471dce" exponent="-2.0" unit="7e7bcb32-df7a-44a4-8a98-abb9431c54a2"/>
+    </unit>
+    <unit xsi:type="dvlm_qudv:DerivedUnit" name="Kilogram Per Cubic Meter" uuid="8ff8194a-f187-4bb1-8788-8677fe390302" symbol="kg m⁻³" description="kilogramPerCubicMeterUnit" definitionURI="" quantityKind="b2417bf1-3228-4a58-a526-1e9cc1790ee5">
+      <factor uuid="90acd420-6530-49a4-b743-01d3deda89ed" exponent="1.0" unit="03178d6e-f5df-4e48-87bd-de529f206dec"/>
+      <factor uuid="3f76a2ca-448f-42b4-b616-22d62416e477" exponent="-3.0" unit="370d3671-32ff-472c-b9e6-68e1a67f9bfa"/>
+    </unit>
+    <unit xsi:type="dvlm_qudv:DerivedUnit" name="Kilogram Per Meter Squared" uuid="54fda76a-eb6e-4968-b3c2-1fa910d7cb35" symbol="kg m⁻²" description="kilogramPerMeterSquaredUnit" definitionURI="" quantityKind="18326773-85aa-4eec-a8d9-d5ecd6f42e6e">
+      <factor uuid="0ebc580a-292e-4853-860b-3dbc5e07cb41" exponent="1.0" unit="03178d6e-f5df-4e48-87bd-de529f206dec"/>
+      <factor uuid="7d4ce07e-d6f3-4807-9091-9d72c8ac8883" exponent="-2.0" unit="370d3671-32ff-472c-b9e6-68e1a67f9bfa"/>
+    </unit>
+    <unit xsi:type="dvlm_qudv:DerivedUnit" name="Watt" uuid="2e0160a6-4932-4761-a81d-7acd82c57e67" symbol="W" description="wattUnit" definitionURI="" quantityKind="fd4685c5-b78d-49c8-bbb3-9b1764b73e41">
+      <factor uuid="ba313f85-a467-4bb3-ad95-32da03164a4c" exponent="1.0" unit="03178d6e-f5df-4e48-87bd-de529f206dec"/>
+      <factor uuid="58343251-4b5b-4ee1-b29e-af2441678d98" exponent="2.0" unit="370d3671-32ff-472c-b9e6-68e1a67f9bfa"/>
+      <factor uuid="28f971a8-6d0c-4195-afcb-f3673e219b8e" exponent="-3.0" unit="7e7bcb32-df7a-44a4-8a98-abb9431c54a2"/>
+    </unit>
+    <unit xsi:type="dvlm_qudv:DerivedUnit" name="Volt" uuid="9c393bd3-6bfa-472e-a41e-dff51afff69e" symbol="V" description="voltUnit" definitionURI="" quantityKind="9162773e-c0e9-4075-92a9-2bea18c3f6e9">
+      <factor uuid="b0c7351d-93fa-4335-a29e-96097d9aaba9" exponent="1.0" unit="03178d6e-f5df-4e48-87bd-de529f206dec"/>
+      <factor uuid="8f2c40e4-665f-498b-8798-e74b250bb7f4" exponent="2.0" unit="370d3671-32ff-472c-b9e6-68e1a67f9bfa"/>
+      <factor uuid="ec39d131-ea33-40f8-8a32-3c5b927c5b12" exponent="-3.0" unit="7e7bcb32-df7a-44a4-8a98-abb9431c54a2"/>
+    </unit>
+    <unit xsi:type="dvlm_qudv:DerivedUnit" name="Pascal" uuid="edbd93d0-9321-4368-9bdd-59749c685146" symbol="Pa" description="pascalUnit" definitionURI="" quantityKind="328d3518-5621-4aac-a431-4eb25b54d305">
+      <factor uuid="ea804b3c-6c53-45e8-abe0-4dce92ed8e0a" exponent="1.0" unit="03178d6e-f5df-4e48-87bd-de529f206dec"/>
+      <factor uuid="5de8768a-6b0c-4f2b-bf45-277cc4600514" exponent="-1.0" unit="370d3671-32ff-472c-b9e6-68e1a67f9bfa"/>
+      <factor uuid="739f8d80-e2f8-47cb-b124-49f6de140c4f" exponent="-2.0" unit="7e7bcb32-df7a-44a4-8a98-abb9431c54a2"/>
+    </unit>
+    <unit xsi:type="dvlm_qudv:DerivedUnit" name="Radian" uuid="c24b2b6f-4392-49ae-9136-88fb10540f5f" symbol="rad" description="radianUnit" definitionURI="" quantityKind="e54dad49-b7da-4017-884c-76fab324059b">
+      <factor uuid="b86b3fe9-4eda-4f9c-ba31-483494097914" exponent="1.0" unit="f76cb7a3-c0dd-4146-8261-0d34069467f4"/>
+    </unit>
+    <unit xsi:type="dvlm_qudv:DerivedUnit" name="RadianPerSecond" uuid="58475cbe-b613-4642-9032-a14c760674f3" symbol="rad s⁻¹" description="radianPerSecondUnit" definitionURI="" quantityKind="c5405d9b-1604-4123-a901-8aac534e8c23">
+      <factor uuid="1e58595c-1b79-416c-9c71-628323520497" exponent="1.0" unit="c24b2b6f-4392-49ae-9136-88fb10540f5f"/>
+      <factor uuid="f1e9a6c7-70ad-45f0-931a-a00d1867ce1a" exponent="-1.0" unit="7e7bcb32-df7a-44a4-8a98-abb9431c54a2"/>
+    </unit>
+    <unit xsi:type="dvlm_qudv:AffineConversionUnit" name="Degree" uuid="48443235-6e7b-40c0-8ae7-4295a52dade5" symbol="°" description="degreeUnit" definitionURI="" quantityKind="e54dad49-b7da-4017-884c-76fab324059b" isInvertible="true" referenceUnit="c24b2b6f-4392-49ae-9136-88fb10540f5f" factor="0.017453292519943295"/>
+    <unit xsi:type="dvlm_qudv:DerivedUnit" name="DegreePerSecond" uuid="dafeba42-9448-4653-b050-35f6b1c63ada" symbol="° s⁻¹" description="degreePerSecondUnit" definitionURI="" quantityKind="c5405d9b-1604-4123-a901-8aac534e8c23">
+      <factor uuid="5a383748-e1a9-464f-8195-ea3116c6682b" exponent="1.0" unit="48443235-6e7b-40c0-8ae7-4295a52dade5"/>
+      <factor uuid="5df98cfa-90aa-45c1-ad3b-177d4e526970" exponent="-1.0" unit="7e7bcb32-df7a-44a4-8a98-abb9431c54a2"/>
+    </unit>
+    <unit xsi:type="dvlm_qudv:PrefixedUnit" name="Percent" uuid="5edbe00f-9d72-4c8a-93f3-31dfc7737696" symbol="%" description="percentUnit" definitionURI="" quantityKind="e054baf0-1b95-44a2-b60e-97c130bc0ca0" isInvertible="true" referenceUnit="f76cb7a3-c0dd-4146-8261-0d34069467f4" prefix="39b9ebff-b4f3-463c-9ef9-e596f5609b9d"/>
+    <unit xsi:type="dvlm_qudv:DerivedUnit" name="Kilogram Meter Squared" uuid="38f6ce3b-7b97-49b9-ac7c-dbd9e59627f5" symbol="kg m²" description="kilogramMeterSquaredUnit" definitionURI="" quantityKind="75eb353a-ddce-495a-84d3-91c12819a3d0">
+      <factor uuid="3d8f6998-a048-49e4-a761-07c08fd7fe98" exponent="1.0" unit="03178d6e-f5df-4e48-87bd-de529f206dec"/>
+      <factor uuid="23a20c5b-42d9-4332-bb83-8d317ac33594" exponent="2.0" unit="370d3671-32ff-472c-b9e6-68e1a67f9bfa"/>
+    </unit>
+    <unit xsi:type="dvlm_qudv:DerivedUnit" name="Bit" uuid="b8275e4d-7e1e-4c1c-b1dd-7bb84521a4ba" symbol="bit" description="bitUnit" definitionURI="" quantityKind="e054baf0-1b95-44a2-b60e-97c130bc0ca0">
+      <factor uuid="d2cd1136-50b9-4bfb-aa15-5744ce9469e1" exponent="1.0" unit="f76cb7a3-c0dd-4146-8261-0d34069467f4"/>
+    </unit>
+    <unit xsi:type="dvlm_qudv:LinearConversionUnit" name="Byte" uuid="337981a8-1df8-4110-9895-a013b6aa1246" symbol="byte" description="byteUnit" definitionURI="" quantityKind="e054baf0-1b95-44a2-b60e-97c130bc0ca0" isInvertible="true" referenceUnit="b8275e4d-7e1e-4c1c-b1dd-7bb84521a4ba" factor="8.0"/>
+    <unit xsi:type="dvlm_qudv:PrefixedUnit" name="Megabyte" uuid="ef9be1fd-c251-474f-9539-4ce349151ef1" symbol="MB" description="megaByteUnit" definitionURI="" quantityKind="e054baf0-1b95-44a2-b60e-97c130bc0ca0" isInvertible="true" referenceUnit="337981a8-1df8-4110-9895-a013b6aa1246" prefix="40fd4a38-5e71-4539-b635-055634642e08"/>
+    <unit xsi:type="dvlm_qudv:DerivedUnit" name="Megabyte Per Second" uuid="c74a50a9-a4bf-431d-8ed6-4cd4b439620e" symbol="MB s⁻¹" description="megabyterPerSecondUnit" definitionURI="" quantityKind="f56c98c8-15cc-44dc-96a2-49c0cd8a3cad">
+      <factor uuid="e670d7e4-68c8-45cb-b17b-0f44694e9b6f" exponent="-1.0" unit="7e7bcb32-df7a-44a4-8a98-abb9431c54a2"/>
+      <factor uuid="4e57d8ec-9f92-4219-9f9f-25a3b854d9a6" exponent="1.0" unit="ef9be1fd-c251-474f-9539-4ce349151ef1"/>
+    </unit>
+    <unit xsi:type="dvlm_qudv:DerivedUnit" name="Ampere hours" uuid="0d733dcb-1963-4d5a-8ec8-7993d877b1ff" symbol="Ah" description="ampereHoursUnit" definitionURI="" quantityKind="c06847b0-7824-4b0f-9e86-d03abe9c4a78">
+      <factor uuid="14dee2d0-75a8-4ddf-9ca0-ac7e11119249" exponent="1.0" unit="569f45c4-0feb-4d7e-8332-66256f4b81eb"/>
+      <factor uuid="4b946b90-29f5-45ba-b2d7-50e4b996e519" exponent="1.0" unit="35c455f9-a6c1-4a5c-bf14-b21437553522"/>
+    </unit>
+    <unit xsi:type="dvlm_qudv:DerivedUnit" name="Meter Squared Per Second Squared Per Kelvin" uuid="b0f93d70-bb2a-4997-840c-9f64025d1b0f" symbol="m² s⁻² K⁻¹" description="meterSquaredPerSecondSquaredPerKelvinUnit" definitionURI="" quantityKind="a5d300d2-f147-4ca3-96e5-f1b1160f31f8">
+      <factor uuid="969a8e94-5a5c-4672-a3a0-63cc0a80fa8e" exponent="-1.0" unit="527e4efa-6b77-41ca-9715-e6a88ac49af3"/>
+      <factor uuid="3ba2092c-2497-4b39-88ff-aed2706a39cd" exponent="2.0" unit="370d3671-32ff-472c-b9e6-68e1a67f9bfa"/>
+      <factor uuid="fa625d66-40a8-40e5-811d-e1af79814cf0" exponent="-2.0" unit="7e7bcb32-df7a-44a4-8a98-abb9431c54a2"/>
+    </unit>
+    <unit xsi:type="dvlm_qudv:DerivedUnit" name="Meter Kilogram Per Second Cubed Per Kelvin" uuid="7d5a4356-f22d-4d4b-91f0-f3f6c83f47b5" symbol="m kg s⁻³ K⁻¹" description="meterKilogramPerSecondCubedPerKelvinUnit" definitionURI="" quantityKind="3ed659b7-003c-48b1-bd3b-2166fafecce9">
+      <factor uuid="0294f38c-ae21-4fdf-a83d-d1cfccb85456" exponent="1.0" unit="03178d6e-f5df-4e48-87bd-de529f206dec"/>
+      <factor uuid="cbea5f67-8483-4734-ac08-3cb110e57cf0" exponent="-1.0" unit="527e4efa-6b77-41ca-9715-e6a88ac49af3"/>
+      <factor uuid="575997e8-6041-4bc9-8f93-a7b3577fb012" exponent="1.0" unit="370d3671-32ff-472c-b9e6-68e1a67f9bfa"/>
+      <factor uuid="61e763bc-4636-48d2-8a13-dcb11c12d823" exponent="-3.0" unit="7e7bcb32-df7a-44a4-8a98-abb9431c54a2"/>
+    </unit>
+    <unit xsi:type="dvlm_qudv:DerivedUnit" name="Watt Per Metre Squared Per Kelvin" uuid="4b00a143-c96d-479a-b9ff-16b281560202" symbol="W m⁻² K⁻¹" description="wattPerMeterSquaredPerKelvin" definitionURI="" quantityKind="3ed659b7-003c-48b1-bd3b-2166fafecce9">
+      <factor uuid="84ef9e2f-9d88-42f8-a133-12f580c76a4e" exponent="1.0" unit="03178d6e-f5df-4e48-87bd-de529f206dec"/>
+      <factor uuid="7d1fb20e-0228-49e3-9b0d-3f503a1cd9d0" exponent="-1.0" unit="527e4efa-6b77-41ca-9715-e6a88ac49af3"/>
+      <factor uuid="c58df343-5161-4d04-b0e4-f8f706b1e7b5" exponent="1.0" unit="370d3671-32ff-472c-b9e6-68e1a67f9bfa"/>
+      <factor uuid="83925859-5eee-46b0-a8c7-ce007f837562" exponent="-3.0" unit="7e7bcb32-df7a-44a4-8a98-abb9431c54a2"/>
+    </unit>
+    <unit xsi:type="dvlm_qudv:DerivedUnit" name="Second Cubed Kelvin Per Meter Squared Per Kilogram" uuid="63b38dcd-e624-452b-86f5-047fcd37e09f" symbol="s³ K m⁻² kg⁻¹" description="secondCubedKelvinPerMeterSquaredPerKilogramUnit" definitionURI="" quantityKind="c6859f79-e3a4-4d2c-a56a-3bcbda810059">
+      <factor uuid="2138c734-866e-4e5f-ab57-7b27e2718270" exponent="-1.0" unit="03178d6e-f5df-4e48-87bd-de529f206dec"/>
+      <factor uuid="59b9e9d1-15a4-41f2-8ec3-87c109c9731a" exponent="1.0" unit="527e4efa-6b77-41ca-9715-e6a88ac49af3"/>
+      <factor uuid="2bf47530-fac3-43f8-bdc7-b2f4945ef0f6" exponent="-2.0" unit="370d3671-32ff-472c-b9e6-68e1a67f9bfa"/>
+      <factor uuid="3a129f56-1b21-4b6e-8b10-213622695562" exponent="3.0" unit="7e7bcb32-df7a-44a4-8a98-abb9431c54a2"/>
+    </unit>
+    <unit xsi:type="dvlm_qudv:DerivedUnit" name="MeterSquaredKilogramPerSecondCubedPerKelvin" uuid="e35d3d9c-6d60-4095-9237-1dcb1d6a7c6e" symbol="m² kg¹ s⁻³ K⁻¹" description="meterSquaredKilogramPerSecondCubedPerKelvinUnit" definitionURI="" quantityKind="34efc174-a83b-4760-ac57-b019f430338e">
+      <factor uuid="c024f3ad-6ee3-41a9-b4e5-a8227dc7d6ec" exponent="1.0" unit="03178d6e-f5df-4e48-87bd-de529f206dec"/>
+      <factor uuid="2b81652d-62e0-4986-8ca8-0cbf22147332" exponent="-1.0" unit="527e4efa-6b77-41ca-9715-e6a88ac49af3"/>
+      <factor uuid="1a18c4cc-21c2-43d1-b446-304fe77e64b9" exponent="2.0" unit="370d3671-32ff-472c-b9e6-68e1a67f9bfa"/>
+      <factor uuid="467e0caa-f65b-4090-9e86-26edbdf29f13" exponent="-3.0" unit="7e7bcb32-df7a-44a4-8a98-abb9431c54a2"/>
+    </unit>
+    <unit xsi:type="dvlm_qudv:DerivedUnit" name="Kilogram Per Second Cubed Per Kelvin" uuid="2f89ec1a-1654-41a1-a347-eecdada52a1a" symbol="kg s⁻³ K⁻¹" description="meterSquaredPerSecondSquaredPerKelvinUnit" definitionURI="" quantityKind="bf619b6f-34a7-4a74-8b4d-5752ee879c45">
+      <factor uuid="53252f0f-a9da-4403-b69a-456641510cd1" exponent="1.0" unit="03178d6e-f5df-4e48-87bd-de529f206dec"/>
+      <factor uuid="b5ff5200-6e04-47f6-8ac7-afc23aa443d0" exponent="-1.0" unit="527e4efa-6b77-41ca-9715-e6a88ac49af3"/>
+      <factor uuid="86db79ca-1e09-4703-87fc-fd93fbdfee66" exponent="-3.0" unit="7e7bcb32-df7a-44a4-8a98-abb9431c54a2"/>
+    </unit>
+    <systemOfQuantities name="SystemOfQuantities" uuid="da446f87-417c-4477-ab7b-e18a8711ea2c" symbol="SoQ" description="" definitionURI="">
+      <quantityKind xsi:type="dvlm_qudv:SimpleQuantityKind" name="Dimensionless" uuid="e054baf0-1b95-44a2-b60e-97c130bc0ca0" symbol="U" description="dimensionlessQK" definitionURI=""/>
+      <quantityKind xsi:type="dvlm_qudv:SimpleQuantityKind" name="Length" uuid="7b22c866-6851-4f98-a510-b525a8f16575" symbol="L" description="lengthQK" definitionURI=""/>
+      <quantityKind xsi:type="dvlm_qudv:SimpleQuantityKind" name="Mass" uuid="4280f271-f4e8-48cd-b66e-527fc282a3f7" symbol="M" description="massQK" definitionURI=""/>
+      <quantityKind xsi:type="dvlm_qudv:SimpleQuantityKind" name="Time" uuid="188462f4-8d07-4e7b-865c-b67036612f2c" symbol="T" description="timeQK" definitionURI=""/>
+      <quantityKind xsi:type="dvlm_qudv:SimpleQuantityKind" name="Temperature" uuid="c11c3d20-af8d-4cca-80b5-1fcead0cd8af" symbol="Θ" description="temperatureQK" definitionURI=""/>
+      <quantityKind xsi:type="dvlm_qudv:SimpleQuantityKind" name="Amount of substance" uuid="0368a65a-f2c3-4b46-825b-31aef1635eb4" symbol="N" description="amountOfSubstanceQK" definitionURI=""/>
+      <quantityKind xsi:type="dvlm_qudv:SimpleQuantityKind" name="Electric current" uuid="11b2c4c3-20d5-432e-9bb1-c06340fbe970" symbol="I" description="electricCurrentQK" definitionURI=""/>
+      <quantityKind xsi:type="dvlm_qudv:SimpleQuantityKind" name="Luminous intensity" uuid="004a408e-4c6d-4053-afaa-37854abe4941" symbol="J" description="luminousIntensityQK" definitionURI=""/>
+      <quantityKind xsi:type="dvlm_qudv:DerivedQuantityKind" name="Area" uuid="88c276fa-a1f9-4fb4-9cb9-41f66149ed0b" symbol="L²" description="areaQK" definitionURI="">
+        <factor uuid="8a5d0c2c-e5c7-4b67-90ec-73e77fa2a4bd" exponent="2.0" quantityKind="7b22c866-6851-4f98-a510-b525a8f16575"/>
+      </quantityKind>
+      <quantityKind xsi:type="dvlm_qudv:DerivedQuantityKind" name="Force" uuid="22ada418-5c6b-47d2-837e-5f4932d2316a" symbol="L¹ M¹ T⁻²" description="forceQK" definitionURI="">
+        <factor uuid="b28810c5-fc09-4ea2-9781-2824dfe6fabf" exponent="-2.0" quantityKind="188462f4-8d07-4e7b-865c-b67036612f2c"/>
+        <factor uuid="fa4fcb41-6284-4dee-ac0a-d3fede8fe1e8" exponent="1.0" quantityKind="7b22c866-6851-4f98-a510-b525a8f16575"/>
+        <factor uuid="8952f7ad-8edf-467f-bf0d-e5bef4747982" exponent="1.0" quantityKind="4280f271-f4e8-48cd-b66e-527fc282a3f7"/>
+      </quantityKind>
+      <quantityKind xsi:type="dvlm_qudv:DerivedQuantityKind" name="Energy and Work" uuid="96671b65-b0d6-4d4e-ab62-67c65d5f61c2" symbol="L² M¹ T⁻²" description="energyAndWorkQK" definitionURI="">
+        <factor uuid="97074a5b-ffa0-45bc-9da1-3cbb40091fb2" exponent="-2.0" quantityKind="188462f4-8d07-4e7b-865c-b67036612f2c"/>
+        <factor uuid="c970671b-2724-4ba7-92fe-5a03c36ca7f3" exponent="2.0" quantityKind="7b22c866-6851-4f98-a510-b525a8f16575"/>
+        <factor uuid="a707d9c1-13f3-4af0-8569-46f76977817f" exponent="1.0" quantityKind="4280f271-f4e8-48cd-b66e-527fc282a3f7"/>
+      </quantityKind>
+      <quantityKind xsi:type="dvlm_qudv:DerivedQuantityKind" name="Density" uuid="b2417bf1-3228-4a58-a526-1e9cc1790ee5" symbol="L⁻³ M¹" description="densityQK" definitionURI="">
+        <factor uuid="d27fb5bc-1d27-4eab-adbe-8a7dcd055aa6" exponent="-3.0" quantityKind="7b22c866-6851-4f98-a510-b525a8f16575"/>
+        <factor uuid="c220f80e-e4d5-4f3a-afbf-fe16c59beb4f" exponent="1.0" quantityKind="4280f271-f4e8-48cd-b66e-527fc282a3f7"/>
+      </quantityKind>
+      <quantityKind xsi:type="dvlm_qudv:DerivedQuantityKind" name="Electric Charge" uuid="c06847b0-7824-4b0f-9e86-d03abe9c4a78" symbol="T¹ I¹" description="electricChargeQK" definitionURI="">
+        <factor uuid="64d5199e-a177-49c4-8f31-4bf52a5a4289" exponent="1.0" quantityKind="188462f4-8d07-4e7b-865c-b67036612f2c"/>
+        <factor uuid="a3f5bfe3-3635-4251-a3b5-c203a6d8e08f" exponent="1.0" quantityKind="11b2c4c3-20d5-432e-9bb1-c06340fbe970"/>
+      </quantityKind>
+      <quantityKind xsi:type="dvlm_qudv:DerivedQuantityKind" name="Frequency" uuid="e2afcdf9-67b3-4b3b-8fae-c08e53ff01ab" symbol="T⁻¹" description="frequencyQK" definitionURI="">
+        <factor uuid="1cfab16f-f884-45c9-af54-bbc99ed55277" exponent="-1.0" quantityKind="188462f4-8d07-4e7b-865c-b67036612f2c"/>
+      </quantityKind>
+      <quantityKind xsi:type="dvlm_qudv:DerivedQuantityKind" name="Data rate" uuid="f56c98c8-15cc-44dc-96a2-49c0cd8a3cad" symbol="T⁻¹" description="dataRateQK" definitionURI="">
+        <factor uuid="9fc0eb7c-3e0b-4fd2-b9c3-3ad18cb9c72c" exponent="1.0" quantityKind="e2afcdf9-67b3-4b3b-8fae-c08e53ff01ab"/>
+      </quantityKind>
+      <quantityKind xsi:type="dvlm_qudv:DerivedQuantityKind" name="Heat Capacity and Entropy" uuid="47aea006-3360-4828-a34a-1c7818b2839c" symbol="L² M¹ T⁻² Θ⁻¹" description="heatCapacityAndEntropyQK" definitionURI="">
+        <factor uuid="97aea92c-3929-4d19-b661-4b2d18e276d1" exponent="-2.0" quantityKind="188462f4-8d07-4e7b-865c-b67036612f2c"/>
+        <factor uuid="78722e0e-85f9-4bb4-9696-e1cc0f86a190" exponent="-1.0" quantityKind="c11c3d20-af8d-4cca-80b5-1fcead0cd8af"/>
+        <factor uuid="0ae73cef-fc22-48b6-be74-fd5d334eeadf" exponent="2.0" quantityKind="7b22c866-6851-4f98-a510-b525a8f16575"/>
+        <factor uuid="f0e72f96-7763-4b76-b668-1f0437c444a3" exponent="1.0" quantityKind="4280f271-f4e8-48cd-b66e-527fc282a3f7"/>
+      </quantityKind>
+      <quantityKind xsi:type="dvlm_qudv:DerivedQuantityKind" name="Heat Flow Rate" uuid="b4b5a68a-3a15-46fb-8076-66bf71350030" symbol="L² M¹ T⁻³" description="heatFlowRateQK" definitionURI="">
+        <factor uuid="1c90f30a-2317-4461-9679-1a2484ecced5" exponent="-3.0" quantityKind="188462f4-8d07-4e7b-865c-b67036612f2c"/>
+        <factor uuid="16d0b1b3-640e-4de0-90f7-eda2f87be25f" exponent="2.0" quantityKind="7b22c866-6851-4f98-a510-b525a8f16575"/>
+        <factor uuid="1882412f-f7a1-4fb9-b37d-fa3bdbe4ac38" exponent="1.0" quantityKind="4280f271-f4e8-48cd-b66e-527fc282a3f7"/>
+      </quantityKind>
+      <quantityKind xsi:type="dvlm_qudv:DerivedQuantityKind" name="Heat Flow Rate per Unit Area" uuid="c0178b50-8806-47fb-8b35-c104b596d1e2" symbol="M¹ T⁻³" description="heatFlowRatePerUnitAreaQK" definitionURI="">
+        <factor uuid="2ba388cf-093b-43bc-a23f-628005da5239" exponent="-3.0" quantityKind="188462f4-8d07-4e7b-865c-b67036612f2c"/>
+        <factor uuid="0b32b060-46c1-4734-8a8f-628328364418" exponent="1.0" quantityKind="4280f271-f4e8-48cd-b66e-527fc282a3f7"/>
+      </quantityKind>
+      <quantityKind xsi:type="dvlm_qudv:DerivedQuantityKind" name="Inductance" uuid="416a8ab0-472f-4441-b7f0-60355eec11f7" symbol="L² M¹ T⁻² I⁻²" description="inductanceQK" definitionURI="">
+        <factor uuid="65329964-ff97-4fc8-b7c9-5356dc483527" exponent="-2.0" quantityKind="188462f4-8d07-4e7b-865c-b67036612f2c"/>
+        <factor uuid="20c386fd-516f-4488-990c-b569fc1439ae" exponent="2.0" quantityKind="7b22c866-6851-4f98-a510-b525a8f16575"/>
+        <factor uuid="34696473-c47b-4225-828c-5df9399001fe" exponent="1.0" quantityKind="4280f271-f4e8-48cd-b66e-527fc282a3f7"/>
+        <factor uuid="8f44ec0e-b487-4135-a758-2b452ea38092" exponent="-2.0" quantityKind="11b2c4c3-20d5-432e-9bb1-c06340fbe970"/>
+      </quantityKind>
+      <quantityKind xsi:type="dvlm_qudv:DerivedQuantityKind" name="Acceleration" uuid="4df543bf-1fca-477e-b041-210bb431f961" symbol="L¹ T⁻²" description="accelerationQK" definitionURI="">
+        <factor uuid="e18b7bb1-0825-4bc3-a2df-7d7b65744c2b" exponent="-2.0" quantityKind="188462f4-8d07-4e7b-865c-b67036612f2c"/>
+        <factor uuid="25377d84-6b80-45cc-a694-40f861deef43" exponent="1.0" quantityKind="7b22c866-6851-4f98-a510-b525a8f16575"/>
+      </quantityKind>
+      <quantityKind xsi:type="dvlm_qudv:DerivedQuantityKind" name="Angle" uuid="e54dad49-b7da-4017-884c-76fab324059b" symbol="α" description="angleQK" definitionURI="">
+        <factor uuid="6c7298f9-befa-4922-9dd4-6cc3f4d2fda6" exponent="1.0" quantityKind="e054baf0-1b95-44a2-b60e-97c130bc0ca0"/>
+      </quantityKind>
+      <quantityKind xsi:type="dvlm_qudv:DerivedQuantityKind" name="Angular Velocity" uuid="c5405d9b-1604-4123-a901-8aac534e8c23" symbol="α¹ T⁻¹" description="angularVelocityQK" definitionURI="">
+        <factor uuid="75660e21-9220-450a-bbda-caff43225f44" exponent="-1.0" quantityKind="188462f4-8d07-4e7b-865c-b67036612f2c"/>
+        <factor uuid="8bd14d09-a722-4364-8ce1-f832163e437a" exponent="1.0" quantityKind="e54dad49-b7da-4017-884c-76fab324059b"/>
+      </quantityKind>
+      <quantityKind xsi:type="dvlm_qudv:DerivedQuantityKind" name="Moment Of Inertia" uuid="75eb353a-ddce-495a-84d3-91c12819a3d0" symbol="M¹ L²" description="momentOfInertiaQK" definitionURI="">
+        <factor uuid="2e6cff5a-db89-4782-a947-19b445541050" exponent="1.0" quantityKind="4280f271-f4e8-48cd-b66e-527fc282a3f7"/>
+        <factor uuid="b6f31251-5269-4148-86b7-b9448ee6832a" exponent="2.0" quantityKind="7b22c866-6851-4f98-a510-b525a8f16575"/>
+      </quantityKind>
+      <quantityKind xsi:type="dvlm_qudv:DerivedQuantityKind" name="Linear Momentum" uuid="6642f8df-4a86-4657-b072-907071d3205a" symbol="L¹ M¹ T⁻¹" description="linearMomentumQK" definitionURI="">
+        <factor uuid="82ece761-1380-4474-833c-25f646f726c5" exponent="-1.0" quantityKind="188462f4-8d07-4e7b-865c-b67036612f2c"/>
+        <factor uuid="85a0a90d-f106-428f-aa1f-39c43a0b062e" exponent="1.0" quantityKind="7b22c866-6851-4f98-a510-b525a8f16575"/>
+        <factor uuid="82392f82-ebe7-49d2-ae43-ea43fee866e2" exponent="1.0" quantityKind="4280f271-f4e8-48cd-b66e-527fc282a3f7"/>
+      </quantityKind>
+      <quantityKind xsi:type="dvlm_qudv:DerivedQuantityKind" name="Velocity" uuid="d7484665-a001-4ae3-807f-64eb3174f9b8" symbol="L¹ T⁻¹" description="velocityQK" definitionURI="">
+        <factor uuid="f83f566a-37aa-4985-811d-5e50a78142a2" exponent="-1.0" quantityKind="188462f4-8d07-4e7b-865c-b67036612f2c"/>
+        <factor uuid="d3057393-ddfa-4a5b-90b8-e4b55204265c" exponent="1.0" quantityKind="7b22c866-6851-4f98-a510-b525a8f16575"/>
+      </quantityKind>
+      <quantityKind xsi:type="dvlm_qudv:DerivedQuantityKind" name="Luminance" uuid="86462034-54fa-4ce6-8910-7eb8732d9663" symbol="L¹ M¹ T⁻¹" description="luminanceQK" definitionURI="">
+        <factor uuid="f3412a93-aa97-4b4e-b984-04ae51be26f7" exponent="1.0" quantityKind="004a408e-4c6d-4053-afaa-37854abe4941"/>
+        <factor uuid="3fa6b786-9070-4614-a214-f01c58304e3c" exponent="-2.0" quantityKind="7b22c866-6851-4f98-a510-b525a8f16575"/>
+      </quantityKind>
+      <quantityKind xsi:type="dvlm_qudv:DerivedQuantityKind" name="Magnetic Dipole Moment" uuid="0145c272-80a2-4ca4-aa98-57f4a728d017" symbol="L² I¹" description="magneticDipoleMomentQK" definitionURI="">
+        <factor uuid="27d2510c-66df-4665-9ab3-9bce32cd2ecd" exponent="2.0" quantityKind="7b22c866-6851-4f98-a510-b525a8f16575"/>
+        <factor uuid="733bf69f-f2e2-424a-8093-85d27cd15ad3" exponent="1.0" quantityKind="11b2c4c3-20d5-432e-9bb1-c06340fbe970"/>
+      </quantityKind>
+      <quantityKind xsi:type="dvlm_qudv:DerivedQuantityKind" name="Magnetic Field Strength" uuid="e0158dd8-7032-409b-a259-ffa285cbc929" symbol="L⁻¹ I¹" description="magneticFieldStrengthQK" definitionURI="">
+        <factor uuid="cd0dbd48-4c81-4828-a9ea-2b91763db8ec" exponent="-1.0" quantityKind="7b22c866-6851-4f98-a510-b525a8f16575"/>
+        <factor uuid="6d4c7acd-e407-47ad-99e2-99592aaa45d1" exponent="1.0" quantityKind="11b2c4c3-20d5-432e-9bb1-c06340fbe970"/>
+      </quantityKind>
+      <quantityKind xsi:type="dvlm_qudv:DerivedQuantityKind" name="Magnetic Flux" uuid="eb821a57-4716-42d1-8a63-5a093f8b5deb" symbol="L² M¹ T⁻² I⁻¹" description="magneticFluxQK" definitionURI="">
+        <factor uuid="97744d43-5b9b-43d0-a5d3-2db6dcfa13dd" exponent="-2.0" quantityKind="188462f4-8d07-4e7b-865c-b67036612f2c"/>
+        <factor uuid="9b33bcb2-7d5c-455c-961e-103ce20767d9" exponent="2.0" quantityKind="7b22c866-6851-4f98-a510-b525a8f16575"/>
+        <factor uuid="f83044f1-0b8b-400f-be3c-e937b7138b73" exponent="1.0" quantityKind="4280f271-f4e8-48cd-b66e-527fc282a3f7"/>
+        <factor uuid="a1c6ce9d-0027-49a6-b4b6-f030f3c35b6c" exponent="-1.0" quantityKind="11b2c4c3-20d5-432e-9bb1-c06340fbe970"/>
+      </quantityKind>
+      <quantityKind xsi:type="dvlm_qudv:DerivedQuantityKind" name="Magnetic Flux Density" uuid="8fd7171a-d10a-496a-b161-4cce4d2c29c6" symbol="M¹ T⁻² I⁻¹" description="magneticFluxDensityQK" definitionURI="">
+        <factor uuid="3ed256eb-e00b-456f-9ce4-164e19291d57" exponent="-2.0" quantityKind="188462f4-8d07-4e7b-865c-b67036612f2c"/>
+        <factor uuid="e3a615bc-58bd-4f22-96bc-7093dadb686d" exponent="1.0" quantityKind="4280f271-f4e8-48cd-b66e-527fc282a3f7"/>
+        <factor uuid="ebf6a3ae-59d5-4aec-b838-01c226642f70" exponent="-1.0" quantityKind="11b2c4c3-20d5-432e-9bb1-c06340fbe970"/>
+      </quantityKind>
+      <quantityKind xsi:type="dvlm_qudv:DerivedQuantityKind" name="Molar Energy" uuid="5c8ce736-0bff-4f77-b97e-6f9d8295ee25" symbol="L² M¹ T⁻² N⁻¹" description="molarEnergyQK" definitionURI="">
+        <factor uuid="db4dd566-a537-4c5a-913c-9e9649c48ddb" exponent="-1.0" quantityKind="0368a65a-f2c3-4b46-825b-31aef1635eb4"/>
+        <factor uuid="b17da9fa-4fe3-410c-ae35-c8b6b1da0021" exponent="-2.0" quantityKind="188462f4-8d07-4e7b-865c-b67036612f2c"/>
+        <factor uuid="c58ae639-827a-400a-ba4a-5c4a2fe709d9" exponent="2.0" quantityKind="7b22c866-6851-4f98-a510-b525a8f16575"/>
+        <factor uuid="9c66d89f-badd-417d-a75a-7862fab09812" exponent="1.0" quantityKind="4280f271-f4e8-48cd-b66e-527fc282a3f7"/>
+      </quantityKind>
+      <quantityKind xsi:type="dvlm_qudv:DerivedQuantityKind" name="Molar Heat Capacity" uuid="78ce656d-b25a-4057-9300-1d4a2382b2c7" symbol="L² M¹ T⁻² N⁻¹" description="molarHeatCapacityQK" definitionURI="">
+        <factor uuid="b8e26961-0e3e-4987-91ac-c53e9c470c88" exponent="-1.0" quantityKind="0368a65a-f2c3-4b46-825b-31aef1635eb4"/>
+        <factor uuid="5163b31d-c70c-4cf4-9f7c-f0a87e726a89" exponent="-2.0" quantityKind="188462f4-8d07-4e7b-865c-b67036612f2c"/>
+        <factor uuid="54aacea2-4152-47ef-ae4d-ea53f5608d7f" exponent="-1.0" quantityKind="c11c3d20-af8d-4cca-80b5-1fcead0cd8af"/>
+        <factor uuid="afef7f9b-4d5d-43c9-9035-8b216418c0ff" exponent="2.0" quantityKind="7b22c866-6851-4f98-a510-b525a8f16575"/>
+        <factor uuid="31d7bb10-cf38-4f37-8a7b-e6694b2e1228" exponent="1.0" quantityKind="4280f271-f4e8-48cd-b66e-527fc282a3f7"/>
+      </quantityKind>
+      <quantityKind xsi:type="dvlm_qudv:DerivedQuantityKind" name="Power" uuid="fd4685c5-b78d-49c8-bbb3-9b1764b73e41" symbol="L² M¹ T⁻³" description="powerQK" definitionURI="">
+        <factor uuid="98e88bc2-fe6f-4cbd-9fb2-a87a4b81bc01" exponent="-3.0" quantityKind="188462f4-8d07-4e7b-865c-b67036612f2c"/>
+        <factor uuid="eb9e3fa5-eec6-4959-8696-faea599868a3" exponent="2.0" quantityKind="7b22c866-6851-4f98-a510-b525a8f16575"/>
+        <factor uuid="49f103ab-b4a8-45cc-8c1b-686e913703c1" exponent="1.0" quantityKind="4280f271-f4e8-48cd-b66e-527fc282a3f7"/>
+      </quantityKind>
+      <quantityKind xsi:type="dvlm_qudv:DerivedQuantityKind" name="Electric potential difference" uuid="9162773e-c0e9-4075-92a9-2bea18c3f6e9" symbol="L² M¹ T⁻³ I⁻¹" description="electricPotentialDifferenceQK" definitionURI="">
+        <factor uuid="b1148216-ca47-45e3-aec3-70c1ba44aaa0" exponent="-3.0" quantityKind="188462f4-8d07-4e7b-865c-b67036612f2c"/>
+        <factor uuid="e7768b27-fa7e-481b-a28b-43630a59f062" exponent="3.0" quantityKind="7b22c866-6851-4f98-a510-b525a8f16575"/>
+        <factor uuid="7f6d5ad3-ac31-448f-ab4e-4871d84952d8" exponent="1.0" quantityKind="4280f271-f4e8-48cd-b66e-527fc282a3f7"/>
+        <factor uuid="df56c6ae-74bf-419e-aca2-e132c1b368db" exponent="-1.0" quantityKind="11b2c4c3-20d5-432e-9bb1-c06340fbe970"/>
+      </quantityKind>
+      <quantityKind xsi:type="dvlm_qudv:DerivedQuantityKind" name="Power per Unit Area" uuid="633b8d86-b335-483f-95f2-6c0c35f43830" symbol="M¹ T⁻³" description="powerPerUnitAreaQK" definitionURI="">
+        <factor uuid="f36a398c-73a2-41aa-82fc-b56d1b4370f8" exponent="-3.0" quantityKind="188462f4-8d07-4e7b-865c-b67036612f2c"/>
+        <factor uuid="5cf4ac8c-0be2-4be0-b909-dc32d55c7364" exponent="1.0" quantityKind="4280f271-f4e8-48cd-b66e-527fc282a3f7"/>
+      </quantityKind>
+      <quantityKind xsi:type="dvlm_qudv:DerivedQuantityKind" name="Mass per Unit Area" uuid="18326773-85aa-4eec-a8d9-d5ecd6f42e6e" symbol="M¹ L⁻²" description="massPerUnitAreaQK" definitionURI="">
+        <factor uuid="f4a859ed-003a-41b8-b100-ddeb776c87e4" exponent="1.0" quantityKind="4280f271-f4e8-48cd-b66e-527fc282a3f7"/>
+        <factor uuid="f0e0343a-78b4-43da-9cce-65c825c47288" exponent="-2.0" quantityKind="7b22c866-6851-4f98-a510-b525a8f16575"/>
+      </quantityKind>
+      <quantityKind xsi:type="dvlm_qudv:DerivedQuantityKind" name="PressureOrStress" uuid="328d3518-5621-4aac-a431-4eb25b54d305" symbol="M¹ T⁻³" description="pressureOrStressQK" definitionURI="">
+        <factor uuid="3d2bb6d5-5b3d-4a4b-8580-4c082e24b370" exponent="-2.0" quantityKind="188462f4-8d07-4e7b-865c-b67036612f2c"/>
+        <factor uuid="fd119856-ba4b-4e39-ba7d-58aa5e2d36ac" exponent="-1.0" quantityKind="7b22c866-6851-4f98-a510-b525a8f16575"/>
+        <factor uuid="eb8b986e-cee9-4dfa-8f09-2df200cd64e4" exponent="1.0" quantityKind="4280f271-f4e8-48cd-b66e-527fc282a3f7"/>
+      </quantityKind>
+      <quantityKind xsi:type="dvlm_qudv:DerivedQuantityKind" name="Resistance" uuid="aaa05593-f802-4cb5-9515-3da3e40d6893" symbol="L² M¹ T⁻³ I⁻²" description="resistanceQK" definitionURI="">
+        <factor uuid="5771b34f-f2af-445e-828e-4da68b848626" exponent="-3.0" quantityKind="188462f4-8d07-4e7b-865c-b67036612f2c"/>
+        <factor uuid="f2a43152-f915-4828-867b-3479d1dddebe" exponent="2.0" quantityKind="7b22c866-6851-4f98-a510-b525a8f16575"/>
+        <factor uuid="8ae8dfc9-4207-4100-a514-26e8afc2e0c0" exponent="1.0" quantityKind="4280f271-f4e8-48cd-b66e-527fc282a3f7"/>
+        <factor uuid="e53f13b7-6010-46c0-bebd-1ec22dd49759" exponent="-2.0" quantityKind="11b2c4c3-20d5-432e-9bb1-c06340fbe970"/>
+      </quantityKind>
+      <quantityKind xsi:type="dvlm_qudv:DerivedQuantityKind" name="Specific Energy" uuid="ef48427a-042d-44f3-91f4-6b737837b137" symbol="L² T⁻²" description="specificEnergyQK" definitionURI="">
+        <factor uuid="5f3cb721-2814-4d26-9458-bb5f2e514446" exponent="-2.0" quantityKind="188462f4-8d07-4e7b-865c-b67036612f2c"/>
+        <factor uuid="8fc2d6b7-567d-42a3-aba1-326955741ee0" exponent="2.0" quantityKind="7b22c866-6851-4f98-a510-b525a8f16575"/>
+      </quantityKind>
+      <quantityKind xsi:type="dvlm_qudv:DerivedQuantityKind" name="Specific Heat Capacity" uuid="a5d300d2-f147-4ca3-96e5-f1b1160f31f8" symbol="L² T⁻² Θ⁻¹" description="specificHeatCapacityQK" definitionURI="">
+        <factor uuid="a1a8e7e3-6c3b-4f0f-8ce3-960e6f8aaf56" exponent="-2.0" quantityKind="188462f4-8d07-4e7b-865c-b67036612f2c"/>
+        <factor uuid="308107f5-d8eb-4d72-b353-92b5d8d20749" exponent="-1.0" quantityKind="c11c3d20-af8d-4cca-80b5-1fcead0cd8af"/>
+        <factor uuid="0177b68a-1855-4ad9-a677-921bbde4300e" exponent="2.0" quantityKind="7b22c866-6851-4f98-a510-b525a8f16575"/>
+      </quantityKind>
+      <quantityKind xsi:type="dvlm_qudv:DerivedQuantityKind" name="Thermal Conductivity" uuid="3ed659b7-003c-48b1-bd3b-2166fafecce9" symbol="L¹ M¹ T⁻³ Θ⁻¹" description="thermalConductivityQK" definitionURI="">
+        <factor uuid="a0379bc1-9c5e-4ab8-93a5-e7fa3e9c8a19" exponent="-3.0" quantityKind="188462f4-8d07-4e7b-865c-b67036612f2c"/>
+        <factor uuid="9fa0302d-fd27-404f-86a8-437ee0437fd5" exponent="-1.0" quantityKind="c11c3d20-af8d-4cca-80b5-1fcead0cd8af"/>
+        <factor uuid="88bd4780-5ec6-4ff7-a875-a087d13efb37" exponent="1.0" quantityKind="7b22c866-6851-4f98-a510-b525a8f16575"/>
+        <factor uuid="f51d7afb-4d91-4d48-bbf1-60a7a69342b8" exponent="1.0" quantityKind="4280f271-f4e8-48cd-b66e-527fc282a3f7"/>
+      </quantityKind>
+      <quantityKind xsi:type="dvlm_qudv:DerivedQuantityKind" name="Thermal Contact Resistance" uuid="c6859f79-e3a4-4d2c-a56a-3bcbda810059" symbol="L⁻² M⁻¹ T³ Θ¹" description="thermalContactResistanceQK" definitionURI="">
+        <factor uuid="49c4a320-dc58-4a6c-bf73-1f18afd4eac1" exponent="3.0" quantityKind="188462f4-8d07-4e7b-865c-b67036612f2c"/>
+        <factor uuid="6724e6e8-1099-4b3f-a73c-c391aa443c54" exponent="1.0" quantityKind="c11c3d20-af8d-4cca-80b5-1fcead0cd8af"/>
+        <factor uuid="a35d9e06-af1a-4c52-a8d6-89f27229d850" exponent="-2.0" quantityKind="7b22c866-6851-4f98-a510-b525a8f16575"/>
+        <factor uuid="581d7374-7f90-4f71-8413-b0e51aaa9049" exponent="-1.0" quantityKind="4280f271-f4e8-48cd-b66e-527fc282a3f7"/>
+      </quantityKind>
+      <quantityKind xsi:type="dvlm_qudv:DerivedQuantityKind" name="Thermal Contact Conductance" uuid="34efc174-a83b-4760-ac57-b019f430338e" symbol="L² M¹ T⁻³ Θ⁻¹" description="thermalContactConductanceQK" definitionURI="">
+        <factor uuid="64a13f3d-3a60-4e94-bb69-43573bc7d24e" exponent="-3.0" quantityKind="188462f4-8d07-4e7b-865c-b67036612f2c"/>
+        <factor uuid="0e09ea78-4257-441c-8990-da5771d2f6fa" exponent="-1.0" quantityKind="c11c3d20-af8d-4cca-80b5-1fcead0cd8af"/>
+        <factor uuid="d75e4b73-8a72-4f50-8508-0e6a24bdf00a" exponent="2.0" quantityKind="7b22c866-6851-4f98-a510-b525a8f16575"/>
+        <factor uuid="fda3973c-9c6a-4903-bb86-af04b8434f87" exponent="1.0" quantityKind="4280f271-f4e8-48cd-b66e-527fc282a3f7"/>
+      </quantityKind>
+      <quantityKind xsi:type="dvlm_qudv:DerivedQuantityKind" name="Thermal Contact Conductance Per Unit Area" uuid="bf619b6f-34a7-4a74-8b4d-5752ee879c45" symbol="M¹ T⁻³ Θ⁻¹" description="thermalContactConductancePerUnitAreaQK" definitionURI="">
+        <factor uuid="9b9c9cf0-4a0c-4878-af00-49d4f40c9de9" exponent="-3.0" quantityKind="188462f4-8d07-4e7b-865c-b67036612f2c"/>
+        <factor uuid="3ce40476-9b22-4ff0-9331-6890a3d64ff8" exponent="-1.0" quantityKind="c11c3d20-af8d-4cca-80b5-1fcead0cd8af"/>
+        <factor uuid="6b28b967-c9e0-45d1-9a3e-8b2599a1a046" exponent="1.0" quantityKind="4280f271-f4e8-48cd-b66e-527fc282a3f7"/>
+      </quantityKind>
+      <quantityKind xsi:type="dvlm_qudv:DerivedQuantityKind" name="Time Squared" uuid="4dc2b116-3056-46d5-a7e5-8fecc164eeba" symbol="T²" description="timeSquaredQK" definitionURI="">
+        <factor uuid="aacc8739-cafe-495f-9905-2b9f5693345b" exponent="2.0" quantityKind="188462f4-8d07-4e7b-865c-b67036612f2c"/>
+      </quantityKind>
+      <quantityKind xsi:type="dvlm_qudv:DerivedQuantityKind" name="Torque" uuid="288c0e51-ba9d-470f-a508-4e287811f399" symbol="L² M¹ T⁻²" description="torqueQK" definitionURI="">
+        <factor uuid="c284d05f-bc3f-4e33-9dff-ee5c82a5a4f8" exponent="-2.0" quantityKind="188462f4-8d07-4e7b-865c-b67036612f2c"/>
+        <factor uuid="9ca55133-b439-4da9-b550-0ecdcafd0f4b" exponent="2.0" quantityKind="7b22c866-6851-4f98-a510-b525a8f16575"/>
+        <factor uuid="6a6884b2-b0fd-488c-8a8a-2fb8396a4c00" exponent="1.0" quantityKind="4280f271-f4e8-48cd-b66e-527fc282a3f7"/>
+      </quantityKind>
+      <quantityKind xsi:type="dvlm_qudv:DerivedQuantityKind" name="Volume" uuid="f03cfb36-b537-4d20-be3b-85f3168dae17" symbol="L³" description="volumeQK" definitionURI="">
+        <factor uuid="a70739e9-46ca-4b56-9c5e-e3dd5f0118cf" exponent="3.0" quantityKind="7b22c866-6851-4f98-a510-b525a8f16575"/>
+      </quantityKind>
+    </systemOfQuantities>
+  </systemOfUnit>
+</dvlm_u:UnitManagement>
